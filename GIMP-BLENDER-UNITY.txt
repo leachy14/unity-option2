@@ -1,0 +1,8 @@
+Converting files from GIMP to Blender to Unity...
+
+-export as .fbx 
+-check selected objects on Blender
+-z foward setting in middle left on Blender
+-Finally change scale factor in Unity
+
+IMPORTANT when making custom assets and putting them into unity
