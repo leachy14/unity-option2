@@ -1,0 +1,24 @@
+2-d game
+Platformer
+towerdefence (Later)
+Platformer Basics
+
+A good sprite - guy 64 * 32
+Good level design - hallway
+Interesting enough graphics
+Place holders
+Power ups
+School.. 1 - 4 years 1st year being brightest 4th being darkest.
+
+
+
+
+
+Other stuff
+
+no weapons
+timing
+ESRB
+Sprites
+Permadeath
+Resolution
