@@ -1,2 +1,4 @@
-added game ideas file
+9/11 added game ideas file
 dicided game type and what we're doing
+
+9/15 Added Textures Folder
