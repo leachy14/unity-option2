@@ -1,0 +1,6 @@
+week of 9/7-9/12.
+
+Began storyboarding and writing out our plan of attack for our game.
+
+9/15/14
+I had rendered our character placeholder that james has supplied with us and put it into our unity directory. Began working on the game.
