@@ -38,6 +38,11 @@ function Update () {
 
 	}
 	
+	if (Input.GetKey("up"))
+	{
+		transform.Translate(0,1,0);
+	}
+	
 	//else {
 		//renderer.material.SetTexture(idle_placeholder);
 	//}
