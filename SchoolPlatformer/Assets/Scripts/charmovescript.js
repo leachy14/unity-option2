@@ -40,7 +40,10 @@ function Update () {
 	
 	if (Input.GetKey("up"))
 	{
-		transform.Translate(0,1,0);
+		if (transform.position.y < 4.0)
+		{
+			transform.Translate(0,.25,0);
+		}
 	}
 	
 	//else {
