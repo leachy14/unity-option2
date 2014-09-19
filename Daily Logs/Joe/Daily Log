@@ -20,4 +20,4 @@ able to jump.
 
 September 19: We fixed the error with the sprite sheet not loading correctly into Unity and some other small errors. I added a "floor"
 for the sprite to walk on and a jumping component to the game. I will try to add a ceiling so that the sprite doesn't jump out into
-space. There is an error with how the engine uses the up key, so that will have to be fixed.
+space. EDIT: Fixed up key. Re-uped the master.
