@@ -49,9 +49,11 @@ function Update () {
 	
 	else 
 	{
-		renderer.material.mainTexture = mainImage;	
-	}
-	
+		
+		renderer.material.mainTexture = mainImage;
+		renderer.material.SetTextureOffset("_MainTex", Vector2(0,0));
+		renderer.material.mainTextureScale = new Vector2(1,1);	
+	}	
 	/*var index = Mathf.FloorToInt(Time.time * 8.0) % 4;
 	var size = Vector2(0.15,1);
 	var offset = Vector2(index/6.0,0);
