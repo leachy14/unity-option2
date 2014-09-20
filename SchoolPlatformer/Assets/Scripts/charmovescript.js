@@ -2,22 +2,22 @@
 
 var charSpeed: float;
 
+var mainImage: Texture;
+var aniImage: Texture;
+
 //used for animation
 var index = Mathf.FloorToInt(Time.time * 8.0) % 4;
 var size = Vector2(0.15,1);
 var offset = Vector2(index/6.0,0);
 
-function Start () {
-//	renderer.material.SetTexture("idle_placeholder",offset);
-	//SpriteRenderer renderer = gameObject.GetComponent<SpriteRenderer>();
+function Start () {	
 }
 
 function Update () {
 
-	
-
 	if (Input.GetKey ("right"))
 	{
+		renderer.material.mainTexture = aniImage;
 		transform.Translate(-charSpeed * Time.deltaTime,0,0);
 		index = Mathf.FloorToInt(Time.time * 8.0) % 4;
 		size = Vector2(0.15,1);
@@ -27,8 +27,9 @@ function Update () {
 
 	}
 	
-	if (Input.GetKey ("left"))
+	else if (Input.GetKey ("left"))
 	{
+		renderer.material.mainTexture = aniImage;
 		transform.Translate(charSpeed * Time.deltaTime,0,0);
 		index = Mathf.FloorToInt(Time.time * 8.0) % 4;
 		size = Vector2(0.15,1);
@@ -38,7 +39,7 @@ function Update () {
 
 	}
 	
-	if (Input.GetKey("up"))
+	else if (Input.GetKey("up"))
 	{
 		if (transform.position.y < 4.0)
 		{
@@ -46,9 +47,10 @@ function Update () {
 		}
 	}
 	
-	//else {
-		//renderer.material.SetTexture(idle_placeholder);
-	//}
+	else 
+	{
+		renderer.material.mainTexture = mainImage;	
+	}
 	
 	/*var index = Mathf.FloorToInt(Time.time * 8.0) % 4;
 	var size = Vector2(0.15,1);
