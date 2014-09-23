@@ -39,14 +39,6 @@ function Update () {
 
 	}
 	
-	 else if (Input.GetKey("up"))
-	{
-		if (transform.position.y < 4.0)
-		{
-			transform.Translate(0,5 * charSpeed * Time.deltaTime,0);
-		}
-	} 
-	
 	else 
 	{
 		
@@ -54,5 +46,17 @@ function Update () {
 		renderer.material.SetTextureOffset("_MainTex", Vector2(0,0));
 		renderer.material.mainTextureScale = new Vector2(1,1);	
 	}	
-
+	
+	 
+	if (Input.GetKey("up"))
+	{
+	
+		if (transform.position.y < 2.3)
+		{
+			transform.Translate(0,5 * charSpeed * Time.deltaTime,0);
+		}
+	} 
+	
+	
+	
 }
