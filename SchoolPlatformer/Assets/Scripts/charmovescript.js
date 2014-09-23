@@ -25,9 +25,9 @@ function Update () {
 		renderer.material.SetTextureScale("_MainTex", size);
 		renderer.material.SetTextureOffset("_MainTex", offset);
 
-	}
+	} 
 	
-	 if (Input.GetKey ("left"))
+	else if (Input.GetKey ("left"))
 	{
 		renderer.material.mainTexture = aniImage;
 		transform.Translate(charSpeed * Time.deltaTime,0,0);
@@ -39,13 +39,13 @@ function Update () {
 
 	}
 	
-	 if (Input.GetKey("up"))
+	 else if (Input.GetKey("up"))
 	{
 		if (transform.position.y < 4.0)
 		{
 			transform.Translate(0,5 * charSpeed * Time.deltaTime,0);
 		}
-	}
+	} 
 	
 	else 
 	{
