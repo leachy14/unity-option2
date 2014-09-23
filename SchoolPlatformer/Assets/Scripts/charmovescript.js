@@ -27,7 +27,7 @@ function Update () {
 
 	}
 	
-	else if (Input.GetKey ("left"))
+	 if (Input.GetKey ("left"))
 	{
 		renderer.material.mainTexture = aniImage;
 		transform.Translate(charSpeed * Time.deltaTime,0,0);
@@ -39,7 +39,7 @@ function Update () {
 
 	}
 	
-	else if (Input.GetKey("up"))
+	 if (Input.GetKey("up"))
 	{
 		if (transform.position.y < 4.0)
 		{
