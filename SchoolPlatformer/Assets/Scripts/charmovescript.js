@@ -19,7 +19,7 @@ function Update () {
 	{
 		renderer.material.mainTexture = aniImage;
 		transform.Translate(-charSpeed * Time.deltaTime,0,0);
-		index = Mathf.FloorToInt(Time.time * 8.0) % 4;
+		index = Mathf.FloorToInt(Time.time * 12.0) % 6;
 		size = Vector2(0.15,1);
 		offset = Vector2(index/6.0,0);
 		renderer.material.SetTextureScale("_MainTex", size);
@@ -31,7 +31,7 @@ function Update () {
 	{
 		renderer.material.mainTexture = aniImage;
 		transform.Translate(charSpeed * Time.deltaTime,0,0);
-		index = Mathf.FloorToInt(Time.time * 8.0) % 4;
+		index = Mathf.FloorToInt(Time.time * 12.0) % 6;
 		size = Vector2(0.15,1);
 		offset = Vector2(index/6.0,0);
 		renderer.material.SetTextureScale("_MainTex", size);
@@ -51,9 +51,9 @@ function Update () {
 	if (Input.GetKey("up"))
 	{
 	
-		if (transform.position.y < 2.3)
+		if (transform.position.y < 8)
 		{
-			transform.Translate(0,5 * charSpeed * Time.deltaTime,0);
+			transform.Translate(0,3.5 * charSpeed * Time.deltaTime,0);
 		}
 	} 
 	
