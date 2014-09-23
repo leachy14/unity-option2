@@ -1,6 +1,10 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{D123F4E0-39E4-D91A-F3B8-C54979AE26FE}") = "SchoolPlatformer", "Assembly-CSharp-firstpass.csproj", "{041A85A4-E7C3-D274-7AD7-3EED8ABA4F45}"
+EndProject
+Project("{D123F4E0-39E4-D91A-F3B8-C54979AE26FE}") = "SchoolPlatformer", "Assembly-UnityScript-firstpass.unityproj", "{9B1DFF9B-E58B-A0CF-AEAC-91668B39AF71}"
+EndProject
 Project("{D123F4E0-39E4-D91A-F3B8-C54979AE26FE}") = "SchoolPlatformer", "Assembly-UnityScript.unityproj", "{CA376BB6-86E0-5189-0BFB-7C54E96CD622}"
 EndProject
 Global
@@ -9,6 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{041A85A4-E7C3-D274-7AD7-3EED8ABA4F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{041A85A4-E7C3-D274-7AD7-3EED8ABA4F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{041A85A4-E7C3-D274-7AD7-3EED8ABA4F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{041A85A4-E7C3-D274-7AD7-3EED8ABA4F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B1DFF9B-E58B-A0CF-AEAC-91668B39AF71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B1DFF9B-E58B-A0CF-AEAC-91668B39AF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B1DFF9B-E58B-A0CF-AEAC-91668B39AF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B1DFF9B-E58B-A0CF-AEAC-91668B39AF71}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA376BB6-86E0-5189-0BFB-7C54E96CD622}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA376BB6-86E0-5189-0BFB-7C54E96CD622}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA376BB6-86E0-5189-0BFB-7C54E96CD622}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -17,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																			GlobalSection(MonoDevelopProperties) = preSolution
+																									GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
