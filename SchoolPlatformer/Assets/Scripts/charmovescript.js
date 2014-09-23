@@ -43,7 +43,7 @@ function Update () {
 	{
 		if (transform.position.y < 4.0)
 		{
-			transform.Translate(0,.25,0);
+			transform.Translate(0,5 * charSpeed * Time.deltaTime,0);
 		}
 	}
 	
@@ -54,10 +54,5 @@ function Update () {
 		renderer.material.SetTextureOffset("_MainTex", Vector2(0,0));
 		renderer.material.mainTextureScale = new Vector2(1,1);	
 	}	
-	/*var index = Mathf.FloorToInt(Time.time * 8.0) % 4;
-	var size = Vector2(0.15,1);
-	var offset = Vector2(index/6.0,0);
-	renderer.material.SetTextureScale("_MainTex", size);
-	renderer.material.SetTextureOffset("_MainTex", offset);*/
 
 }
