@@ -1,10 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\CharFollow.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\charmovescript.js">
     <Files>
-      <File FileName="SchoolPlatformer.sln" Line="1" Column="1" />
-      <File FileName="Assets\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js" Line="5" Column="79" />
-      <File FileName="Assets\Scripts\CharFollow.js" Line="10" Column="42" />
+      <File FileName="Assets\Scripts\charmovescript.js" Line="14" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
