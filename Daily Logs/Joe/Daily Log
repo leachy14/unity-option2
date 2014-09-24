@@ -24,3 +24,5 @@ space. EDIT: Fixed up key. Re-uped the master.
 
 September 23: Tried to get the camera to follow the sprite as it moved. James uploaded the preliminary background, so I will try to change
 the placeholder with that. Otherwise, the day was filled with trying to fix bugs.
+
+September 24: Placed the background into the game, and fixed the camera view of the sprite. The next step will be adding powerups and enemies.
