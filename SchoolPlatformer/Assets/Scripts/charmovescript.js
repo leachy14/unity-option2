@@ -4,6 +4,7 @@ var charSpeed: float;
 
 var mainImage: Texture;
 var aniImage: Texture;
+var aniImageLeft: Texture;
 
 //used for animation
 var index = Mathf.FloorToInt(Time.time * 8.0) % 4;
@@ -29,7 +30,7 @@ function Update () {
 	
 	else if (Input.GetKey ("left"))
 	{
-		renderer.material.mainTexture = aniImage;
+		renderer.material.mainTexture = aniImageLeft;
 		transform.Translate(charSpeed * Time.deltaTime,0,0);
 		index = Mathf.FloorToInt(Time.time * 12.0) % 6;
 		size = Vector2(0.15,1);
