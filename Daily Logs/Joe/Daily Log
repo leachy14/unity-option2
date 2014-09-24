@@ -21,3 +21,6 @@ able to jump.
 September 19: We fixed the error with the sprite sheet not loading correctly into Unity and some other small errors. I added a "floor"
 for the sprite to walk on and a jumping component to the game. I will try to add a ceiling so that the sprite doesn't jump out into
 space. EDIT: Fixed up key. Re-uped the master.
+
+September 23: Tried to get the camera to follow the sprite as it moved. James uploaded the preliminary background, so I will try to change
+the placeholder with that. Otherwise, the day was filled with trying to fix bugs.
