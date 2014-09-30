@@ -5,6 +5,7 @@ var charSpeed: float;
 var mainImage: Texture;
 var aniImage: Texture;
 var aniImageLeft: Texture;
+var canJump: boolean;
 
 //used for animation
 var index = Mathf.FloorToInt(Time.time * 8.0) % 4;
@@ -15,6 +16,16 @@ function Start () {
 }
 
 function Update () {
+
+	if (transform.position.y == -1.92)
+	{
+		canJump = true;
+	}
+		
+	else if (transform.position.y > -1.92)
+	{
+		canJump = false;
+	} 
 
 	if (Input.GetKey ("right"))
 	{
@@ -49,15 +60,11 @@ function Update () {
 	}	
 	
 	 
-	if (Input.GetKey("up"))
+	if (Input.GetKey("up") && canJump)
 	{
-	
-		if (transform.position.y < 8)
-		{
-			transform.Translate(0,3.5 * charSpeed * Time.deltaTime,0);
-		}
+		transform.rigidbody.velocity.y = 7.7;
+			//transform.Translate(0,3.5 * charSpeed * Time.deltaTime,0);
+		
 	} 
-	
-	
 	
 }

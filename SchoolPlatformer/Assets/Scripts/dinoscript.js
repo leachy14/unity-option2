@@ -5,14 +5,14 @@ var rngx: int;
 
 function Start () {
 
-	rngx = (Math.floor(Math.random() * 11);
+	/*rngx = (Mathf.Floor(Random() * 11));
 	var di: GameObject;
 	
 	di = Instantiate(
 		dino,
-		Vector3(rngx, -2.5,1),
+		Vector3(rngx, -2.5,1));*/
 		
-
+}
 function Update () {
 
 		var index = Mathf.FloorToInt(Time.time * 12.0) % 6;
