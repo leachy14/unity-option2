@@ -17,12 +17,12 @@ function Start () {
 
 function Update () {
 
-	if (transform.position.y == -1.92)
+	if (transform.position.y <= -1.91)
 	{
 		canJump = true;
 	}
 		
-	else if (transform.position.y > -1.92)
+	else if (transform.position.y >= -1.91)
 	{
 		canJump = false;
 	} 
