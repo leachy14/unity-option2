@@ -60,7 +60,7 @@ function Update () {
 	}	
 	
 	 
-	if (Input.GetKey("up") && canJump)
+	if (Input.GetKey("up") && canJump == true)
 	{
 		transform.rigidbody.velocity.y = 7.7;
 			//transform.Translate(0,3.5 * charSpeed * Time.deltaTime,0);
