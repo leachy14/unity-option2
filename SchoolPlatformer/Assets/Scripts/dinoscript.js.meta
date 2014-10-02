@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: d95a9319767a74148a63b2136ddca54d
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - dino: {fileID: 100000, guid: 2a733bea4e263fb48bc779226b747db6, type: 3}
+  - imageText: {fileID: 2800000, guid: 361aa9a96c4d0594393a15feb51d303f, type: 3}
+  - dinoPrefab: {fileID: 400000, guid: e8fcf6b0873d55c44bb01862cc9940f7, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
