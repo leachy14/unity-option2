@@ -1,8 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\dinoscript.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\dinomovescript.js">
     <Files>
-      <File FileName="Assets\Scripts\dinoscript.js" Line="27" Column="6" />
+      <File FileName="Assets\Scripts\dinomovescript.js" Line="10" Column="4" />
+      <File FileName="Assets\Scripts\charmovescript.js" Line="12" Column="22" />
+      <File FileName="Assets\Scripts\dinoscript.js" Line="6" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
