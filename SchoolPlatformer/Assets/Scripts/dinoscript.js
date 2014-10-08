@@ -6,6 +6,7 @@ var imageText: Texture;
 var dinoPrefab: Transform;
 var startTime: float;
 var rndt: int;
+var number = 0;
 
 function Start () 
 {
@@ -26,12 +27,13 @@ function Update ()
 		if (startTime == 0) 
     {
         startTime = Time.time; 
-        rndt = Random.Range(5, 120);
+        rndt = Random.Range(5, 10);
     }
     else
     {
-        if ((Time.time - startTime) >= rndt) 
+        if ((Time.time - startTime) >= rndt && number < 1) 
         {
+        	number++;
             startTime = 0; 
             Instantiate (dinoPrefab, Vector3(rngx, -2.5, -4.3), Quaternion.identity);
 		}
