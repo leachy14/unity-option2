@@ -12,11 +12,17 @@ var index = Mathf.FloorToInt(Time.time * 8.0) % 4;
 var size = Vector2(0.15,1);
 var offset = Vector2(index/6.0,0);
 
-function Start () {	
+function Start () {
+
+		
 }
 
 function Update () {
 
+
+Invoke("OnControllerColliderHit", 1.0);
+
+	
 	if (transform.position.y <= -1.91)
 	{
 		canJump = true;
@@ -67,4 +73,20 @@ function Update () {
 		
 	} 
 	
+	
+	}
+	function OnControllerColliderHit (hit : ControllerColliderHit) {
+		var body : Rigidbody = hit.collider.attachedRigidbody;
+		// no rigidbody
+	
+	
+	if (body == null) 
+	{ 
+		canJump = false;
+	}
+	else 
+	{
+	canJump = true;
+	}
 }
+
