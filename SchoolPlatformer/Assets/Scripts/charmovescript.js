@@ -13,17 +13,17 @@ var size = Vector2(0.15,1);
 var offset = Vector2(index/6.0,0);
 
 function Start () {
-
-		
+//InvokeRepeating("OnControllerColliderHit", 1.0, 1.0);
+	canJump = true;
 }
 
 function Update () {
 
 
-Invoke("OnControllerColliderHit", 1.0);
 
-	
-	if (transform.position.y <= -1.91)
+//Invoke("OnControllerColliderHit", 1.0);
+
+if (transform.position.y <= -1.91)
 	{
 		canJump = true;
 	}
@@ -32,6 +32,8 @@ Invoke("OnControllerColliderHit", 1.0);
 	{
 		canJump = false;
 	} 
+
+
 
 	if (Input.GetKey ("right"))
 	{
@@ -68,14 +70,21 @@ Invoke("OnControllerColliderHit", 1.0);
 	 
 	if (Input.GetKey("up") && canJump == true)
 	{
+		canJump = false;
 		transform.rigidbody.velocity.y = 7.7;
 			//transform.Translate(0,3.5 * charSpeed * Time.deltaTime,0);
 		
 	} 
 	
+
+	/*else if (Input.GetKey("up") && JumpNum == 1)
+	{
+		canJump = false;
+	}
+	*/
 	
 	}
-	function OnControllerColliderHit (hit : ControllerColliderHit) {
+/*function OnControllerColliderHit (hit : ControllerColliderHit) {
 		var body : Rigidbody = hit.collider.attachedRigidbody;
 		// no rigidbody
 	
@@ -90,3 +99,4 @@ Invoke("OnControllerColliderHit", 1.0);
 	}
 }
 
+*/
