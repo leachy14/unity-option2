@@ -2,7 +2,7 @@
 
 var dinospeed: float;
 var imageText: Texture;
-var dinoPrefab: Transform;
+//var dinoPrefab: Transform;
 var aniImage: Texture;
 
 var index = Mathf.FloorToInt(Time.time * 12.0) % 6;
@@ -17,7 +17,10 @@ function Start () {
 
 function Update () {
 
+<<<<<<< Updated upstream
 	
+=======
+>>>>>>> Stashed changes
 		renderer.material.mainTexture = aniImage;
 		transform.Translate(-dinospeed * Time.deltaTime,0,0);
 		index = Mathf.FloorToInt(Time.time * 12.0) % 6;
