@@ -47,6 +47,7 @@
 -r:'Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Frameworks/Managed/UnityEditor.dll'
 -i:UnityEditor
+'Assets/Scripts/charjump.js'
 'Assets/Scripts/charmovescript.js'
 'Assets/Scripts/dinomovescript.js'
 'Assets/Scripts/dinoscript.js'
