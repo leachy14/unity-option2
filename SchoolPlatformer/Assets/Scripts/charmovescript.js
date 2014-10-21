@@ -14,7 +14,7 @@ var size = Vector2(0.15,1);
 var offset = Vector2(index/6.0,0);
 
 function Start () {
-Invoke("OnCollisionEnter", 1.0);
+
 
 	canJump = true;
 }
@@ -25,7 +25,7 @@ function Update () {
 
 //Invoke("OnControllerColliderHit", 1.0);
 
-if (transform.position.y <= -1.91)
+/*if (transform.position.y <= -1.91)
 	{
 		canJump = true;
 	}
@@ -34,7 +34,7 @@ if (transform.position.y <= -1.91)
 	{
 		canJump = false;
 	} 
-
+*/
 
 
 	if (Input.GetKey ("right"))
@@ -105,7 +105,7 @@ if (transform.position.y <= -1.91)
 function OnCollisionEnter(collision : Collision) {
 	var body : Rigidbody = collision.collider.attachedRigidbody;
 
-	if (body == null) {
+	if (collision.rigidbody == null) {
 	canJump = false;
 	}
 
