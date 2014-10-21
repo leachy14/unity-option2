@@ -23,8 +23,6 @@ function Update () {
 
 
 
-//Invoke("OnControllerColliderHit", 1.0);
-
 /*if (transform.position.y <= -1.91)
 	{
 		canJump = true;
