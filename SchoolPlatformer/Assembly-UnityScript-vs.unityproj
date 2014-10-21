@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\charmovescript.js" />
      <Compile Include="Assets\Scripts\dinomovescript.js" />
      <Compile Include="Assets\Scripts\dinoscript.js" />
+     <Compile Include="Assets\Scripts\hitboxscript.js" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>/Users/option2/Desktop/Github/unity-option2/SchoolPlatformer/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
