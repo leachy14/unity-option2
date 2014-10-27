@@ -9,7 +9,7 @@ var canJump: boolean;
 var collider: Physics;
 
 //used for animation
-var index = Mathf.FloorToInt(Time.time * 8.0) % 4;
+private var index: float;// = Mathf.FloorToInt(Time.time * 8.0) % 4;
 var size = Vector2(0.15,1);
 var offset = Vector2(index/6.0,0);
 
@@ -104,7 +104,7 @@ function OnCollisionEnter(collision : Collision) {
 	var body : Rigidbody = collision.collider.attachedRigidbody;
 
 	if (collision.rigidbody == null) {
-	canJump = false;
+	canJump = true;
 	}
 
 	
