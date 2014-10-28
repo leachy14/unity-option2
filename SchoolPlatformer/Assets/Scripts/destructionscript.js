@@ -8,12 +8,12 @@ function Update () {
 
 }
 
-function OnCollisionEnter (collision: Collision)		//dino destruction!
+function OnControllerColliderHit (hit: ControllerColliderHit)		//dino destruction!
 {
-	if (other.tag == "stomp")
+	if (hit.gameObject.CompareTag("stomp"));
 	{
-		Destroy(gameObject);
-		Destroy(collision.gameObject);
+		//Destroy(gameObject);
+		Destroy(hit.gameObject);
 	}
 	
 } 
