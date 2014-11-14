@@ -8,9 +8,9 @@ function Update () {
 
 }
 
-function OnControllerColliderHit (hit: ControllerColliderHit)		//dino destruction!
+function OnCollisionEnter (hit: Collision)		//dino destruction!
 {
-	if (hit.gameObject.CompareTag("stomp"));
+	if (hit.gameObject.name == "dinoprefab(Clone)")
 	{
 		//Destroy(gameObject);
 		Destroy(hit.gameObject);
