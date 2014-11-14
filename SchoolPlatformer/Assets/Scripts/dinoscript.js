@@ -31,7 +31,7 @@ function Update ()
     }
     else
     {
-        if ((Time.time - startTime) >= rndt && number < 1) 
+        if ((Time.time - startTime) >= rndt && number < 5) 
         {
         	number++;
             startTime = 0; 

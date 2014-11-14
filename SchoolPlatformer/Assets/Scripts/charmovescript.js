@@ -83,7 +83,7 @@ function Update () {
 	}
 	*/
 	
-	}
+	
 /*function OnControllerColliderHit (hit : ControllerColliderHit) {
 		var body : Rigidbody = hit.collider.attachedRigidbody;
 		// no rigidbody
@@ -99,6 +99,13 @@ function Update () {
 	}
 }
 */
+	
+	if (transform.position.x < -49.03)
+		transform.position.x = -49.03;
+		
+	if (transform.position.x > 48.96)
+		transform.position.x = 48.96;
+}
 
 function OnCollisionEnter(collision : Collision) {
 	var body : Rigidbody = collision.collider.attachedRigidbody;
