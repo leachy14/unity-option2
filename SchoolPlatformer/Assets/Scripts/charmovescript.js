@@ -23,17 +23,11 @@ function Update () {
 
 
 
-/*if (transform.position.y <= -1.91)
-	{
-		canJump = true;
-	}
+	if (Input.GetKey ("escape"))
+		Application.Quit();
+	
+	
 		
-	else if (transform.position.y >= -1.91)
-	{
-		canJump = false;
-	} 
-*/
-
 
 	if (Input.GetKey ("right"))
 	{
