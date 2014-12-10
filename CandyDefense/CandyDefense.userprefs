@@ -1,7 +1,8 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\enemy_path.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\dotween.cs">
     <Files>
+      <File FileName="Assets\Scripts\dotween.cs" Line="12" Column="5" />
       <File FileName="Assets\Scripts\enemy_path.js" Line="3" Column="26" />
     </Files>
   </MonoDevelop.Ide.Workbench>
