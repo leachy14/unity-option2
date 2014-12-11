@@ -47,10 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Pixelplacement\iTweenPath\Editor\iTweenPathEditor.cs" />
-     <None Include="Assets\DOTween\readme.txt" />
-     <None Include="Assets\DOTween\DOTween43.xml" />
      <None Include="Assets\Plugins\Pixelplacement\iTween\ReadMe!\ReadMe!.txt" />
-     <None Include="Assets\DOTween\DOTween46.xml" />
  <Reference Include="Assembly-UnityScript">
  <HintPath>C:/Users/leary_000/Documents/1Unity/unity-option2/CandyDefense/Library/ScriptAssemblies/Assembly-UnityScript.dll</HintPath>
  </Reference>
@@ -63,17 +60,14 @@
  <Reference Include="DOTween">
  <HintPath>C:/Users/leary_000/Documents/1Unity/unity-option2/CandyDefense/Assets/DOTween/DOTween.dll</HintPath>
  </Reference>
- <Reference Include="DOTweenEditor">
- <HintPath>C:/Users/leary_000/Documents/1Unity/unity-option2/CandyDefense/Assets/DOTween/Editor/DOTweenEditor.dll</HintPath>
- </Reference>
- <Reference Include="UnityEditor.Graphs">
- <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
- </Reference>
  <Reference Include="DOTween43">
  <HintPath>C:/Users/leary_000/Documents/1Unity/unity-option2/CandyDefense/Assets/DOTween/DOTween43.dll</HintPath>
  </Reference>
  <Reference Include="DOTween46">
  <HintPath>C:/Users/leary_000/Documents/1Unity/unity-option2/CandyDefense/Assets/DOTween/DOTween46.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEditor.Graphs">
+ <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.Graphs.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>
