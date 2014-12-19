@@ -15,10 +15,8 @@ function Update () {
 	FindClosestEnemy();
 	
 	
-	/*if (distance < 3)
-	{
-	transform.LookAt(enemy);
-	}*/
+	transform.rotation.x = 0;
+	transform.rotation.y = 0;
 	//if (enemy.gameObject 
 }
 
