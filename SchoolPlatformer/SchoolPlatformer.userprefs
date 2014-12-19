@@ -1,10 +1,17 @@
 ﻿<Properties>
+<<<<<<< Updated upstream
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="..\CandyDefense\Assets\Scripts\enemy_walk.js">
     <Files>
       <File FileName="..\CandyDefense\Assets\Scripts\enemy_walk.js" Line="70" Column="19" />
       <File FileName="Assets\Scripts\dinomovescript.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\charmovescript.js" Line="1" Column="1" />
+=======
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../../../New Unity Project/Assets/TDTK_Free/Scripts/C#/PathTD.cs">
+    <Files>
+      <File FileName="../../../../New Unity Project/Assets/TDTK_Free/Scripts/C#/PathTD.cs" Line="1" Column="1" />
+>>>>>>> Stashed changes
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -1,9 +1,16 @@
 ﻿<Properties>
+<<<<<<< Updated upstream
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\enemy_walk2.cs">
     <Files>
       <File FileName="Assets\Scripts\turret_ill_shoot.js" Line="22" Column="30" />
       <File FileName="Assets\Scripts\enemy_walk2.cs" Line="30" Column="41" />
+=======
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/enemy_walk2.cs">
+    <Files>
+      <File FileName="Assets/Scripts/enemy_walk2.cs" Line="35" Column="1" />
+>>>>>>> Stashed changes
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -27,3 +27,4 @@ function FindClosestEnemy (){
 				distance = curDistance; 
 			} 
 		} 	
+}

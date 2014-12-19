@@ -5,6 +5,8 @@ Project("{D123F4E0-39E4-D91A-F3B8-C54979AE26FE}") = "SchoolPlatformer", "Assembl
 EndProject
 Project("{D123F4E0-39E4-D91A-F3B8-C54979AE26FE}") = "SchoolPlatformer", "Assembly-CSharp.csproj", "{1A2E24FD-35B5-297C-CAD4-FB01416FFDA6}"
 EndProject
+Project("{D123F4E0-39E4-D91A-F3B8-C54979AE26FE}") = "SchoolPlatformer", "Assembly-CSharp-Editor.csproj", "{831B0E0C-4592-C400-49FA-8C3468B349CF}"
+EndProject
 Project("{D123F4E0-39E4-D91A-F3B8-C54979AE26FE}") = "SchoolPlatformer", "Assembly-UnityScript-firstpass.unityproj", "{9B1DFF9B-E58B-A0CF-AEAC-91668B39AF71}"
 EndProject
 Project("{D123F4E0-39E4-D91A-F3B8-C54979AE26FE}") = "SchoolPlatformer", "Assembly-UnityScript.unityproj", "{CA376BB6-86E0-5189-0BFB-7C54E96CD622}"
@@ -23,6 +25,10 @@ Global
 		{1A2E24FD-35B5-297C-CAD4-FB01416FFDA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A2E24FD-35B5-297C-CAD4-FB01416FFDA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A2E24FD-35B5-297C-CAD4-FB01416FFDA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{831B0E0C-4592-C400-49FA-8C3468B349CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{831B0E0C-4592-C400-49FA-8C3468B349CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{831B0E0C-4592-C400-49FA-8C3468B349CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{831B0E0C-4592-C400-49FA-8C3468B349CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9B1DFF9B-E58B-A0CF-AEAC-91668B39AF71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9B1DFF9B-E58B-A0CF-AEAC-91668B39AF71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B1DFF9B-E58B-A0CF-AEAC-91668B39AF71}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -35,12 +41,15 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																																																																				GlobalSection(MonoDevelopProperties) = preSolution
+																																																																																										GlobalSection(MonoDevelopProperties) = preSolution
 =======
 																																																																																	GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> origin/master
 =======
 																																																																																		GlobalSection(MonoDevelopProperties) = preSolution
+>>>>>>> Stashed changes
+=======
+																																																																						GlobalSection(MonoDevelopProperties) = preSolution
 >>>>>>> Stashed changes
 =======
 																													GlobalSection(MonoDevelopProperties) = preSolution
