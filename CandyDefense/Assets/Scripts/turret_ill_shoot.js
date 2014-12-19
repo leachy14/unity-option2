@@ -1,6 +1,10 @@
 ﻿#pragma strict
 
 
+var enemy : Transform;
+
+
+
 function Start () {
 	
 	FindClosestEnemy();
@@ -8,6 +12,13 @@ function Start () {
 
 function Update () {
 	
+	FindClosestEnemy();
+	
+	
+	/*if (distance < 3)
+	{
+	transform.LookAt(enemy);
+	}*/
 	//if (enemy.gameObject 
 }
 
@@ -25,6 +36,9 @@ function FindClosestEnemy (){
 			if (curDistance < distance) { 
 				closest = go; 
 				distance = curDistance; 
-			} 
+			}
+			if (distance < 2) {
+			transform.LookAt(enemy);
+			}
 		} 	
 }
