@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\enemy_walk3.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\enemy_spawner.js">
     <Files>
+      <File FileName="Assets\Scripts\enemy_spawner.js" Line="26" Column="2" />
       <File FileName="Assets\Scripts\enemy_walk3.cs" Line="59" Column="5" />
-      <File FileName="Assets\Scripts\turret_ill_shoot.js" Line="19" Column="27" />
+      <File FileName="Assets\Scripts\turret_ill_shoot.js" Line="1" Column="1" />
       <File FileName="Assets\Scripts\enemy_walk2.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
