@@ -1,11 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\enemy_spawner.js">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\..\..\Desktop\Test PRoject\Assets\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js">
     <Files>
-      <File FileName="Assets\Scripts\enemy_spawner.js" Line="26" Column="2" />
-      <File FileName="Assets\Scripts\enemy_walk3.cs" Line="59" Column="5" />
-      <File FileName="Assets\Scripts\turret_ill_shoot.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\enemy_walk2.cs" Line="1" Column="1" />
+      <File FileName="..\..\..\..\Desktop\Test PRoject\Assets\Standard Assets\Character Controllers\Sources\Scripts\ThirdPersonController.js" Line="294" Column="4" />
+      <File FileName="..\..\..\..\Desktop\Test PRoject\Assets\Standard Assets\Scripts\Camera Scripts\SmoothFollow.js" Line="56" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

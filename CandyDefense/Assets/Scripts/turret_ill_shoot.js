@@ -1,4 +1,6 @@
 ﻿#pragma strict
+import enemy_spawner;
+import UnityEngine.GameObject;
 
 
 var enemy : Transform;
@@ -27,6 +29,8 @@ function FindClosestEnemy (){
 		var closest : GameObject; 
 		var distance = Mathf.Infinity; 
 		var position = transform.position; 
+
+		
 		// Iterate through them and find the closest one
 		for (var go : GameObject in gos)  { 
 			var diff = (go.transform.position - position);
