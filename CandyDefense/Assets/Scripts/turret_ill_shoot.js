@@ -4,8 +4,8 @@ import UnityEngine.GameObject;
 
 
 var enemy : Transform;
-
-
+var turret : GameObject;
+var gos : GameObject[];	
 
 function Start () {
 	
@@ -20,12 +20,14 @@ function Update () {
 	transform.rotation.x = 0;
 	transform.rotation.y = 0;
 	//if (enemy.gameObject 
+
 }
 
 function FindClosestEnemy (){
 		// Find all game objects with tag Enemy
-		var gos : GameObject[];
+		
 		gos = GameObject.FindGameObjectsWithTag("Enemy"); 
+		turret = GameObject.FindGameObjectWithTag("Turret");
 		var closest : GameObject; 
 		var distance = Mathf.Infinity; 
 		var position = transform.position; 
@@ -40,7 +42,7 @@ function FindClosestEnemy (){
 				distance = curDistance; 
 			}
 			if (distance < 2) {
-			transform.LookAt(enemy);
+			transform.LookAt(turret.gameObject.FindGameObjectWithTag("Enemy").transform.position);
 			}
 		} 	
 }
