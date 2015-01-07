@@ -45,10 +45,11 @@ function FindClosestEnemy (){
 			}
 			if (distance < 2) {
 			transform.LookAt(turret.gameObject.FindGameObjectWithTag("Enemy").transform.position);
-			yield WaitForSeconds (3);
+			yield WaitForSeconds (6);
 			time++;
 			if (time == 6) {
 			time = 0;
+			yield WaitForSeconds (1);
 			Shoot();
 			yield WaitForSeconds (1);
 			}
