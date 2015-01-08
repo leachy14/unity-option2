@@ -24,6 +24,7 @@ public class enemy_walk3 : MonoBehaviour {
 	void FixedUpdate()
 	{
 		handleWalkWaypoints();
+
 	}
 	
 	// Handle walking the waypoints
@@ -58,5 +59,19 @@ public class enemy_walk3 : MonoBehaviour {
 		// Face walk direction
 		//transform.rotation = Quaternion.Euler(0, 0, targetAngle);
 	}
-}
 
+void HandleHealth() {
+
+
+
+
+
+
+
+
+
+
+
+
+		}
+}

@@ -8,8 +8,8 @@ var turret : GameObject;
 var gos : GameObject[];	
 
 function Start () {
-
 FindClosestEnemy();
+HandleShotMovement();
 }
 
 
@@ -17,13 +17,17 @@ function FixedUpdate () {
 
 		FindClosestEnemy();
 		
+		HandleShotMovement();
+		
 		projectile_entity = GameObject.FindGameObjectWithTag("Projectile");
 		
-		//transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position);
+		transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position);
+		transform.position.z = 0;
 		
+	transform.rotation.x = 0;
+	transform.rotation.y = 0;
 		//projectile_entity.transform.forward;
-
-		//constantForce.relativeForce = Vector2(0,0);
+;
 }
 function Shoot () {
 
@@ -36,21 +40,13 @@ function Shoot () {
 }
 function HandleShotMovement () {
 
-if (time == 6)  {
 
-	constantForce.relativeForce = Vector2(1,1);
-
-/*
-		Vector3 relative = targetWaypoint.position - transform.position;;
-		Vector3 movementNormal = Vector3.Normalize(relative);;
-		float distanceToWaypoint = relative.magnitude;;
-		float targetAngle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg - 90;
-*/
+	rigidbody2D.velocity = transform.forward * 2;
 
 
 
 
-	}
+
 }
 function FindClosestEnemy (){
 		// Find all game objects with tag Enemy
@@ -78,3 +74,26 @@ function FindClosestEnemy (){
 	}
 
 }
+/*function OnCollisionEnter(collision : Collision) {
+	var body : Rigidbody = collision.collider.attachedRigidbody;
+
+	if (collision.rigidbody == null) {
+
+	}
+
+	
+	else if (collision.rigidbody == {
+	canJump = true;
+	}
+
+}
+*/
+/*function OnCollisionEnter (hit: Collision)		//dino destruction!
+{
+	if (hit.gameObject.name == "enemy(Clone)")
+	{
+		//Destroy(gameObject);
+		Destroy(hit.gameObject);
+	}
+	
+} */

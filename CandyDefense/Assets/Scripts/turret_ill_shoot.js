@@ -8,6 +8,11 @@ var turret : GameObject;
 var gos : GameObject[];	
 var shot : GameObject;
 var time : int;
+var closest : GameObject; 
+var distance : float;
+var fireRate = 2;
+private var nextFire = 0.0;
+
 
 function Start () {
 	time = 0;
@@ -45,13 +50,10 @@ function FindClosestEnemy (){
 			}
 			if (distance < 2) {
 			transform.LookAt(turret.gameObject.FindGameObjectWithTag("Enemy").transform.position);
-			yield WaitForSeconds (6);
-			time++;
-			if (time == 6) {
-			time = 0;
-			yield WaitForSeconds (1);
+			if (Time.time > nextFire) {
+			nextFire = Time.time + fireRate;
 			Shoot();
-			yield WaitForSeconds (1);
+			
 			}
 		} 	
 	}
@@ -62,9 +64,6 @@ function Shoot () {
 
 
 Instantiate(shot, transform.position, transform.rotation);
-
-
-
 
 
 
