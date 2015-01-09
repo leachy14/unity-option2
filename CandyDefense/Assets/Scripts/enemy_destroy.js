@@ -14,15 +14,8 @@ function OnCollisionEnter2D(coll: Collision2D)		//dino destruction!
 	{
 	
 	Destroy(coll.gameObject);
+	Destroy(gameObject);
 	}
 	
 } 
-function OnCollisionExit2D(coll: Collision2D) {
 
-	if (coll.gameObject.tag == "Enemy")
-	{
-	Destroy(gameObject);
-
-	}
-
-}

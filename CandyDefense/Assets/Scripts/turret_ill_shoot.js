@@ -10,7 +10,7 @@ var shot : GameObject;
 var time : int;
 var closest : GameObject; 
 var distance : float;
-var fireRate = 2;
+var fireRate = 1;
 private var nextFire = 0.0;
 
 

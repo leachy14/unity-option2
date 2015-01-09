@@ -4,7 +4,7 @@ var dino: GameObject;
 var num = 5;
 var spawnTime: float = 5f;
 var spawnDelay: float = 3f;
-
+var enemies : GameObject[];
 
 function Start () {
 	
@@ -15,7 +15,7 @@ function Start () {
 
 
 function Update () {
-		
+		enemies = GameObject.FindGameObjectsWithTag("Enemy");
 }
 
 function Spawn() {

@@ -15,6 +15,7 @@ function OnCollisionEnter2D(coll: Collision2D)		//dino destruction!
 		//GameObject.FindGameObjectWithTag("Enemy");
 		//coll.gameObject.SendMessage("ApplyDamage", 10);
 	Destroy(coll.gameObject);
+	Destroy(gameObject);
 	}
 	
 } 
