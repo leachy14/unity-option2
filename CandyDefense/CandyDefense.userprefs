@@ -1,13 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\projectile_destroy.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\turret_ill_shoot.js">
     <Files>
-      <File FileName="Assets\Scripts\LevelControl.cs" Line="27" Column="6" />
-      <File FileName="Assets\Scripts\projectile.js" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\turret_ill_shoot.js" Line="13" Column="17" />
+      <File FileName="Assets\Scripts\projectile.js" Line="47" Column="42" />
+      <File FileName="Assets\Scripts\LevelControl.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\turret_ill_shoot.js" Line="53" Column="91" />
       <File FileName="Assets\Scripts\projectile_destroy.js" Line="17" Column="27" />
-      <File FileName="Assets\Scripts\enemy_spawner.js" Line="18" Column="56" />
-      <File FileName="Assets\Scripts\enemy_destroy.js" Line="17" Column="22" />
+      <File FileName="Assets\Scripts\enemy_spawner.js" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\enemy_destroy.js" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

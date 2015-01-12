@@ -12,7 +12,7 @@ FindClosestEnemy();
 HandleShotMovement();
 		projectile_entity = GameObject.FindGameObjectWithTag("Projectile");
 		
-		transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position);
+		transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
 }
 
 
@@ -43,14 +43,16 @@ function Shoot () {
 }
 function HandleShotMovement () {
 
- if (transform.rotation.z >= 270 && transform.rotation.z <= 90) {
+
+rigidbody2D.velocity = transform.up * -2;
+ /*if (transform.rotation.z >= 270 && transform.rotation.z <= 90) {
  
 	rigidbody2D.velocity = transform.right * 2;
 }
  else {
  rigidbody2D.velocity = transform.right * -2;
  }
-
+*/
 
 
 }
