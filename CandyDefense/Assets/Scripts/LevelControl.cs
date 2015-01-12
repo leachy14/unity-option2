@@ -35,7 +35,7 @@ public class LevelControl : MonoBehaviour
 		wave = 0;
 		maxEnemies = 5;
 		roundIsOver = true;
-		startTimer = 5;
+		startTimer = 2;
 	}
 	
 	// Update is called once per frame
@@ -67,7 +67,7 @@ public class LevelControl : MonoBehaviour
 	void NextWave ()   //resets the spawn timer, adds 1 to the wave #, and then spawns based on wave
 	{
 		currentEnemies = 0;
-		startTimer = 5;
+		startTimer = 2;
 		SetWave (wave + 1);
 		maxEnemies ++;
 		roundIsOver = false;

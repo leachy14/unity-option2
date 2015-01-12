@@ -10,6 +10,9 @@ var gos : GameObject[];
 function Start () {
 FindClosestEnemy();
 HandleShotMovement();
+		projectile_entity = GameObject.FindGameObjectWithTag("Projectile");
+		
+		transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position);
 }
 
 
@@ -19,9 +22,9 @@ function FixedUpdate () {
 		
 		HandleShotMovement();
 		
-		projectile_entity = GameObject.FindGameObjectWithTag("Projectile");
+		//projectile_entity = GameObject.FindGameObjectWithTag("Projectile");
 		
-		transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position);
+		//transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position);
 		transform.position.z = 0;
 		
 	transform.rotation.x = 0;
@@ -40,10 +43,13 @@ function Shoot () {
 }
 function HandleShotMovement () {
 
-
-	rigidbody2D.velocity = transform.forward * 2;
-
-
+ if (transform.rotation.z >= 270 && transform.rotation.z <= 90) {
+ 
+	rigidbody2D.velocity = transform.right * 2;
+}
+ else {
+ rigidbody2D.velocity = transform.right * -2;
+ }
 
 
 
@@ -66,7 +72,7 @@ function FindClosestEnemy (){
 				distance = curDistance; 
 			}
  			if (distance < 2) {
-			transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position);
+			//transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position);
 			yield WaitForSeconds (5);
 			time++;
 		}
