@@ -55,23 +55,8 @@ public class Dino_walk : MonoBehaviour {
 			// Walk towards waypoint
 			rigidbody2D.AddForce(new Vector2(movementNormal.x, movementNormal.y) * movementSpeed);
 		}
-		
-		// Face walk direction
-		//transform.rotation = Quaternion.Euler(0, 0, targetAngle);
+
 	}
 
-void HandleHealth() {
 
-
-
-
-
-
-
-
-
-
-
-
-		}
 }

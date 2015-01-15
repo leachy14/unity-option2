@@ -9,7 +9,7 @@ var shot : GameObject;
 var time : int;
 var closest : GameObject; 
 var distance : float;
-var fireRate = 0.5;
+var fireRate = 2;
 private var nextFire = 0.0;
 
 
@@ -22,11 +22,9 @@ function Start () {
 function Update () {
 	
 	FindClosestEnemy();
-	
-	
 	transform.rotation.x = 0;
 	transform.rotation.y = 0;
-	//if (enemy.gameObject 
+
 
 }
 
@@ -48,7 +46,6 @@ function FindClosestEnemy (){
 				distance = curDistance; 
 			}
 			if (distance < 2) {
-			 //transform.LookAt(transform.position + new Vector3(0, 0, 1), go.position);
 			transform.LookAt(turret.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
 			if (Time.time > nextFire) {
 			nextFire = Time.time + fireRate;
@@ -61,10 +58,6 @@ function FindClosestEnemy (){
 
 function Shoot () {
 
-
-
-Instantiate(shot, transform.position, transform.rotation);
-
-
+	Instantiate(shot, transform.position, transform.rotation);
 
 }

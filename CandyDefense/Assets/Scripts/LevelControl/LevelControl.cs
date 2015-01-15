@@ -8,7 +8,6 @@ public class LevelControl : MonoBehaviour
 	public int maxEnemies;        //max ammount of enemies on the map at any given time
 	public int currentEnemies;  //amount of enemies currently on the map
 	public float startTimer;    //countdown until timer ends
-	
 	public GameObject[] enemies;     //array of enemies
 	public GameObject[] spawnPoints; //array of spawnpoints
 	public GameObject enemy;
@@ -23,10 +22,8 @@ public class LevelControl : MonoBehaviour
 			startTimer -= 1;
 		}
 		if (startTimer == 0) {
-						CancelInvoke ();
+			CancelInvoke ();
 				}
-		
-		
 	}
 	
 	// Use this for initialization
@@ -81,17 +78,7 @@ public class LevelControl : MonoBehaviour
 		wave = waveToSet;
 	}
 	
-	IEnumerator randomSpawn (int arrayIndex, int amount) //spawns in random spawnPoint
-	{ //call with StartCoroutine (randomSpawn (enemy array index, number to spawn));
-		for (int i = 0; i <= amount; i++) {
-			if (currentEnemies < maxEnemies) {
-				Instantiate (enemy, transform.position, transform.rotation);
-				yield return new WaitForSeconds (1);
-				currentEnemies ++;
-			}
-			
-		}
-	}
+
 	
 	IEnumerator Spawn (int arrayIndex, int amount)  //spawns in specific spawnPoint
 	{ //call with StartCoroutine (Spawn (enemy array index, number to spawn, spawnpoint array index));
