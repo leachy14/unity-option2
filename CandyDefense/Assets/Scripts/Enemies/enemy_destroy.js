@@ -10,7 +10,7 @@ function Update () {
 
 function OnCollisionEnter2D(coll: Collision2D)		//dino destruction!
 {
-	if (coll.gameObject.name == "enemy(Clone)")
+	if (coll.gameObject.tag == "Enemy")
 	{
 	
 	Destroy(coll.gameObject);
