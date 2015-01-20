@@ -6,7 +6,6 @@ var enemy : Transform;
 var turret : GameObject;
 var gos : GameObject[];	
 var shot : GameObject;
-var time : int;
 var closest : GameObject; 
 var distance : float;
 var fireRate = 2;
@@ -14,7 +13,7 @@ private var nextFire = 0.0;
 
 
 function Start () {
-	time = 0;
+
 	FindClosestEnemy();
 	
 }

@@ -77,9 +77,6 @@ public class LevelControl : MonoBehaviour
 	{
 		wave = waveToSet;
 	}
-	
-
-	
 	IEnumerator Spawn (int arrayIndex, int amount)  //spawns in specific spawnPoint
 	{ //call with StartCoroutine (Spawn (enemy array index, number to spawn, spawnpoint array index));
 		for (int i = 0; i <= amount; i++) {
