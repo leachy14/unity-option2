@@ -13,8 +13,10 @@ public class LevelControl : MonoBehaviour
 	public GameObject[] spawnPoints; //array of spawnpoints
 	public GameObject enemy;
 	public Vector2 scrollPosition = Vector2.zero;
-	
-	
+	public Texture illuminaty_turret;
+	public Texture startbutton;
+
+
 	
 	public void CountDown ()  //countsdown  1 every 1 second
 	{
@@ -92,14 +94,14 @@ public class LevelControl : MonoBehaviour
 	}
 	void OnGUI () {
 		//guiText.fontSize = 30;
-		scrollPosition = GUI.BeginScrollView(new Rect(10, 300, 100, 100), scrollPosition, new Rect(0, 0, 220, 200));
-		GUI.Button(new Rect(0, 0, 100, 20), "Top-left");
-		GUI.Button(new Rect(120, 0, 100, 20), "Top-right");
-		GUI.Button(new Rect(0, 180, 100, 20), "Bottom-left");
-		GUI.Button(new Rect(120, 180, 100, 20), "Bottom-right");
+		scrollPosition = GUI.BeginScrollView(new Rect(520, 10, 140, 300), scrollPosition, new Rect(0, 0, 140, 200));
+		GUI.Button(new Rect(0, 0, 50, 50), illuminaty_turret);
+		GUI.Button(new Rect(55, 0, 50, 50), "Turret 2");
+		GUI.Button(new Rect(0, 55, 50, 50), "Turret 3");
+		GUI.Button(new Rect(55, 55, 50, 50), "Turret 4");
 		GUI.EndScrollView();
 		GUI.Label (new Rect (10, 300, 130, 200), round);
-		if(GUI.Button(new Rect(10, 30, 100, 50), "Start Round")) {
+		if(GUI.Button(new Rect(10, 30, 100, 50), startbutton)) {
 			if(roundIsOver){
 				if (startTimer > 0) {                        // but only if its not 0
 					InvokeRepeating ("CountDown", 1, 1);
