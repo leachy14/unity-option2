@@ -1,9 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelControl/LevelControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Turrets/Illuminaty_turret.js">
     <Files>
       <File FileName="Assets/Scripts/Enemies/Dino_walk.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/LevelControl/LevelControl.cs" Line="72" Column="33" />
+      <File FileName="Assets/Scripts/Turrets/Projectile_collider.js" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/Turrets/projectile.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Turrets/Illuminaty_turret.js" Line="60" Column="60" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -8,10 +8,11 @@ public class LevelControl : MonoBehaviour
 	public int maxEnemies;        //max ammount of enemies on the map at any given time
 	public int currentEnemies;  //amount of enemies currently on the map
 	public float startTimer;    //countdown until timer ends
+	public string round;
 	public GameObject[] enemies;     //array of enemies
 	public GameObject[] spawnPoints; //array of spawnpoints
 	public GameObject enemy;
-	
+	public Vector2 scrollPosition = Vector2.zero;
 	
 	
 	
@@ -58,6 +59,7 @@ public class LevelControl : MonoBehaviour
 			}
 		}     
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
 	}
 	
 	
@@ -89,7 +91,15 @@ public class LevelControl : MonoBehaviour
 		}
 	}
 	void OnGUI () {
-		if(GUI.Button(new Rect(10, 10, 50, 50), "Start Round")) {
+		//guiText.fontSize = 30;
+		scrollPosition = GUI.BeginScrollView(new Rect(10, 300, 100, 100), scrollPosition, new Rect(0, 0, 220, 200));
+		GUI.Button(new Rect(0, 0, 100, 20), "Top-left");
+		GUI.Button(new Rect(120, 0, 100, 20), "Top-right");
+		GUI.Button(new Rect(0, 180, 100, 20), "Bottom-left");
+		GUI.Button(new Rect(120, 180, 100, 20), "Bottom-right");
+		GUI.EndScrollView();
+		GUI.Label (new Rect (10, 300, 130, 200), round);
+		if(GUI.Button(new Rect(10, 30, 100, 50), "Start Round")) {
 			if(roundIsOver){
 				if (startTimer > 0) {                        // but only if its not 0
 					InvokeRepeating ("CountDown", 1, 1);
