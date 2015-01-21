@@ -88,4 +88,14 @@ public class LevelControl : MonoBehaviour
 			
 		}
 	}
+	void OnGUI () {
+		if(GUI.Button(new Rect(10, 10, 50, 50), "Start Round")) {
+			if(roundIsOver){
+				if (startTimer > 0) {                        // but only if its not 0
+					InvokeRepeating ("CountDown", 1, 1);
+					
+				}
+			}
+		}
+	}
 }
