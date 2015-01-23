@@ -11,9 +11,7 @@ public class LevelControl : MonoBehaviour
 	public string round;
 	public GameObject[] enemies;     //array of enemies
 	public GameObject[] spawnPoints; //array of spawnpoints
-	public GameObject enemy;
-	public Vector2 scrollPosition = Vector2.zero;
-	public Texture illuminaty_turret;
+	public GameObject enemy;	
 	public Texture startbutton;
 
 
@@ -93,13 +91,6 @@ public class LevelControl : MonoBehaviour
 		}
 	}
 	void OnGUI () {
-		//guiText.fontSize = 30;
-		scrollPosition = GUI.BeginScrollView(new Rect(520, 10, 140, 300), scrollPosition, new Rect(0, 0, 140, 200));
-		GUI.Button(new Rect(0, 0, 50, 50), illuminaty_turret);
-		GUI.Button(new Rect(55, 0, 50, 50), "Turret 2");
-		GUI.Button(new Rect(0, 55, 50, 50), "Turret 3");
-		GUI.Button(new Rect(55, 55, 50, 50), "Turret 4");
-		GUI.EndScrollView();
 		GUI.Label (new Rect (10, 300, 130, 200), round);
 		if(GUI.Button(new Rect(10, 30, 100, 50), startbutton)) {
 			if(roundIsOver){

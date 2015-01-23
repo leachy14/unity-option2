@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: ad84f9979e02140cfbd67ea5ee25e887
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - illuminaty_turret: {fileID: 2800000, guid: 5816caa5daa6e484988515b710e0226d, type: 3}
+  - startbutton: {instanceID: 0}
+  - illum_turret: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 

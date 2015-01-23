@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\Enemies\Dino_walk.cs" />
      <Compile Include="Assets\Scripts\LevelControl\LevelControl.cs" />
+     <Compile Include="Assets\Scripts\Store\StoreControl.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
