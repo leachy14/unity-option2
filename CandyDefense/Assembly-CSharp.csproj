@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Enemies\Dino_walk.cs" />
+     <Compile Include="Assets\Scripts\Enemies\Enemy_Coll.cs" />
      <Compile Include="Assets\Scripts\LevelControl\LevelControl.cs" />
      <Compile Include="Assets\Scripts\Store\StoreControl.cs" />
   </ItemGroup>

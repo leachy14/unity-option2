@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+namespace Walk {
 public class Dino_walk : MonoBehaviour {
 	
 	private int _targetWaypoint = 0;
@@ -59,4 +60,5 @@ public class Dino_walk : MonoBehaviour {
 	}
 
 
+}
 }

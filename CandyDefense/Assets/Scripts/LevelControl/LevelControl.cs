@@ -13,7 +13,7 @@ public class LevelControl : MonoBehaviour
 	public GameObject[] spawnPoints; //array of spawnpoints
 	public GameObject enemy;	
 	public Texture startbutton;
-
+	public float hSliderValue = 5.0F;
 
 	
 	public void CountDown ()  //countsdown  1 every 1 second
