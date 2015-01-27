@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-
 namespace Store {
 public class StoreControl : MonoBehaviour
 {
@@ -39,8 +38,10 @@ public class StoreControl : MonoBehaviour
 		GUI.Label(new Rect(10, 265, 200, 300), Money);
 		if (illum_toggle == true && Coins >= 100) {
 			if(Input.GetMouseButton(0)) {
+				Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+				clickedPosition.z = 0;
 				//Instantiate(illum_turret, transform.position, transform.rotation);
-					Instantiate(illum_turret, hit.point, transform.rotation);
+				Instantiate(illum_turret, clickedPosition, transform.rotation);
 				Coins = (Coins - 100);
 				illum_toggle = false;
 			}
