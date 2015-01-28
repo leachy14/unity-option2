@@ -31,7 +31,7 @@ public class LevelControl : MonoBehaviour
 	void Start ()
 	{
 		wave = 0;
-		maxEnemies = 5;
+		maxEnemies = 4;
 		roundIsOver = true;
 		startTimer = 2;
 	}
@@ -71,7 +71,7 @@ public class LevelControl : MonoBehaviour
 		maxEnemies ++;
 		roundIsOver = false;
 		Debug.Log ("spawning?");
-		StartCoroutine (Spawn (0, 5));
+		StartCoroutine (Spawn (0, maxEnemies));
 		
 	}
 	
@@ -79,6 +79,7 @@ public class LevelControl : MonoBehaviour
 	{
 		wave = waveToSet;
 	}
+
 	IEnumerator Spawn (int arrayIndex, int amount)  //spawns in specific spawnPoint
 	{ //call with StartCoroutine (Spawn (enemy array index, number to spawn, spawnpoint array index));
 		for (int i = 0; i <= amount; i++) {

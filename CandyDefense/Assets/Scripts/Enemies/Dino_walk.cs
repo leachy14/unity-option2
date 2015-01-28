@@ -8,11 +8,16 @@ public class Dino_walk : MonoBehaviour {
 	private Transform _waypoints;
 	
 	public float movementSpeed = 3f;
+	public int wave_number;
 	
 	// Use this for initialization
 	void Start () 
 	{
 		_waypoints = GameObject.Find("Waypoints").transform;
+		
+		GameObject level_accessor = GameObject.Find("spawner");
+		LevelControl levelcontrol = level_accessor.GetComponent<LevelControl> ();
+		wave_number = levelcontrol.wave;
 	}
 	
 	// Update is called once per frame
@@ -54,7 +59,7 @@ public class Dino_walk : MonoBehaviour {
 		else
 		{
 			// Walk towards waypoint
-			rigidbody2D.AddForce(new Vector2(movementNormal.x, movementNormal.y) * movementSpeed);
+			rigidbody2D.AddForce(new Vector2(movementNormal.x, movementNormal.y) * movementSpeed * (wave_number * .5f));
 		}
 
 	}

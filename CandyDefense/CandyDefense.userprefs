@@ -1,8 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Store\StoreControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Dino_walk.cs">
     <Files>
-      <File FileName="Assets\Scripts\Store\StoreControl.cs" Line="42" Column="5" />
+      <File FileName="Assets\Scripts\Enemies\Dino_walk.cs" Line="62" Column="107" />
+      <File FileName="Assets\Scripts\LevelControl\LevelControl.cs" Line="34" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
