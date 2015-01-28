@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
+
 namespace Store {
 public class StoreControl : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class StoreControl : MonoBehaviour
 	public GameObject illum_turret;
 	public string Money;
 	public RaycastHit hit;
-		
+	public Camera main;
 
 	// Use this for initialization
 	void Start ()
@@ -23,8 +24,8 @@ public class StoreControl : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-		RaycastHit hit;
+		Vector3 vec = main.ScreenToWorldPoint(Input.mousePosition);
+		transform.position = vec;
 		Money =	"<color=#ff0000ff><size=30>Coins: " + Coins + "</size></color>";
 	}
 	void OnGUI () {
@@ -38,14 +39,12 @@ public class StoreControl : MonoBehaviour
 		GUI.Label(new Rect(10, 265, 200, 300), Money);
 		if (illum_toggle == true && Coins >= 100) {
 			if(Input.GetMouseButton(0)) {
-				Vector3 clickedPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-				clickedPosition.z = 0;
-				//Instantiate(illum_turret, transform.position, transform.rotation);
-				Instantiate(illum_turret, clickedPosition, transform.rotation);
+				Instantiate(illum_turret, transform.position, transform.rotation);
 				Coins = (Coins - 100);
 				illum_toggle = false;
+					}
 			}
 		}
-	}
+	
 }
 }

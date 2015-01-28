@@ -15,7 +15,7 @@ private var nextFire = 0.0;
 function Start () {
 
 	FindClosestEnemy();
-	
+	transform.position.z = 0;
 }
 
 function Update () {

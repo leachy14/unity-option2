@@ -16,17 +16,20 @@ public class Enemy_Coll : MonoBehaviour
 	void Update ()
 	{
 	if (hlth < 1) {
-				StoreControl.Coins   += 100;
-			Destroy(gameObject);
 			
+			StoreControl.Coins += 100;
+			Debug.Log ("Got coins?");
+				Destroy(gameObject);
+
 		}
 	}
 	void OnCollisionEnter2D(Collision2D coll) 
 	{
 		if (coll.gameObject.tag == "Projectile")
 		{
-			Destroy(coll.gameObject);
+			
 			hlth -= 1;
+				Destroy(coll.gameObject);
 		}
 	}
 }
