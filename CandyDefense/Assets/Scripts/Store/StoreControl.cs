@@ -19,8 +19,7 @@ public class StoreControl : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-	Storeposition = Screen.width;
-	MoneyHeight = (Screen.height - 100);
+	
 	}
 	
 	// Update is called once per frame
@@ -29,6 +28,8 @@ public class StoreControl : MonoBehaviour
 		Vector3 vec = main.ScreenToWorldPoint(Input.mousePosition);
 		transform.position = vec;
 		Money =	"<color=#ff0000ff><size=30>Coins: " + Coins + "</size></color>";
+			Storeposition = (Screen.width - 150);
+			MoneyHeight = (Screen.height - 100);
 	}
 	void OnGUI () {
 		//Store Menu
@@ -38,7 +39,7 @@ public class StoreControl : MonoBehaviour
 		GUI.Button(new Rect(0, 55, 50, 50), "Turret 3");
 		GUI.Button(new Rect(55, 55, 50, 50), "Turret 4");
 		GUI.EndScrollView();
-		GUI.Label(new Rect(10, 265, 200, 300), Money);
+		GUI.Label(new Rect(10, MoneyHeight, 200, 300), Money);
 		if (illum_toggle == true && Coins >= 100) {
 			if(Input.GetMouseButton(0)) {
 				Instantiate(illum_turret, transform.position, transform.rotation);

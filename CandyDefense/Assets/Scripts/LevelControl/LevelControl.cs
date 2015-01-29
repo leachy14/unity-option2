@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-namespace Level {
 public class LevelControl : MonoBehaviour
 {
 	public int wave;            //the wave we're on
@@ -15,7 +14,7 @@ public class LevelControl : MonoBehaviour
 	public GameObject enemy;	
 	public Texture startbutton;
 	public float hSliderValue = 5.0F;
-
+	int RoundHeight;
 	
 	public void CountDown ()  //countsdown  1 every 1 second
 	{
@@ -61,6 +60,7 @@ public class LevelControl : MonoBehaviour
 		}     
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
+		RoundHeight = (Screen.height - 75);
 	}
 	
 	
@@ -93,7 +93,7 @@ public class LevelControl : MonoBehaviour
 		}
 	}
 	void OnGUI () {
-		GUI.Label (new Rect (10, 300, 130, 200), round);
+		GUI.Label (new Rect (10, RoundHeight, 130, 200), round);
 		if(GUI.Button(new Rect(10, 30, 100, 50), startbutton)) {
 			if(roundIsOver){
 				if (startTimer > 0) {                        // but only if its not 0
@@ -104,4 +104,4 @@ public class LevelControl : MonoBehaviour
 		}
 	}
 }
-}
+
