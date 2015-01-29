@@ -14,11 +14,13 @@ public class StoreControl : MonoBehaviour
 	public string Money;
 	public RaycastHit hit;
 	public Camera main;
-
+	public int Storeposition;
+	public int MoneyHeight;
 	// Use this for initialization
 	void Start ()
 	{
-	
+	Storeposition = Screen.width;
+	MoneyHeight = (Screen.height - 100);
 	}
 	
 	// Update is called once per frame
@@ -30,7 +32,7 @@ public class StoreControl : MonoBehaviour
 	}
 	void OnGUI () {
 		//Store Menu
-		scrollPosition = GUI.BeginScrollView(new Rect(520, 10, 140, 300), scrollPosition, new Rect(0, 0, 140, 200));
+		scrollPosition = GUI.BeginScrollView(new Rect(Storeposition, 10, 140, 300), scrollPosition, new Rect(0, 0, 140, 200));
 		illum_toggle = GUI.Toggle(new Rect(0, 0, 50, 50), illum_toggle, illuminaty_turret);
 		GUI.Button(new Rect(55, 0, 50, 50), "Turret 2");
 		GUI.Button(new Rect(0, 55, 50, 50), "Turret 3");
@@ -42,9 +44,23 @@ public class StoreControl : MonoBehaviour
 				Instantiate(illum_turret, transform.position, transform.rotation);
 				Coins = (Coins - 100);
 				illum_toggle = false;
-					}
+				}
 			}
 		}
-	
-}
+	public void BuyIllumTurret () { 
+		if (Coins >= 100) {
+			if(Input.GetMouseButton(0)) {
+				Instantiate(illum_turret, transform.position, transform.rotation);
+				Coins = (Coins - 100);
+				illum_toggle = false;
+				}	
+			}
+		}
+	public void ShowStore() {
+		Storeposition = (Screen.width - 100);
+		}
+	public void HideStore() {
+		Storeposition = Screen.width;
+		}
+	}
 }
