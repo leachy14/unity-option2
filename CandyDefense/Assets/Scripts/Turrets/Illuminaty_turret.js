@@ -44,7 +44,7 @@ function FindClosestEnemy (){
 				closest = go; 
 				distance = curDistance; 
 			}
-			if (distance < 2) {
+			if (distance < 1.5) {
 			transform.LookAt(turret.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
 			if (Time.time > nextFire) {
 			nextFire = Time.time + fireRate;

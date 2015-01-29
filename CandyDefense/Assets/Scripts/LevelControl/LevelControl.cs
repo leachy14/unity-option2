@@ -11,7 +11,8 @@ public class LevelControl : MonoBehaviour
 	public string round;
 	public GameObject[] enemies;     //array of enemies
 	public GameObject[] spawnPoints; //array of spawnpoints
-	public GameObject enemy;	
+	public GameObject Raptor;	
+	public GameObject SanicRaptor;
 	public Texture startbutton;
 	public float hSliderValue = 5.0F;
 	int RoundHeight;
@@ -85,9 +86,14 @@ public class LevelControl : MonoBehaviour
 	{ //call with StartCoroutine (Spawn (enemy array index, number to spawn, spawnpoint array index));
 		for (int i = 0; i <= amount; i++) {
 			if (currentEnemies < maxEnemies) {
-				Instantiate (enemy, transform.position, transform.rotation);
+				Instantiate (Raptor, transform.position, transform.rotation);
 				yield return new WaitForSeconds (1);
 				currentEnemies ++;
+				if (wave >= 4) {
+					Instantiate (SanicRaptor, transform.position, transform.rotation);
+					yield return new WaitForSeconds (1);
+					currentEnemies ++;
+				}
 			}
 			
 		}

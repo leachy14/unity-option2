@@ -9,15 +9,21 @@ public class Dino_walk : MonoBehaviour {
 	
 	public float movementSpeed = 3f;
 	public int wave_number;
-	
+	public int Speed;
+
 	// Use this for initialization
 	void Start () 
 	{
 		_waypoints = GameObject.Find("Waypoints").transform;
-		
 		GameObject level_accessor = GameObject.Find("spawner");
 		LevelControl levelcontrol = level_accessor.GetComponent<LevelControl> ();
-		wave_number = levelcontrol.wave;
+		//wave_number = levelcontrol.wave;
+			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
+				Speed = 4;			
+			} else if (this.gameObject.name == "Dino_enemy(Clone)") {
+				Speed = 2;
+			}
+
 	}
 	
 	// Update is called once per frame
@@ -59,7 +65,7 @@ public class Dino_walk : MonoBehaviour {
 		else
 		{
 			// Walk towards waypoint
-			rigidbody2D.AddForce(new Vector2(movementNormal.x, movementNormal.y) * movementSpeed * (wave_number * .5f));
+			rigidbody2D.AddForce(new Vector2(movementNormal.x, movementNormal.y) * movementSpeed * (Speed * .5f));
 		}
 
 	}

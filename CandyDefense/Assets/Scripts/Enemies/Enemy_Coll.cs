@@ -5,21 +5,25 @@ using Store;
 namespace Enemy {
 public class Enemy_Coll : MonoBehaviour
 {
-	public int hlth = 1;
+		public int hlth;
 	// Use this for initialization
 	void Start ()
 	{
-	
+	if (this.gameObject.name == "Sanic_Raptor(Clone)") {
+						hlth = 2;
+				} else {
+				hlth = 1;
+			}
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-	if (hlth < 1) {
-			
-			StoreControl.Coins += 100;
+	if (hlth < 1) 
+		{
+			StoreControl.Coins += 10;
 			Debug.Log ("Got coins?");
-				Destroy(gameObject);
+			Destroy(gameObject);
 
 		}
 	}
@@ -27,11 +31,9 @@ public class Enemy_Coll : MonoBehaviour
 	{
 		if (coll.gameObject.tag == "Projectile")
 		{
-			
-			hlth -= 1;
 				Destroy(coll.gameObject);
+				hlth -= 1;
+			}
 		}
 	}
-}
-
 }
