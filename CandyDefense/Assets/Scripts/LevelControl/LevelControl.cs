@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
+
+public namespace Level {
 public class LevelControl : MonoBehaviour
 {
 	public int wave;            //the wave we're on
@@ -102,4 +104,5 @@ public class LevelControl : MonoBehaviour
 			}
 		}
 	}
+}
 }
