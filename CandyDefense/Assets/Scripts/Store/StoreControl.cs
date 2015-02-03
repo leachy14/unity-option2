@@ -16,30 +16,36 @@ public class StoreControl : MonoBehaviour
 	
 	
 	//Textures
-		public Texture illuminaty_turret;
-		public Texture startbutton;
+	public Texture illuminaty_turret;
+	public Texture startbutton;
 
 
 	//Toggles
-		private bool illum_toggle = false;
-		private bool StoreOpen = false;
+	private bool illum_toggle = false;
+	private bool StoreOpen = false;
 
 
 	//Positions
-		public int Storeposition;
-		public int MoneyHeight;
-		public int StoreOpenButtonPos;
-		public int StorePlaneH;
-		public int test;
+	public int Storeposition;
+	public int MoneyHeight;
+	public int StoreOpenButtonPos;
+	public int StorePlaneH;
+	public int test;
 
 	//Turrets 
-		public GameObject illum_turret;
+	public GameObject illum_turret;
 
+	//Access other scripts
+	public GameObject round_level;
+	public LevelControl round_accessor;
 
 	// Use this for initialization
 	void Start ()
 	{
 			StorePlaneH = Screen.height;
+
+			round_level = GameObject.Find ("spawner");
+			round_accessor = round_level.GetComponent<LevelControl> ();
 	}
 	
 	// Update is called once per frame
@@ -50,7 +56,7 @@ public class StoreControl : MonoBehaviour
 		transform.position = vec;
 		
 		Money =	"<color=#ff0000ff><size=30>Coins: " + Coins + "</size></color>";
-		
+
 			if (StoreOpen == true) {
 				Storeposition = (Screen.width - 160);
 				StoreOpenButtonPos = (Screen.width - 180);
@@ -62,6 +68,7 @@ public class StoreControl : MonoBehaviour
 
 			MoneyHeight = (Screen.height - 100);
 			test = Screen.height;
+
 
 	}
 	void OnGUI () {
@@ -84,6 +91,15 @@ public class StoreControl : MonoBehaviour
 		GUI.Button(new Rect(0, 385, 50, 50), "Turret");
 		GUI.Button(new Rect(55, 385, 50, 50), "Turret");
 		GUI.EndScrollView();
+
+		if (round_accessor.current_enemy_amount > 0) {
+				StoreOpen = false;
+			}
+
+		if (round_accessor.current_enemy_amount == 0) {
+				StoreOpen = true;
+			}
+
 
 		//show the store
 

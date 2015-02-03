@@ -22,7 +22,7 @@ public class Enemy_Coll : MonoBehaviour
 	if (hlth < 1) 
 		{
 			StoreControl.Coins += 10;
-			Debug.Log ("Got coins?");
+			//Debug.Log ("Got coins?");
 			Destroy(gameObject);
 
 		}

@@ -19,17 +19,16 @@ public class LevelControl : MonoBehaviour
 	//Bools	
 	public bool roundIsOver;    //are we inbetween rounds?
 	public bool pause = false;
-	
-	
-	//intergers
+
+	//integers
 	public int wave;            //the wave we're on
 	public int RoundHeight;
 	public int maxEnemies;        //max ammount of enemies on the map at any given time
 	public int currentEnemies;  //amount of enemies currently on the map
 	public int pauseX;
 	public int pauseY;
-	
-	
+	public int current_enemy_amount;
+
 	
 	//floats
 	public float hSliderValue = 5.0F;
@@ -53,34 +52,41 @@ public class LevelControl : MonoBehaviour
 		maxEnemies = 4;
 		roundIsOver = true;
 		startTimer = 2;
+		current_enemy_amount = 0;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		if (startTimer > 0) {          //if we're either counting down or still waiting
-			roundIsOver = true;    //round is still in over state
+			roundIsOver = true; 		//round is still in over state
+
 		} else {                         //otherwise
-			roundIsOver = false;   //the round is over and we need to
-			NextWave ();           //start the next wave
+										//the round is over and we need to
+			NextWave ();  			   //start the next wave
+			roundIsOver = false;
 		}
-		if (roundIsOver) {                                            //if the round is in over state
+	
+		if (roundIsOver == true) {                                            //if the round is in over state
 			if (Input.GetKeyDown ("space")) {                   //"press space to start the countdown timer
 				if (startTimer > 0) {                        // but only if its not 0
 					InvokeRepeating ("CountDown", 1, 1);
 				}    
 			}
+
+		current_enemy_amount = enemies.Length;
 		}     
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
 		RoundHeight = (Screen.height - 75);
+
 		if (Input.GetKey("escape") && pause == false) {
 			pause = true;
 		} else if (Input.GetKey("escape") && pause == true) {
 			pause = false;
 		}
 		pauseY = (Screen.height - 300);
-		pauseX
+		//pauseX Perry, what does this do?
 	}
 	void NextWave ()   //resets the spawn timer, adds 1 to the wave #, and then spawns based on wave
 	{
@@ -89,7 +95,6 @@ public class LevelControl : MonoBehaviour
 		SetWave (wave + 1);
 		maxEnemies ++;
 		roundIsOver = false;
-		Debug.Log ("spawning?");
 		StartCoroutine (Spawn (0, maxEnemies));
 	}
 	
@@ -97,6 +102,7 @@ public class LevelControl : MonoBehaviour
 	{
 		wave = waveToSet;
 	}
+
 	IEnumerator Spawn (int arrayIndex, int amount)  //spawns in specific spawnPoint
 	{ //call with StartCoroutine (Spawn (enemy array index, number to spawn, spawnpoint array index));
 		for (int i = 0; i <= amount; i++) {
