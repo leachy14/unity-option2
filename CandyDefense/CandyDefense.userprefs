@@ -1,8 +1,8 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Enemies\Enemy_Coll.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Turrets\Illuminaty_turret.js">
     <Files>
-      <File FileName="Assets\Scripts\Enemies\Enemy_Coll.cs" Line="25" Column="6" />
+      <File FileName="Assets\Scripts\Turrets\Illuminaty_turret.js" Line="47" Column="64" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
