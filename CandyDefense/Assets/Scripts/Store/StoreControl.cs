@@ -34,6 +34,9 @@ public class StoreControl : MonoBehaviour
 
 	//Turrets 
 	public GameObject illum_turret;
+	
+	//Path Collider
+	public GameObject path_collide;
 
 	//Access other scripts
 	public GameObject round_level;
@@ -111,9 +114,11 @@ public class StoreControl : MonoBehaviour
 			//Place the damn turret
 		if (illum_toggle == true && Coins >= 100) {
 			if(Input.GetMouseButton(0)) {
-				Instantiate(illum_turret, transform.position, transform.rotation);
-				Coins = (Coins - 100);
-				illum_toggle = false;
+					if (path_collide.collider2D.OverlapPoint(transform.position) == false){
+					Instantiate(illum_turret, transform.position, transform.rotation);
+					Coins = (Coins - 100);
+					illum_toggle = false;
+				}
 				}
 			}
 		}
