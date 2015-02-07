@@ -11,13 +11,22 @@ public class Dino_walk : MonoBehaviour {
 	public int wave_number;
 	public int Speed;
 
+	public GameObject level_accessor;
+	public LevelControl levelcontrol;
+
 	// Use this for initialization
 	void Start () 
 	{
 		_waypoints = GameObject.Find("Waypoints").transform;
+<<<<<<< HEAD
 		GameObject level_accessor = GameObject.Find("spawner");
 		
 		//wave_number = levelcontrol.wave;
+=======
+		level_accessor = GameObject.Find("spawner");
+		levelcontrol = level_accessor.GetComponent<LevelControl> ();
+
+>>>>>>> Version .91_E
 			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
 				Speed = 4;			
 			} else if (this.gameObject.name == "Dino_enemy(Clone)") {
@@ -40,7 +49,7 @@ public class Dino_walk : MonoBehaviour {
 	}
 	
 	// Handle walking the waypoints
-	private void handleWalkWaypoints()
+	public void handleWalkWaypoints()
 	{
 		Transform targetWaypoint = _waypoints.GetChild(_targetWaypoint);
 		Vector3 relative = targetWaypoint.position - transform.position;
@@ -59,6 +68,8 @@ public class Dino_walk : MonoBehaviour {
 			{
 				// Inform level script that a unit has reached the last waypoint
 				Destroy(gameObject);
+				
+				levelcontrol.lives--;
 				return;
 			}
 		}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Store;
 
 namespace Level {
 public class LevelControl : MonoBehaviour
@@ -16,6 +17,7 @@ public class LevelControl : MonoBehaviour
 	public GameObject[] spawnPoints; //array of spawnpoints
 	public GameObject Raptor;	
 	public GameObject SanicRaptor;
+	public GameObject store_accessor;
 	
 	//Bools	
 	public bool roundIsOver;    //are we inbetween rounds?
@@ -24,12 +26,13 @@ public class LevelControl : MonoBehaviour
 	//integers
 	public int wave;            //the wave we're on
 	public int RoundHeight;
-	public int maxEnemies;        //max ammount of enemies on the map at any given time
+	public int maxEnemies;        //max amount of enemies on the map at any given time
 	public int currentEnemies;  //amount of enemies currently on the map
 	public int pauseX;
 	public int pauseY;
 <<<<<<< HEAD
 	public int current_enemy_amount;
+	public int lives;
 
 =======
 	public int Tutorial;
@@ -39,6 +42,9 @@ public class LevelControl : MonoBehaviour
 	//floats
 	public float hSliderValue = 5.0F;
 	public float startTimer;    //countdown until timer ends	
+
+	//Access other scripts
+	public StoreControl storecontrol;
 	
 	
 	public void CountDown ()  //countsdown  1 every 1 second
@@ -61,9 +67,17 @@ public class LevelControl : MonoBehaviour
 		startTimer = 2;
 <<<<<<< HEAD
 		current_enemy_amount = 0;
+<<<<<<< HEAD
 =======
 			Tutorial = 1;
 >>>>>>> Perry
+=======
+		lives = 3;
+
+		store_accessor = GameObject.Find ("Store");
+
+		storecontrol = store_accessor.GetComponent<StoreControl> ();
+>>>>>>> Version .91_E
 	}
 	
 	// Update is called once per frame
@@ -86,7 +100,8 @@ public class LevelControl : MonoBehaviour
 			}
 
 		current_enemy_amount = enemies.Length;
-		}     
+		}
+
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
 		RoundHeight = (Screen.height - 75);
@@ -101,12 +116,36 @@ public class LevelControl : MonoBehaviour
 			pause = false;
 		}
 <<<<<<< HEAD
+<<<<<<< HEAD
 		pauseY = (Screen.height - 300);
 		//pauseX Perry, what does this do?
 =======
 		pauseY = (Screen.height / 2 - 100);
 		pauseX = (Screen.width / 2 - 200);
 >>>>>>> Perry
+=======
+		pauseY = (Screen.height / 2 - 100);
+		pauseX = (Screen.width / 2 - 200);
+
+		if (lives == 0) 
+		{
+			storecontrol.Restart();
+			lives = 3;
+			for (int i = 0; i < enemies.Length; i++)
+			{
+				Destroy (enemies[i]);
+			}
+
+			GameObject[] turret_objects = GameObject.FindGameObjectsWithTag("Turret");
+
+			foreach (GameObject objs in turret_objects)
+				Destroy(objs);
+
+			wave = 1;
+			maxEnemies = 4;
+
+		}
+>>>>>>> Version .91_E
 	}
 	void NextWave ()   //resets the spawn timer, adds 1 to the wave #, and then spawns based on wave
 	{

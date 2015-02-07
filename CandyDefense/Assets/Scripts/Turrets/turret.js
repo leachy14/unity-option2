@@ -13,11 +13,11 @@ var distance : float;
 var fireRate : int;
 private var nextFire = 0.0;
 
-
 function Start () {
 
 	FindClosestEnemy();
 	transform.position.z = 0;
+<<<<<<< HEAD:CandyDefense/Assets/Scripts/Turrets/turret.js
 	if(this.gameObject.name == "illuminaty_turret(Clone)") {
 	fireRate = 2;
 	}
@@ -27,6 +27,9 @@ function Start () {
 	if (this.gameObject.name == "FlameThrower(Clone)") {
 	fireRate = 0.1;
 	}
+=======
+
+>>>>>>> Version .91_E:CandyDefense/Assets/Scripts/Turrets/Illuminaty_turret.js
 }
 
 function Update () {
@@ -34,7 +37,7 @@ function Update () {
 	FindClosestEnemy();
 	transform.rotation.x = 0;
 	transform.rotation.y = 0;
-
+	
 
 }
 
