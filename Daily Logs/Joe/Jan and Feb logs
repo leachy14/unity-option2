@@ -1,0 +1,36 @@
+January 2: Absent
+
+January 5: Didn’t do much work. We regrouped and talked about what’s on the agenda for the next few weeks before the end of the semester.
+
+January 6: The turret now looks at the enemies to shoot at them. The dinosaur spawning is now fixed and we can change the number that are spawned.
+
+January 8: Workshop
+
+January 9: Projectile firing is now fixed to shoot at the specific enemy. The projectile is more heat seeking than shooting in a straight line; that needs to be fixed.
+
+January 12: Worked to fix the rotation issue of the turret, along with the path of the projectile.
+
+January 14: Workshop
+
+January 15: Made sure all evidence, logs and reflections are up to date for our meeting tomorrow.
+
+January 16: Benchmark meeting
+
+January 20: Updated the UI for placing new turrets
+
+January 21: Round number and start button were added to add to the UI
+
+January 23: More of a relaxing day. Chris wasn’t there due to the Sundance trip; discussed what we would do on the benchmark day.
+
+January 26: We worked on the store and the spawning of the turret today; still a lot to do before the main game frame is finished.
+
+January 29: We made a long list of things we need to do in order for our game to be considered in “beta” stage. We will soon be playing with branches in Unity in order for all of us to work on the game separately at home. Unity wasn’t working on the Macs today, so we tried to fix that as well.
+
+
+February 2: Snowday
+
+February 3: Started to play with branches so we can all work separately on little features in the game
+
+February 4: Fixed store position on the screen so that it can be used to place turrets
+
+February 6: Fixed a small bug with the dinos not moving on the path after a new feature was implemented. A round system was added so only a few dinosaurs can pass through the “gate” and a new dino enemy was added and can now be spawned.
