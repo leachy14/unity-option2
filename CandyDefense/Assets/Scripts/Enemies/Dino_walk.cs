@@ -16,7 +16,7 @@ public class Dino_walk : MonoBehaviour {
 	{
 		_waypoints = GameObject.Find("Waypoints").transform;
 		GameObject level_accessor = GameObject.Find("spawner");
-		LevelControl levelcontrol = level_accessor.GetComponent<LevelControl> ();
+		
 		//wave_number = levelcontrol.wave;
 			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
 				Speed = 4;			

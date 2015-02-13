@@ -7,9 +7,13 @@ var turret : GameObject;
 
 function Start () {
 		
+		transform.Translate(0, 0, 0.2);
 		HandleShotMovement();
 		projectile_entity = GameObject.FindGameObjectWithTag("Projectile");
 		transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
+		if(this.gameObject.name == "shotFlame(Clone)") {
+			Destroy(gameObject, 0.3);
+		}
 }
 
 
@@ -21,7 +25,9 @@ function FixedUpdate () {
 		transform.rotation.x = 0;
 		transform.rotation.y = 0;
 		
-	
+		if(this.gameObject.name == "shotFlame(Clone)") {
+		transform.localScale += Vector3(0.1,0.1,0);
+	}
 }
 
 function HandleShotMovement () {

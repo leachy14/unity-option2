@@ -5,17 +5,17 @@ using System.Collections;
 namespace Store {
 public class StoreControl : MonoBehaviour
 {
-	public Vector2 scrollPosition = Vector2.zero;
+	
 
 	
 	public static int Coins = 100;
 	
 	public string Money;
-	public RaycastHit hit;
 	public Camera main;
 	
 	
 	//Textures
+<<<<<<< HEAD
 	public Texture illuminaty_turret;
 	public Texture startbutton;
 
@@ -41,6 +41,31 @@ public class StoreControl : MonoBehaviour
 	//Access other scripts
 	public GameObject round_level;
 	public LevelControl round_accessor;
+=======
+		public Texture illuminaty_turret;
+		public Texture startbutton;
+		public Texture green_turret;
+		public Texture flamethrower;
+
+	//Toggles
+		private bool illum_toggle = false;
+		private bool StoreOpen = false;
+		private bool green_toggle = false;
+		private bool flame_toggle = false;
+
+	//Positions
+		public int Storeposition;
+		public int MoneyHeight;
+		public int StoreOpenButtonPos;
+		public int StorePlaneH;
+		public int test;
+		public Vector2 scrollPosition = Vector2.zero;
+
+	//Turrets 
+		public GameObject illum_turret;
+		public GameObject green_tur;
+		public GameObject flame_tur;
+>>>>>>> Perry
 
 	// Use this for initialization
 	void Start ()
@@ -61,8 +86,8 @@ public class StoreControl : MonoBehaviour
 		Money =	"<color=#ff0000ff><size=30>Coins: " + Coins + "</size></color>";
 
 			if (StoreOpen == true) {
-				Storeposition = (Screen.width - 160);
-				StoreOpenButtonPos = (Screen.width - 180);
+				Storeposition = (Screen.width - 180);
+				StoreOpenButtonPos = (Screen.width - 200);
 				}
 			if (StoreOpen == false) {
 				Storeposition = Screen.width;
@@ -76,23 +101,22 @@ public class StoreControl : MonoBehaviour
 	}
 	void OnGUI () {
 		//Store Menu
-		scrollPosition = GUI.BeginScrollView(new Rect(Storeposition, 10, 156, Screen.height), scrollPosition, new Rect(0, 0, 140, 1000));
-		illum_toggle = GUI.Toggle(new Rect(0, 0, 50, 50), illum_toggle, illuminaty_turret);
-		GUI.Button(new Rect(55, 0, 50, 50), "Turret");
-		GUI.Button(new Rect(0, 55, 50, 50), "Turret");
-		GUI.Button(new Rect(55, 55, 50, 50), "Turret");
-		GUI.Button(new Rect(0, 110, 50, 50), "Turret");
-		GUI.Button(new Rect(55, 110, 50, 50), "Turret");
-		GUI.Button(new Rect(0, 165, 50, 50), "Turret");
-		GUI.Button(new Rect(55, 165, 50, 50), "Turret");
-		GUI.Button(new Rect(0, 220, 50, 50), "Turret");
-		GUI.Button(new Rect(55, 220, 50, 50), "Turret");
-		GUI.Button(new Rect(0, 275, 50, 50), "Turret");
-		GUI.Button(new Rect(55, 275, 50, 50), "Turret");
-		GUI.Button(new Rect(0, 330, 50, 50), "Turret");
-		GUI.Button(new Rect(55, 330, 50, 50), "Turret");
-		GUI.Button(new Rect(0, 385, 50, 50), "Turret");
-		GUI.Button(new Rect(55, 385, 50, 50), "Turret");
+		scrollPosition = GUI.BeginScrollView(new Rect(Storeposition, 10, 170, Screen.height), scrollPosition, new Rect(0, 0, 140, 1000));
+		if (GUI.Button (new Rect (0, 0, 64, 64), illuminaty_turret)) {
+				illum_toggle = true;
+				green_toggle = false;
+				flame_toggle = false;
+			}
+		if(GUI.Button(new Rect(70, 0, 65, 65), green_turret)) {
+				green_toggle = true;
+				illum_toggle = false;
+				flame_toggle = false;
+			}
+		if(GUI.Button (new Rect(0, 70, 65, 65), flamethrower)) {
+				flame_toggle = true;
+				illum_toggle = false;
+				green_toggle = false;
+			}
 		GUI.EndScrollView();
 
 		if (round_accessor.current_enemy_amount > 0) {
@@ -105,10 +129,9 @@ public class StoreControl : MonoBehaviour
 
 
 		//show the store
+		StoreOpen = GUI.Toggle (new Rect (StoreOpenButtonPos, 20, 20, Screen.height), StoreOpen, "");
 
-			StoreOpen = GUI.Toggle (new Rect (StoreOpenButtonPos, 20, 20, Screen.height), StoreOpen, "");
-
-			//You've got money
+		//You've got money
 		GUI.Label(new Rect(10, MoneyHeight, 200, 300), Money);
 		
 			//Place the damn turret
@@ -119,6 +142,20 @@ public class StoreControl : MonoBehaviour
 					Coins = (Coins - 100);
 					illum_toggle = false;
 				}
+				}
+			}
+		if (green_toggle == true && Coins >= 100) {
+				if(Input.GetMouseButton(0)) {
+					Instantiate(green_tur, transform.position, transform.rotation);
+					Coins = (Coins - 100);
+					green_toggle = false;
+				}
+			}
+		if (flame_toggle == true && Coins >= 100) {
+			if(Input.GetMouseButton(0)) {
+				Instantiate(flame_tur, transform.position, transform.rotation);
+				Coins = (Coins - 100);
+				flame_toggle = false;
 				}
 			}
 		}

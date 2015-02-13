@@ -5,10 +5,12 @@ import projectile;
 var enemy : Transform;
 var turret : GameObject;
 var gos : GameObject[];	
-var shot : GameObject;
+var shotnormal : GameObject;
 var closest : GameObject; 
+var shotFlame : GameObject;
+
 var distance : float;
-var fireRate = 2;
+var fireRate : int;
 private var nextFire = 0.0;
 
 
@@ -16,6 +18,15 @@ function Start () {
 
 	FindClosestEnemy();
 	transform.position.z = 0;
+	if(this.gameObject.name == "illuminaty_turret(Clone)") {
+	fireRate = 2;
+	}
+	if (this.gameObject.name == "green_turret(Clone)") {
+	fireRate = 1;
+	}
+	if (this.gameObject.name == "FlameThrower(Clone)") {
+	fireRate = 0.1;
+	}
 }
 
 function Update () {
@@ -47,16 +58,20 @@ function FindClosestEnemy (){
 			if (distance < 1.5 && closest.transform.position.x >= -2.388) {
 			transform.LookAt(turret.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
 			if (Time.time > nextFire) {
-			nextFire = Time.time + fireRate;
+			nextFire = (Time.time + fireRate);
 			Shoot();
 			
 			}
 		} 	
-	}
+	}// && this.gameObject.name != "Flame thrower(Clone)"
 }
 
 function Shoot () {
 
-	Instantiate(shot, transform.position, transform.rotation);
-
+	if(this.gameObject.name != "FlameThrower(Clone)"){
+		Instantiate(shotnormal, transform.position, transform.rotation);
+	}
+	if(this.gameObject.name == "FlameThrower(Clone)"){
+		Instantiate(shotFlame, transform.position, transform.rotation);
+	}
 }

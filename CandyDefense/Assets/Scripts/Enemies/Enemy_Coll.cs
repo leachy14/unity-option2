@@ -6,6 +6,7 @@ namespace Enemy {
 public class Enemy_Coll : MonoBehaviour
 {
 		public int hlth;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -19,10 +20,20 @@ public class Enemy_Coll : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+
 	if (hlth < 1) 
 		{
+<<<<<<< HEAD
 			StoreControl.Coins += 10;
 			//Debug.Log ("Got coins?");
+=======
+			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
+				StoreControl.Coins += 40;
+				} else if (this.gameObject.name == "Dino_enemy(Clone)") {
+					StoreControl.Coins += 10;
+				}
+			Debug.Log ("Got coins?");
+>>>>>>> Perry
 			Destroy(gameObject);
 
 		}
@@ -34,6 +45,7 @@ public class Enemy_Coll : MonoBehaviour
 				Destroy(coll.gameObject);
 				hlth -= 1;
 			}
+
 		}
 	}
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
+namespace Level {
 public class LevelControl : MonoBehaviour
 {
 
@@ -27,8 +28,13 @@ public class LevelControl : MonoBehaviour
 	public int currentEnemies;  //amount of enemies currently on the map
 	public int pauseX;
 	public int pauseY;
+<<<<<<< HEAD
 	public int current_enemy_amount;
 
+=======
+	public int Tutorial;
+	
+>>>>>>> Perry
 	
 	//floats
 	public float hSliderValue = 5.0F;
@@ -41,6 +47,7 @@ public class LevelControl : MonoBehaviour
 			startTimer -= 1;
 		}
 		if (startTimer == 0) {
+
 			CancelInvoke ();
 				}
 	}
@@ -52,7 +59,11 @@ public class LevelControl : MonoBehaviour
 		maxEnemies = 4;
 		roundIsOver = true;
 		startTimer = 2;
+<<<<<<< HEAD
 		current_enemy_amount = 0;
+=======
+			Tutorial = 1;
+>>>>>>> Perry
 	}
 	
 	// Update is called once per frame
@@ -79,14 +90,23 @@ public class LevelControl : MonoBehaviour
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
 		RoundHeight = (Screen.height - 75);
+<<<<<<< HEAD
 
 		if (Input.GetKey("escape") && pause == false) {
+=======
+		if (Input.GetKeyDown("escape") && pause == false) {
+>>>>>>> Perry
 			pause = true;
-		} else if (Input.GetKey("escape") && pause == true) {
+		} else if (Input.GetKeyDown("escape") && pause == true) {
 			pause = false;
 		}
+<<<<<<< HEAD
 		pauseY = (Screen.height - 300);
 		//pauseX Perry, what does this do?
+=======
+		pauseY = (Screen.height / 2 - 100);
+		pauseX = (Screen.width / 2 - 200);
+>>>>>>> Perry
 	}
 	void NextWave ()   //resets the spawn timer, adds 1 to the wave #, and then spawns based on wave
 	{
@@ -119,7 +139,7 @@ public class LevelControl : MonoBehaviour
 		}
 	}
 	void OnGUI () {
-		GUI.Label (new Rect (10, RoundHeight, 130, 200), round);
+		GUI.Label (new Rect (10, RoundHeight, 200, 200), round);
 		if(GUI.Button(new Rect(10, 30, 100, 50), startbutton)) {
 			if(roundIsOver){
 				if (startTimer > 0) {                        // but only if its not 0
@@ -127,5 +147,23 @@ public class LevelControl : MonoBehaviour
 				}
 			}
 		}
+		if(pause == true) {
+			GUI.BeginGroup(new Rect(pauseX, pauseY, 800, 600));
+			GUI.Box(new Rect(0, 0, 400, 200), "This is a title");
+			if(GUI.Button(new Rect(10, 50, 100, 50), "Quit Game")) {
+				Application.Quit();
+			}
+			GUI.EndGroup();
+		}
+		if (Tutorial == 1) {
+				GUI.BeginGroup(new Rect(pauseX, pauseY, 800, 600));
+				GUI.Box(new Rect(0, 0, 600, 400), "Instructions");
+				GUI.Label(new Rect(20, 20, 400, 300), "Click on the right edge of the screen to open the store.");
+				if(GUI.Button(new Rect(200, 200, 100, 50), "Next")) {
+					Tutorial++;
+				}
+				GUI.EndGroup();
+			}
 	}
+}
 }
