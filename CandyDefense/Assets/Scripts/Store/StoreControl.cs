@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
+
 namespace Store {
 public class StoreControl : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class StoreControl : MonoBehaviour
 	
 	public string Money;
 	public Camera main;
-	public string Lives;
 	
 	
 	//Textures
@@ -67,7 +67,6 @@ public class StoreControl : MonoBehaviour
 		public GameObject flame_tur;
 >>>>>>> Perry
 
-
 	// Use this for initialization
 	void Start ()
 	{
@@ -85,8 +84,6 @@ public class StoreControl : MonoBehaviour
 		transform.position = vec;
 		
 		Money =	"<color=#ff0000ff><size=30>Coins: " + Coins + "</size></color>";
-
-		Lives = "<color=#ff0000ff><size=30>Lives left: " + round_accessor.lives + "</size></color>";
 
 			if (StoreOpen == true) {
 				Storeposition = (Screen.width - 180);
@@ -136,7 +133,6 @@ public class StoreControl : MonoBehaviour
 
 		//You've got money
 		GUI.Label(new Rect(10, MoneyHeight, 200, 300), Money);
-		GUI.Label (new Rect (10, (Screen.height - 125), 200, 300), Lives);
 		
 			//Place the damn turret
 		if (illum_toggle == true && Coins >= 100) {
@@ -162,11 +158,6 @@ public class StoreControl : MonoBehaviour
 				flame_toggle = false;
 				}
 			}
-		}
-
-	public void Restart() {
-			Coins = 100;
-			StoreOpen = true;
 		}
 
 	}
