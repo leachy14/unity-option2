@@ -23,17 +23,13 @@ public class Enemy_Coll : MonoBehaviour
 
 	if (hlth < 1) 
 		{
-<<<<<<< HEAD
 			StoreControl.Coins += 10;
-			//Debug.Log ("Got coins?");
-=======
 			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
 				StoreControl.Coins += 40;
 				} else if (this.gameObject.name == "Dino_enemy(Clone)") {
 					StoreControl.Coins += 10;
 				}
 			Debug.Log ("Got coins?");
->>>>>>> Perry
 			Destroy(gameObject);
 
 		}

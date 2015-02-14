@@ -2,7 +2,10 @@ fileFormatVersion: 2
 guid: a38c12b7e67823e4fad4cb44a64bbc06
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - startbutton: {instanceID: 0}
+  - Raptor: {fileID: 100000, guid: 7fccee57eb0ff144095916ad46d5d1c7, type: 2}
+  - SanicRaptor: {fileID: 100000, guid: 3e7835a1bd63bec4c90332edc22656e4, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

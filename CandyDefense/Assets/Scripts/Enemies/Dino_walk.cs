@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Level;
 
 namespace Walk {
 public class Dino_walk : MonoBehaviour {
@@ -11,11 +12,15 @@ public class Dino_walk : MonoBehaviour {
 	public int wave_number;
 	public int Speed;
 
+	public GameObject level_accessor;
+	public LevelControl levelcontrol;
+
 	// Use this for initialization
 	void Start () 
 	{
 		_waypoints = GameObject.Find("Waypoints").transform;
-		GameObject level_accessor = GameObject.Find("spawner");
+		level_accessor = GameObject.Find("spawner");
+		levelcontrol = level_accessor.GetComponent<LevelControl> ();
 		
 		//wave_number = levelcontrol.wave;
 			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
@@ -59,6 +64,7 @@ public class Dino_walk : MonoBehaviour {
 			{
 				// Inform level script that a unit has reached the last waypoint
 				Destroy(gameObject);
+				levelcontrol.lives--;
 				return;
 			}
 		}

@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using Store;
 
 namespace Level {
 public class LevelControl : MonoBehaviour
@@ -28,18 +29,19 @@ public class LevelControl : MonoBehaviour
 	public int currentEnemies;  //amount of enemies currently on the map
 	public int pauseX;
 	public int pauseY;
-<<<<<<< HEAD
-	public int current_enemy_amount;
+		public int lives;
 
-=======
+	public int current_enemy_amount;
+		
 	public int Tutorial;
-	
->>>>>>> Perry
-	
+
 	//floats
 	public float hSliderValue = 5.0F;
 	public float startTimer;    //countdown until timer ends	
 	
+	//Access other scripts
+		public GameObject store_accessor;
+		public StoreControl storecontrol;
 	
 	public void CountDown ()  //countsdown  1 every 1 second
 	{
@@ -59,55 +61,71 @@ public class LevelControl : MonoBehaviour
 		maxEnemies = 4;
 		roundIsOver = true;
 		startTimer = 2;
-<<<<<<< HEAD
 		current_enemy_amount = 0;
-=======
-			Tutorial = 1;
->>>>>>> Perry
+		Tutorial = 1;
+		lives = 3;
+		store_accessor = GameObject.Find ("Store");
+		storecontrol = store_accessor.GetComponent <StoreControl> ();
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		if (startTimer > 0) {          //if we're either counting down or still waiting
-			roundIsOver = true; 		//round is still in over state
+						if (startTimer > 0) {          //if we're either counting down or still waiting
+								roundIsOver = true; 		//round is still in over state
 
-		} else {                         //otherwise
-										//the round is over and we need to
-			NextWave ();  			   //start the next wave
-			roundIsOver = false;
-		}
+						} else {                         //otherwise
+								//the round is over and we need to
+								NextWave ();  			   //start the next wave
+								roundIsOver = false;
+						}
 	
-		if (roundIsOver == true) {                                            //if the round is in over state
-			if (Input.GetKeyDown ("space")) {                   //"press space to start the countdown timer
-				if (startTimer > 0) {                        // but only if its not 0
-					InvokeRepeating ("CountDown", 1, 1);
-				}    
+						if (roundIsOver == true) {                                            //if the round is in over state
+								if (Input.GetKeyDown ("space")) {                   //"press space to start the countdown timer
+										if (startTimer > 0) {                        // but only if its not 0
+												InvokeRepeating ("CountDown", 1, 1);
+										}    
+								}
+
+								current_enemy_amount = enemies.Length;
+						}     
+						enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+						round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
+						RoundHeight = (Screen.height - 75);
+
+
+						if (Input.GetKey ("escape") && pause == false) {
+
+								if (Input.GetKeyDown ("escape") && pause == false) {
+
+										pause = true;
+								} else if (Input.GetKeyDown ("escape") && pause == true) {
+										pause = false;
+								}
+
+								pauseY = (Screen.height - 300);
+								//pauseX Perry, what does this do?
+
+								pauseY = (Screen.height / 2 - 100);
+								pauseX = (Screen.width / 2 - 200);
+
+						}
+					if (lives == 0) 
+			{
+				StoreControl.Coins = 100;
+				storecontrol.StoreOpen = true;
+				lives = 3;
+				for (int i = 0; i < enemies.Length; i++)
+				{
+					Destroy (enemies[i]);
+				}
+				GameObject[] turret_objects = GameObject.FindGameObjectsWithTag("Turret");
+				foreach (GameObject objs in turret_objects)
+					Destroy(objs);
+				wave = 1;
+				maxEnemies = 4;
 			}
-
-		current_enemy_amount = enemies.Length;
-		}     
-		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
-		RoundHeight = (Screen.height - 75);
-<<<<<<< HEAD
-
-		if (Input.GetKey("escape") && pause == false) {
-=======
-		if (Input.GetKeyDown("escape") && pause == false) {
->>>>>>> Perry
-			pause = true;
-		} else if (Input.GetKeyDown("escape") && pause == true) {
-			pause = false;
-		}
-<<<<<<< HEAD
-		pauseY = (Screen.height - 300);
-		//pauseX Perry, what does this do?
-=======
-		pauseY = (Screen.height / 2 - 100);
-		pauseX = (Screen.width / 2 - 200);
->>>>>>> Perry
-	}
+				}
 	void NextWave ()   //resets the spawn timer, adds 1 to the wave #, and then spawns based on wave
 	{
 		currentEnemies = 0;
