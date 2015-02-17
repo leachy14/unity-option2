@@ -27,6 +27,10 @@ function Start () {
 	if (this.gameObject.name == "FlameThrower(Clone)") {
 	fireRate = 0.1;
 	}
+	
+	if (this.gameObject.name == "sniper(Clone)") {
+	fireRate = 1.5;
+	}
 }
 
 function Update () {

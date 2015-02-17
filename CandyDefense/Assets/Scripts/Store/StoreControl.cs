@@ -20,7 +20,7 @@ public class StoreControl : MonoBehaviour
 	public Texture startbutton;
 	public Texture green_turret;
 	public Texture flamethrower;
-
+	public Texture sniper;
 
 	//Toggles
 	private bool illum_toggle = false;
@@ -38,7 +38,8 @@ public class StoreControl : MonoBehaviour
 	public GameObject illum_turret;
 	public GameObject green_tur;
 	public GameObject flame_tur;
-	
+	public GameObject sniper_turret;
+
 	//Path Collider
 	public GameObject path_collide;
 
@@ -50,7 +51,7 @@ public class StoreControl : MonoBehaviour
 	//Toggles
 		private bool green_toggle = false;
 		private bool flame_toggle = false;
-
+		private bool sniper_toggle = false;
 	//Positions
 		public Vector2 scrollPosition = Vector2.zero;
 
@@ -108,6 +109,13 @@ public class StoreControl : MonoBehaviour
 								illum_toggle = false;
 								green_toggle = false;
 						}
+						
+						if (GUI.Button (new Rect (70, 70, 65, 65), sniper)) {
+								flame_toggle = false;
+								illum_toggle = false;
+								green_toggle = false;
+								sniper_toggle = true;
+						}	
 						GUI.EndScrollView ();
 
 						if (round_accessor.current_enemy_amount > 0) {
@@ -154,6 +162,15 @@ public class StoreControl : MonoBehaviour
 										}
 								}
 						}
+						if (sniper_toggle == true && Coins >= 100) {
+							if (Input.GetMouseButton (0)) {
+								if (path_collide.collider2D.OverlapPoint (transform.position) == false) {
+									Instantiate (sniper_turret, transform.position, transform.rotation);
+									Coins = (Coins - 100);
+									sniper_toggle = false;
+					}
+				}
+			}
 				}
 }
 }
