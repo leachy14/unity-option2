@@ -1,35 +1,22 @@
-﻿#pragma strict
-import UnityEngine.GameObject;
-import projectile;
+#pragma strict
 
-var enemy : Transform;
-var turret : GameObject;
-var gos : GameObject[];	
-var closest : GameObject; 
-var Bomb : GameObject;
 
-var distance : float;
 var fireRate : int;
 private var nextFire = 0.0;
 
-
+// Use this for initialization
 function Start () {
 
-	FindClosestEnemy();
-	transform.position.z = 0;
-	fireRate = 2;
+transform.Translate(0, 0, 0.2);
 }
 
+// Update is called once per frame
 function Update () {
-	
-	FindClosestEnemy();
-	transform.rotation.x = 0;
-	transform.rotation.y = 0;
+
 
 
 }
-
-function FindClosestEnemy (){
+function FindClosestEnemy () {
 		// Find all game objects with tag Enemy
 		
 		gos = GameObject.FindGameObjectsWithTag("Enemy"); 
@@ -46,7 +33,7 @@ function FindClosestEnemy (){
 				closest = go; 
 				distance = curDistance; 
 			}
-			if (distance < 1.5 && closest.transform.position.x >= -2.388) {
+			if (distance < 1 && closest.transform.position.x >= -2.388) {
 			transform.LookAt(turret.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
 			if (Time.time > nextFire) {
 			nextFire = (Time.time + fireRate);
@@ -57,7 +44,8 @@ function FindClosestEnemy (){
 	}
 }
 
-function Shoot () {
+function Explode () {
 
-	Instantiate(Bomb, transform.position, transform.rotation);
+	
+
 }

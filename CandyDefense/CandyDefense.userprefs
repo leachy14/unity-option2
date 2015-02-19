@@ -1,6 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Turrets/Bomb.js">
+    <Files>
+      <File FileName="Assets/Scripts/Turrets/Bomber.js" Line="62" Column="60" />
+      <File FileName="Assets/Scripts/Turrets/FlameThrower.js" Line="32" Column="1" />
+      <File FileName="Assets/Scripts/Turrets/Bomb.js" Line="1" Column="15" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
