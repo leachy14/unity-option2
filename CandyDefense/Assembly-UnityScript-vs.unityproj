@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Turrets\projectile.js" />
+     <Compile Include="Assets\Scripts\Turrets\sn.js" />
      <Compile Include="Assets\Scripts\Turrets\turret.js" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
