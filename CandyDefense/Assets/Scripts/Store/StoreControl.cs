@@ -20,11 +20,15 @@ public class StoreControl : MonoBehaviour
 	public Texture startbutton;
 	public Texture green_turret;
 	public Texture flamethrower;
+	public Texture Bomber_text;
 
 
 	//Toggles
 	private bool illum_toggle = false;
 	public bool StoreOpen = false;
+	private bool green_toggle = false;
+	private bool flame_toggle = false;
+	private bool Bomber_toggle = false;
 
 
 	//Positions
@@ -38,7 +42,8 @@ public class StoreControl : MonoBehaviour
 	public GameObject illum_turret;
 	public GameObject green_tur;
 	public GameObject flame_tur;
-	
+	public GameObject Bomber;
+
 	//Path Collider
 	public GameObject path_collide;
 
@@ -47,9 +52,6 @@ public class StoreControl : MonoBehaviour
 	public LevelControl round_accessor;
 
 
-	//Toggles
-		private bool green_toggle = false;
-		private bool flame_toggle = false;
 
 	//Positions
 		public Vector2 scrollPosition = Vector2.zero;
@@ -97,16 +99,26 @@ public class StoreControl : MonoBehaviour
 								illum_toggle = true;
 								green_toggle = false;
 								flame_toggle = false;
+								Bomber_toggle = false;
 						}
 						if (GUI.Button (new Rect (70, 0, 65, 65), green_turret)) {
 								green_toggle = true;
 								illum_toggle = false;
 								flame_toggle = false;
+								Bomber_toggle = false;
 						}
 						if (GUI.Button (new Rect (0, 70, 65, 65), flamethrower)) {
 								flame_toggle = true;
 								illum_toggle = false;
 								green_toggle = false;
+								Bomber_toggle = false;	
+						}
+						if (GUI.Button (new Rect (70, 70, 65, 65), Bomber_text)) {
+								Bomber_toggle = true;
+								illum_toggle = false;
+								green_toggle = false;
+								flame_toggle = false;
+								
 						}
 						GUI.EndScrollView ();
 
@@ -129,7 +141,7 @@ public class StoreControl : MonoBehaviour
 						//Place the damn turret
 						if (illum_toggle == true && Coins >= 100) {
 								if (Input.GetMouseButton (0)) {
-										if (path_collide.collider2D.OverlapPoint (transform.position) == false) {
+										if (path_collide.collider2D.OverlapPoint (transform.position) == false) {	
 												Instantiate (illum_turret, transform.position, transform.rotation);
 												Coins = (Coins - 100);
 												illum_toggle = false;
@@ -154,6 +166,15 @@ public class StoreControl : MonoBehaviour
 										}
 								}
 						}
+						if (Bomber_toggle == true && Coins >= 100) {
+								if (Input.GetMouseButton (0)) {
+										if (path_collide.collider2D.OverlapPoint (transform.position) == false) {
+												Instantiate (Bomber, transform.position, transform.rotation);
+												Coins = (Coins - 100);
+												Bomber_toggle = false;
+					}
+				}
+			}
 				}
 }
 }

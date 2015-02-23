@@ -63,8 +63,9 @@ public class Dino_walk : MonoBehaviour {
 			else
 			{
 				// Inform level script that a unit has reached the last waypoint
-				Destroy(gameObject);
-				levelcontrol.lives--;
+					levelcontrol.lives--;
+					Destroy(gameObject);
+				
 				return;
 			}
 		}

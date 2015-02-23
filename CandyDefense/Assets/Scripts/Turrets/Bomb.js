@@ -6,11 +6,15 @@ var turret : GameObject;
 var gos : GameObject[];	
 var fireRate : int;
 private var nextFire = 0.0;
+protected var anim : Animator;
+var runStateHash : int = Animator.StringToHash("Base Layer.Run");
 
 // Use this for initialization
 function Start () {
 
-animation.Play("Countdown");
+
+anim = GetComponent("Animator");
+
 rigidbody2D.velocity = transform.up * 0.1;
 FindClosestEnemy();	
 }
@@ -23,6 +27,7 @@ function Update () {
 		transform.rotation.x = 0;
 		transform.rotation.y = 0;
 		rigidbody2D.velocity = transform.up * 0;
+		 var stateInfo : AnimatorStateInfo = anim.GetCurrentAnimatorStateInfo(0);
 
 }
 function FindClosestEnemy () {
@@ -55,7 +60,7 @@ function FindClosestEnemy () {
 
 function Explode () {
 
-animation.Play("Countdown", PlayMode.StopAll);
+anim.SetBool ("countdown", true);
 	
 
 }
