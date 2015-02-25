@@ -46,7 +46,10 @@ public class Enemy_Coll : MonoBehaviour
 				Destroy(coll.gameObject);
 				hlth -= 1;
 			}
-
+		if (coll.gameObject.tag == "Bomb")
+		{
+				hlth -= 1;
+			}
 		}
 	
 	}

@@ -15,16 +15,20 @@ public class Dino_walk : MonoBehaviour {
 	public GameObject level_accessor;
 	public LevelControl levelcontrol;
 
+	public GameObject other_dino;
+
 	// Use this for initialization
 	void Start () 
 	{
 		_waypoints = GameObject.Find("Waypoints").transform;
 		level_accessor = GameObject.Find("spawner");
 		levelcontrol = level_accessor.GetComponent<LevelControl> ();
-		
+			other_dino = GameObject.FindGameObjectWithTag("Enemy");
+
 		//wave_number = levelcontrol.wave;
 			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
-				Speed = 4;			
+				Speed = 4;	
+				Physics2D.IgnoreCollision(other_dino.collider2D, collider2D);
 			} else if (this.gameObject.name == "Dino_enemy(Clone)") {
 				Speed = 2;
 			}
@@ -34,7 +38,11 @@ public class Dino_walk : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		
+			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
+				Speed = 4;	
+				Physics2D.IgnoreCollision(other_dino.collider2D, collider2D);
+			}
+			FindClosestEnemy();
 	}
 	
 	// Fixed update
@@ -76,7 +84,27 @@ public class Dino_walk : MonoBehaviour {
 		}
 
 	}
+		GameObject FindClosestEnemy() {
+			GameObject[] gos;
+			gos = GameObject.FindGameObjectsWithTag("Enemy");
+			GameObject closest;
+			float distance = Mathf.Infinity;
+			Vector3 position = transform.position;
+			foreach (GameObject go in gos) {
+				Vector3 diff = go.transform.position - position;
+				float curDistance = diff.sqrMagnitude;
+				if (curDistance < distance) {
+					closest = go;
+					distance = curDistance;
+					other_dino = closest;
+				}
+			}
+
+			return other_dino;
 
 
-}
+
+		}
+
+}	
 }
