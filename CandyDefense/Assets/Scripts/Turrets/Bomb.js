@@ -11,40 +11,51 @@ private var nextExplode = 0.0;
 protected var anim : Animator;
 var runStateHash : int = Animator.StringToHash("Base Layer.Run");
 var iscounting : int;
+var path_collide : GameObject;
+
 
 // Use this for initialization
 function Start () {
-
+transform.Translate(0, 0, 0.2);
 iscounting = 0;
 anim = GetComponent("Animator");
-
 rigidbody2D.velocity = transform.up * 0.1;
 FindClosestEnemy();	
 fireRate = 2;
 explodeRate = 3;
+
+path_collide = gameObject.Find("Path Spawn Blocker");
+Physics2D.IgnoreLayerCollision(10,13, true);
+Physics2D.IgnoreLayerCollision(13,11, true);
+Physics2D.IgnoreLayerCollision(13,13, true);
 }
 
 // Update is called once per frame
 function Update () {
 
-		if(iscounting != 1){
+		
 		FindClosestEnemy();	
-		}
+		
 		transform.position.z = 0;
 		transform.rotation.x = 0;
 		transform.rotation.y = 0;
+		
+		
+		if (path_collide.collider2D.OverlapPoint (transform.position) == false) {
+		rigidbody2D.velocity = transform.up * -0.5;
+		}
+		if (path_collide.collider2D.OverlapPoint (transform.position) == true) {
 		rigidbody2D.velocity = transform.up * 0;
+		}
+		 
+		  
 		 var stateInfo : AnimatorStateInfo = anim.GetCurrentAnimatorStateInfo(0);
-		 if(iscounting == 1) {
+		
 		 
-	 if (Time.time > nextExplode) {
-		anim.SetBool ("explode", true);
-		anim.SetBool ("countdown", false);
-		transform.localScale += Vector3(0.5,0.5,0);
-		Destroy(gameObject, 0.06);
-		}
-		}
-		 
+	 
+
+		
+
 
 }
 function FindClosestEnemy () {
@@ -64,29 +75,24 @@ function FindClosestEnemy () {
 				closest = go; 
 				distance = curDistance; 
 			}
-			if (distance < 1 && closest.transform.position.x >= -2.388) {
+			if (distance < 0.2 && closest.transform.position.x >= -2.388) {
 			transform.LookAt(Bomb.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
-			if (Time.time > nextFire) {
-			nextFire = (Time.time + fireRate);
 			Explode();
 			
 			}
-		} 	
+		 	
 	}
 }
 
 function Explode () {
 
 
-nextExplode = (Time.time + explodeRate);
-anim.SetBool ("countdown", true);
-anim.SetBool ("explode", false);
-iscounting = 1;
-
-		if (Time.time > nextExplode) {
+		
 		anim.SetBool ("explode", true);
-		anim.SetBool ("countdown", false);
-		Destroy(gameObject, 0.06);
-		}
+Physics2D.IgnoreLayerCollision(10,13, false);
+Physics2D.IgnoreLayerCollision(13,11, false);
+		transform.localScale += Vector3(1,1,0);
+		Destroy(gameObject, 0.17);
+		
 
 }

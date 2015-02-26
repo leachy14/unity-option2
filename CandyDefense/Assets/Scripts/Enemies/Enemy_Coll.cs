@@ -48,7 +48,7 @@ public class Enemy_Coll : MonoBehaviour
 			}
 		if (coll.gameObject.tag == "Bomb")
 		{
-				hlth -= 1;
+				hlth = 0;
 			}
 		}
 	

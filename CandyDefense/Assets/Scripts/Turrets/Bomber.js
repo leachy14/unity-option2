@@ -17,7 +17,7 @@ function Start () {
 
 	FindClosestEnemy();
 	transform.position.z = 0;
-	fireRate = 2;
+	fireRate = 7;
 }
 
 function Update () {

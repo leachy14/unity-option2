@@ -24,9 +24,10 @@ function FixedUpdate () {
 		transform.position.z = 0;
 		transform.rotation.x = 0;
 		transform.rotation.y = 0;
-		
+		Physics2D.IgnoreLayerCollision(12,12, true);
 		if(this.gameObject.name == "shotFlame(Clone)") {
 		transform.localScale += Vector3(0.1,0.1,0);
+		
 	}
 }
 

@@ -57,7 +57,7 @@ public class LevelControl : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		wave = 0;
+		wave = 3;
 		maxEnemies = 4;
 		roundIsOver = true;
 		startTimer = 2;
