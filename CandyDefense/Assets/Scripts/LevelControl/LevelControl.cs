@@ -94,7 +94,7 @@ public class LevelControl : MonoBehaviour
 						RoundHeight = (Screen.height - 75);
 
 
-						if (Input.GetKey ("escape") && pause == false) {
+						
 
 								if (Input.GetKeyDown ("escape") && pause == false) {
 
@@ -109,7 +109,7 @@ public class LevelControl : MonoBehaviour
 								pauseY = (Screen.height / 2 - 100);
 								pauseX = (Screen.width / 2 - 200);
 
-						}
+						
 					if (lives == 0) 
 			{
 				StoreControl.Coins = 100;

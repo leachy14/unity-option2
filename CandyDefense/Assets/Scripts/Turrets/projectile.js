@@ -34,7 +34,7 @@ function FixedUpdate () {
 function HandleShotMovement () {
 
 
-	rigidbody2D.velocity = transform.up * -2;
+	GetComponent.<Rigidbody2D>().velocity = transform.up * -2;
 
 if (transform.position.x < -3.5) {
 	Destroy(gameObject);

@@ -19,7 +19,7 @@ function Start () {
 transform.Translate(0, 0, 0.2);
 iscounting = 0;
 anim = GetComponent("Animator");
-rigidbody2D.velocity = transform.up * 0.1;
+GetComponent.<Rigidbody2D>().velocity = transform.up * 0.1;
 FindClosestEnemy();	
 fireRate = 2;
 explodeRate = 3;
@@ -41,11 +41,11 @@ function Update () {
 		transform.rotation.y = 0;
 		
 		
-		if (path_collide.collider2D.OverlapPoint (transform.position) == false) {
-		rigidbody2D.velocity = transform.up * -0.5;
+		if (path_collide.GetComponent.<Collider2D>().OverlapPoint (transform.position) == false) {
+		GetComponent.<Rigidbody2D>().velocity = transform.up * -0.5;
 		}
-		if (path_collide.collider2D.OverlapPoint (transform.position) == true) {
-		rigidbody2D.velocity = transform.up * 0;
+		if (path_collide.GetComponent.<Collider2D>().OverlapPoint (transform.position) == true) {
+		GetComponent.<Rigidbody2D>().velocity = transform.up * 0;
 		}
 		 
 		  
