@@ -89,12 +89,20 @@ public class StoreControl : MonoBehaviour
 			test = Screen.height;
 
 
-
-
-	}
-	void OnGUI () {
-						//Store Menu
-						scrollPosition = GUI.BeginScrollView (new Rect (Storeposition, 10, 170, Screen.height), scrollPosition, new Rect (0, 0, 140, 1000));
+			if (flame_toggle == true && Coins >= 100) {
+				if (Input.GetMouseButton (0)) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+						Instantiate (flame_tur, transform.position, transform.rotation);
+						Coins = (Coins - 100);
+						flame_toggle = false;
+					}
+				}
+			}
+			
+		}
+		void OnGUI () {
+			//Store Menu
+			scrollPosition = GUI.BeginScrollView (new Rect (Storeposition, 10, 170, Screen.height), scrollPosition, new Rect (0, 0, 140, 1000));
 						if (GUI.Button (new Rect (0, 0, 64, 64), illuminaty_turret)) {
 								illum_toggle = true;
 								green_toggle = false;
@@ -176,5 +184,8 @@ public class StoreControl : MonoBehaviour
 				}
 			}
 				}
+		public void Buy_Flame() {
+			flame_toggle = true;
+		}
 }
 }
