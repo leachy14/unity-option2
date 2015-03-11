@@ -2,14 +2,19 @@ using UnityEngine;
 using System.Collections;
 using Store;
 
+
+
 namespace Enemy {
 public class Enemy_Coll : MonoBehaviour
 {
 		public int hlth;
+	
 
 	// Use this for initialization
 	void Start ()
 	{
+
+	
 	if (this.gameObject.name == "Sanic_Raptor(Clone)") {
 						hlth = 2;
 				} else {
@@ -41,7 +46,11 @@ public class Enemy_Coll : MonoBehaviour
 				Destroy(coll.gameObject);
 				hlth -= 1;
 			}
-
+		if (coll.gameObject.tag == "Bomb")
+		{
+				hlth = 0;
+			}
 		}
+	
 	}
 }

@@ -5,31 +5,64 @@ var Bomb : GameObject;
 var turret : GameObject;
 var gos : GameObject[];	
 var fireRate : int;
+var explodeRate : int;
 private var nextFire = 0.0;
+private var nextExplode = 0.0;
+protected var anim : Animator;
+var runStateHash : int = Animator.StringToHash("Base Layer.Run");
+var iscounting : int;
+var path_collide : GameObject;
+
 
 // Use this for initialization
 function Start () {
-
-animation.Play("Countdown");
-rigidbody2D.velocity = transform.up * 0.1;
+transform.Translate(0, 0, 0.2);
+iscounting = 0;
+anim = GetComponent("Animator");
+GetComponent.<Rigidbody2D>().velocity = transform.up * 0.1;
 FindClosestEnemy();	
+fireRate = 2;
+explodeRate = 3;
+
+path_collide = gameObject.Find("Path Spawn Blocker");
+Physics2D.IgnoreLayerCollision(10,13, true);
+Physics2D.IgnoreLayerCollision(13,11, true);
+Physics2D.IgnoreLayerCollision(13,13, true);
 }
 
 // Update is called once per frame
 function Update () {
 
+		
 		FindClosestEnemy();	
+		
 		transform.position.z = 0;
 		transform.rotation.x = 0;
 		transform.rotation.y = 0;
-		rigidbody2D.velocity = transform.up * 0;
+		
+		
+		if (path_collide.GetComponent.<Collider2D>().OverlapPoint (transform.position) == false) {
+		GetComponent.<Rigidbody2D>().velocity = transform.up * -0.5;
+		}
+		if (path_collide.GetComponent.<Collider2D>().OverlapPoint (transform.position) == true) {
+		GetComponent.<Rigidbody2D>().velocity = transform.up * 0;
+		}
+		 
+		  
+		 var stateInfo : AnimatorStateInfo = anim.GetCurrentAnimatorStateInfo(0);
+		
+		 
+	 
+
+		
+
 
 }
 function FindClosestEnemy () {
 		// Find all game objects with tag Enemy
 		
 		gos = GameObject.FindGameObjectsWithTag("Enemy");
-		Bomb = GameObject.FindGameObjectWithTag("Projectile");
+		Bomb = GameObject.FindGameObjectWithTag("Bomb");
 		var closest : GameObject; 
 		var distance = Mathf.Infinity; 
 		var position = transform.position; 
@@ -42,20 +75,24 @@ function FindClosestEnemy () {
 				closest = go; 
 				distance = curDistance; 
 			}
-			if (distance < 1 && closest.transform.position.x >= -2.388) {
+			if (distance < 0.2 && closest.transform.position.x >= -2.388) {
 			transform.LookAt(Bomb.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
-			if (Time.time > nextFire) {
-			nextFire = (Time.time + fireRate);
 			Explode();
 			
 			}
-		} 	
+		 	
 	}
 }
 
 function Explode () {
 
-animation.Play("Countdown", PlayMode.StopAll);
-	
+
+		
+		anim.SetBool ("explode", true);
+Physics2D.IgnoreLayerCollision(10,13, false);
+Physics2D.IgnoreLayerCollision(13,11, false);
+		transform.localScale += Vector3(1,1,0);
+		Destroy(gameObject, 0.17);
+		
 
 }
