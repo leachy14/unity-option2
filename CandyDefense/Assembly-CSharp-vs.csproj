@@ -49,6 +49,7 @@
      <Compile Include="Assets\Scripts\Enemies\Dino_walk.cs" />
      <Compile Include="Assets\Scripts\Enemies\Enemy_Coll.cs" />
      <Compile Include="Assets\Scripts\LevelControl\LevelControl.cs" />
+     <Compile Include="Assets\Scripts\LevelControl\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts\LevelControl\StartScreen.cs" />
      <Compile Include="Assets\Scripts\Store\StoreControl.cs" />
  <Reference Include="UnityEngine.UI">

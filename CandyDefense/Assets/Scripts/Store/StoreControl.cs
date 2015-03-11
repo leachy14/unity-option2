@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using Level;
+using UnityEngine.UI;
+
 
 namespace Store {
 public class StoreControl : MonoBehaviour
@@ -27,7 +29,7 @@ public class StoreControl : MonoBehaviour
 	private bool illum_toggle = false;
 	public bool StoreOpen = false;
 	private bool green_toggle = false;
-	private bool flame_toggle = false;
+	private static bool flame_toggle = false;
 	private bool Bomber_toggle = false;
 
 
@@ -186,6 +188,9 @@ public class StoreControl : MonoBehaviour
 				}
 		public void Buy_Flame() {
 			flame_toggle = true;
+		}
+		public void OnClick (bool flame_toggle) {
+			StoreControl.flame_toggle = true;
 		}
 }
 }
