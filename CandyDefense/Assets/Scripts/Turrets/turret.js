@@ -28,9 +28,6 @@ function Start () {
 	fireRate = 0.1;
 	}
 	
-	if (this.gameObject.name == "Sniper_Turret(Clone)") {
-	fireRate = 1.5;
-	}
 }
 
 function Update () {
@@ -62,7 +59,7 @@ function FindClosestEnemy (){
 			
 
 			
-			if (distance < 1.5 && closest.transform.position.x >= -2.388 && this.gameObject.name != "Sniper_Turret(Clone)") {
+			if (distance < 1.5 && closest.transform.position.x >= -2.388 && this.gameObject.name) {
 			transform.LookAt(turret.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
 			if (Time.time > nextFire) {
 			nextFire = (Time.time + fireRate);
@@ -70,18 +67,12 @@ function FindClosestEnemy (){
 			
 			}
 			//make new script
-			if (distance < 10 && closest.transform.position.x >= -2.388 && this.gameObject.name == "Sniper_Turret(Clone)") {
-			transform.LookAt(turret.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
-			if (Time.time > nextFire) {
-			nextFire = (Time.time + fireRate);
-			Shoot();
-			} 	
 			
 
 		}// && this.gameObject.name != "Flame thrower(Clone)"
 }
 }
-}
+
 
 function Shoot () {
 

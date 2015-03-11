@@ -51,7 +51,7 @@ public class Dino_walk : MonoBehaviour {
 		Vector3 relative = targetWaypoint.position - transform.position;
 		Vector3 movementNormal = Vector3.Normalize(relative);
 		float distanceToWaypoint = relative.magnitude;
-		float targetAngle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg - 90;
+//		float targetAngle = Mathf.Atan2(relative.y, relative.x) * Mathf.Rad2Deg - 90;
 		
 		if (distanceToWaypoint < 0.1)
 		{
@@ -71,7 +71,7 @@ public class Dino_walk : MonoBehaviour {
 		else
 		{
 			// Walk towards waypoint
-			rigidbody2D.AddForce(new Vector2(movementNormal.x, movementNormal.y) * movementSpeed * (Speed * .5f));
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(movementNormal.x, movementNormal.y) * movementSpeed * (Speed * .5f));
 		}
 
 	}
