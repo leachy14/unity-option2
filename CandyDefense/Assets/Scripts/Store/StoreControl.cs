@@ -185,12 +185,15 @@ public class StoreControl : MonoBehaviour
 					}
 				}
 			}
+
 				}
-		public void Buy_Flame() {
-			flame_toggle = true;
+
+		public void OnClick (Toggle flame_toggle) {
+			gameObject.SetActive(flame_toggle.isOn);
 		}
-		public void OnClick (bool flame_toggle) {
-			StoreControl.flame_toggle = true;
+		public void OnEnable () {
+
+
 		}
 }
 }
