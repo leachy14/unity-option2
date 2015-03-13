@@ -53,7 +53,9 @@ public class StoreControl : MonoBehaviour
 	public GameObject round_level;
 	public LevelControl round_accessor;
 
-
+	//Ui Stuff New UI
+	private GameObject Health_Slider;
+	
 
 	//Positions
 		public Vector2 scrollPosition = Vector2.zero;
@@ -66,6 +68,7 @@ public class StoreControl : MonoBehaviour
 
 			round_level = GameObject.Find ("spawner");
 			round_accessor = round_level.GetComponent<LevelControl> ();
+		
 	}
 	
 	// Update is called once per frame
@@ -100,7 +103,7 @@ public class StoreControl : MonoBehaviour
 					}
 				}
 			}
-			
+		
 		}
 		void OnGUI () {
 			//Store Menu
@@ -193,6 +196,9 @@ public class StoreControl : MonoBehaviour
 		}
 		public void OnEnable () {
 
+
+		}
+		public void UpdateSlider (float value) {
 
 		}
 }
