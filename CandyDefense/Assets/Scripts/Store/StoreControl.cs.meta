@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: ad84f9979e02140cfbd67ea5ee25e887
+timeCreated: 1426276022
+licenseType: Free
 MonoImporter:
   serializedVersion: 2
   defaultReferences:
@@ -8,12 +10,16 @@ MonoImporter:
   - startbutton: {instanceID: 0}
   - green_turret: {fileID: 2800000, guid: 5b4cdfdd8fdbb824ba61cfb652f7c394, type: 3}
   - flamethrower: {fileID: 2800000, guid: 48dc153d068684a8bb54e62b5666cc54, type: 3}
+  - sniper: {fileID: 2800000, guid: f647803c10ac048ffac33cd2f513709f, type: 3}
   - illum_turret: {fileID: 100000, guid: 87978f61b81b5410a80c357e9b14a06d, type: 2}
   - green_tur: {fileID: 100000, guid: 7e494b0fc4e464a4fb16811471644145, type: 2}
   - flame_tur: {fileID: 100000, guid: b461debd18dfd44be9c78718dfb082ae, type: 2}
+  - sniper_turret: {fileID: 100000, guid: 7176b888213144f6fa6345f3fdab4fd7, type: 2}
   - path_collide: {instanceID: 0}
   - round_level: {instanceID: 0}
   - round_accessor: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 

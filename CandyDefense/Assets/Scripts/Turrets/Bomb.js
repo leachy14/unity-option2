@@ -10,8 +10,8 @@ private var nextFire = 0.0;
 // Use this for initialization
 function Start () {
 
-animation.Play("Countdown");
-rigidbody2D.velocity = transform.up * 0.1;
+GetComponent.<Animation>().Play("Countdown");
+GetComponent.<Rigidbody2D>().velocity = transform.up * 0.1;
 FindClosestEnemy();	
 }
 
@@ -22,7 +22,7 @@ function Update () {
 		transform.position.z = 0;
 		transform.rotation.x = 0;
 		transform.rotation.y = 0;
-		rigidbody2D.velocity = transform.up * 0;
+		GetComponent.<Rigidbody2D>().velocity = transform.up * 0;
 
 }
 function FindClosestEnemy () {
@@ -55,7 +55,7 @@ function FindClosestEnemy () {
 
 function Explode () {
 
-animation.Play("Countdown", PlayMode.StopAll);
+GetComponent.<Animation>().Play("Countdown", PlayMode.StopAll);
 	
 
 }
