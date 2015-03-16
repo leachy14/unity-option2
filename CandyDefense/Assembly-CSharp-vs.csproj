@@ -52,8 +52,8 @@
      <Compile Include="Assets\Scripts\LevelControl\LevelControl.cs" />
      <Compile Include="Assets\Scripts\LevelControl\ShowSliderValue.cs" />
      <Compile Include="Assets\Scripts\LevelControl\StartScreen.cs" />
-     <Compile Include="Assets\Scripts\Store\BuyFlame.cs" />
-     <Compile Include="Assets\Scripts\Store\BuySniper.cs" />
+     <Compile Include="Assets\Scripts\LevelControl\UpdateLabels.cs" />
+     <Compile Include="Assets\Scripts\Store\BuyTurrets.cs" />
      <Compile Include="Assets\Scripts\Store\StoreControl.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

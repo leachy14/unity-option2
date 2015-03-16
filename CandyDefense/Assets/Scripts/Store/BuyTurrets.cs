@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using Store;
 
-public class BuySniper : MonoBehaviour
+public class BuyTurrets : MonoBehaviour
 {
 
 	public GameObject Store_sniper;
@@ -21,7 +21,13 @@ public class BuySniper : MonoBehaviour
 	
 		}
 	public void Buy_Sniper () {
-		//Store_bool.
+		//Store_bool.SniperToggle = true;
+	}
+	public void Buy_Flame () {
+		Store_bool.Flame_toggle = true;
+	}
+	public void Buy_Bomber () {
+		Store_bool.Bomber_toggle = true;
 	}
 }
 

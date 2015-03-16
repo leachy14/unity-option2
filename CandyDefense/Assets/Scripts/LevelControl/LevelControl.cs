@@ -157,7 +157,6 @@ public class LevelControl : MonoBehaviour
 		}
 	}
 	void OnGUI () {
-		GUI.Label (new Rect (10, RoundHeight, 200, 200), round);
 		if(GUI.Button(new Rect(10, 30, 100, 50), startbutton)) {
 			if(roundIsOver){
 				if (startTimer > 0) {                        // but only if its not 0
