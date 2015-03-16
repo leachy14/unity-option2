@@ -76,7 +76,7 @@ function FindClosestEnemy () {
 				distance = curDistance; 
 			}
 			if (distance < 0.2 && closest.transform.position.x >= -2.388) {
-			transform.LookAt(Bomb.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
+			transform.LookAt(closest.transform.position, Vector3.forward);
 			Explode();
 			
 			}
@@ -89,8 +89,8 @@ function Explode () {
 
 		
 		anim.SetBool ("explode", true);
-Physics2D.IgnoreLayerCollision(10,13, false);
-Physics2D.IgnoreLayerCollision(13,11, false);
+		Physics2D.IgnoreLayerCollision(10,13, false);
+		Physics2D.IgnoreLayerCollision(13,11, false);
 		transform.localScale += Vector3(1,1,0);
 		Destroy(gameObject, 0.17);
 		

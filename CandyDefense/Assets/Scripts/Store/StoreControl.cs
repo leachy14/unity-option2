@@ -26,11 +26,11 @@ public class StoreControl : MonoBehaviour
 
 
 	//Toggles
-	private bool illum_toggle = false;
+	public bool illum_toggle = false;
 	public bool StoreOpen = false;
-	private bool green_toggle = false;
-	private static bool flame_toggle = false;
-	private bool Bomber_toggle = false;
+	public bool green_toggle = false;
+	public bool Flame_toggle = false;
+	public bool Bomber_toggle = false;
 
 
 	//Positions
@@ -94,20 +94,51 @@ public class StoreControl : MonoBehaviour
 			test = Screen.height;
 
 
-			if (flame_toggle == true && Coins >= 100) {
+		
+		
+			if (illum_toggle == true && StoreOpen == true && Coins >= 100) {
+				if (Input.GetMouseButton (0)) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
+						Instantiate (illum_turret, transform.position, transform.rotation);
+						Coins = (Coins - 100);
+						illum_toggle = false;
+					}
+				}
+			}
+			if (green_toggle == true && StoreOpen == true && Coins >= 100) {
+				if (Input.GetMouseButton (0)) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+						Instantiate (green_tur, transform.position, transform.rotation);
+						Coins = (Coins - 100);
+						green_toggle = false;
+					}
+				}
+			}
+			if (Flame_toggle == true && StoreOpen == true && Coins >= 100) {
 				if (Input.GetMouseButton (0)) {
 					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
 						Instantiate (flame_tur, transform.position, transform.rotation);
 						Coins = (Coins - 100);
-						flame_toggle = false;
+						Flame_toggle = false;
 					}
 				}
 			}
-		
+			if (Bomber_toggle == true && StoreOpen == true && Coins >= 100) {
+				if (Input.GetMouseButton (0)) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+						Instantiate (Bomber, transform.position, transform.rotation);
+						Coins = (Coins - 100);
+						Bomber_toggle = false;
+					}
+				}
+			}
+
+
+
 		}
-		void OnGUI () {
+			void OnGUI () {
 			//Store Menu
-			scrollPosition = GUI.BeginScrollView (new Rect (Storeposition, 10, 170, Screen.height), scrollPosition, new Rect (0, 0, 140, 1000));
+			/*scrollPosition = GUI.BeginScrollView (new Rect (Storeposition, 10, 170, Screen.height), scrollPosition, new Rect (0, 0, 140, 1000));
 						if (GUI.Button (new Rect (0, 0, 64, 64), illuminaty_turret)) {
 								illum_toggle = true;
 								green_toggle = false;
@@ -134,7 +165,7 @@ public class StoreControl : MonoBehaviour
 								
 						}
 						GUI.EndScrollView ();
-
+*/
 						if (round_accessor.current_enemy_amount > 0) {
 								StoreOpen = false;
 						}
@@ -151,7 +182,7 @@ public class StoreControl : MonoBehaviour
 						GUI.Label (new Rect (10, MoneyHeight, 200, 300), Money);
 						GUI.Label (new Rect (10, (Screen.height - 125), 200, 300), Lives);
 		
-						//Place the damn turret
+					/*	//Place the damn turret
 						if (illum_toggle == true && Coins >= 100) {
 								if (Input.GetMouseButton (0)) {
 										if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
@@ -188,18 +219,9 @@ public class StoreControl : MonoBehaviour
 					}
 				}
 			}
-
-				}
-
-		public void OnClick (Toggle flame_toggle) {
-			gameObject.SetActive(flame_toggle.isOn);
-		}
-		public void OnEnable () {
+			if(F */
+				} 
 
 
-		}
-		public void UpdateSlider (float value) {
-
-		}
 }
 }
