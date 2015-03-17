@@ -27,12 +27,9 @@ public class StoreControl : MonoBehaviour
 	//Toggles
 	public bool illum_toggle = false;
 	public bool StoreOpen = false;
-<<<<<<< HEAD
-=======
 	public bool green_toggle = false;
 	public bool Flame_toggle = false;
 	public bool Bomber_toggle = false;
->>>>>>> Perry
 
 
 	//Positions
@@ -55,18 +52,18 @@ public class StoreControl : MonoBehaviour
 	public GameObject round_level;
 	public LevelControl round_accessor;
 
-<<<<<<< HEAD
+
 
 	//Toggles
 		private bool green_toggle = false;
 		private bool flame_toggle = false;
 		private bool sniper_toggle = false;
-=======
+
 	//Ui Stuff New UI
 	private GameObject Health_Slider;
 	
 
->>>>>>> Perry
+
 	//Positions
 		public Vector2 scrollPosition = Vector2.zero;
 
@@ -104,7 +101,7 @@ public class StoreControl : MonoBehaviour
 			test = Screen.height;
 
 
-<<<<<<< HEAD
+
 
 
 	}
@@ -185,7 +182,7 @@ public class StoreControl : MonoBehaviour
 									Instantiate (sniper_turret, transform.position, transform.rotation);
 									Coins = (Coins - 100);
 									sniper_toggle = false;
-=======
+
 			if (round_accessor.current_enemy_amount > 0) {
 				StoreOpen = false;
 			}
@@ -218,7 +215,7 @@ public class StoreControl : MonoBehaviour
 						Instantiate (flame_tur, transform.position, transform.rotation);
 						Coins = (Coins - 100);
 						Flame_toggle = false;
->>>>>>> Perry
+
 					}
 				}
 			}
@@ -230,8 +227,7 @@ public class StoreControl : MonoBehaviour
 						Bomber_toggle = false;
 					}
 				}
-<<<<<<< HEAD
-=======
+
 			}
 
 
@@ -239,6 +235,6 @@ public class StoreControl : MonoBehaviour
 		}
 			
 
->>>>>>> Perry
+
 }
 }
