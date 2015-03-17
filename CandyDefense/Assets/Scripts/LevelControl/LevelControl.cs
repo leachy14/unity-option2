@@ -29,7 +29,7 @@ public class LevelControl : MonoBehaviour
 	public int currentEnemies;  //amount of enemies currently on the map
 	public int pauseX;
 	public int pauseY;
-		public int lives;
+	public int lives;
 
 	public int current_enemy_amount;
 		
@@ -103,7 +103,7 @@ public class LevelControl : MonoBehaviour
 										pause = false;
 								}
 
-								pauseY = (Screen.height - 300);
+								//pauseY = (Screen.height - 300);
 								//pauseX Perry, what does this do?
 
 								pauseY = (Screen.height / 2 - 100);
@@ -157,7 +157,6 @@ public class LevelControl : MonoBehaviour
 		}
 	}
 	void OnGUI () {
-		GUI.Label (new Rect (10, RoundHeight, 200, 200), round);
 		if(GUI.Button(new Rect(10, 30, 100, 50), startbutton)) {
 			if(roundIsOver){
 				if (startTimer > 0) {                        // but only if its not 0

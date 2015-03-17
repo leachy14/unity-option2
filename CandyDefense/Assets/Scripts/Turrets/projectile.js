@@ -10,7 +10,7 @@ function Start () {
 		transform.Translate(0, 0, 0.2);
 		HandleShotMovement();
 		projectile_entity = GameObject.FindGameObjectWithTag("Projectile");
-		transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
+		//transform.LookAt(projectile_entity.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
 		if(this.gameObject.name == "shotFlame(Clone)") {
 			Destroy(gameObject, 0.3);
 		}

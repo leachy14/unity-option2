@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using Level;
+using UnityEngine.UI;
+
 
 namespace Store {
 public class StoreControl : MonoBehaviour
@@ -23,8 +25,14 @@ public class StoreControl : MonoBehaviour
 	public Texture sniper;
 
 	//Toggles
-	private bool illum_toggle = false;
+	public bool illum_toggle = false;
 	public bool StoreOpen = false;
+<<<<<<< HEAD
+=======
+	public bool green_toggle = false;
+	public bool Flame_toggle = false;
+	public bool Bomber_toggle = false;
+>>>>>>> Perry
 
 
 	//Positions
@@ -47,11 +55,18 @@ public class StoreControl : MonoBehaviour
 	public GameObject round_level;
 	public LevelControl round_accessor;
 
+<<<<<<< HEAD
 
 	//Toggles
 		private bool green_toggle = false;
 		private bool flame_toggle = false;
 		private bool sniper_toggle = false;
+=======
+	//Ui Stuff New UI
+	private GameObject Health_Slider;
+	
+
+>>>>>>> Perry
 	//Positions
 		public Vector2 scrollPosition = Vector2.zero;
 
@@ -63,6 +78,7 @@ public class StoreControl : MonoBehaviour
 
 			round_level = GameObject.Find ("spawner");
 			round_accessor = round_level.GetComponent<LevelControl> ();
+		
 	}
 	
 	// Update is called once per frame
@@ -88,6 +104,7 @@ public class StoreControl : MonoBehaviour
 			test = Screen.height;
 
 
+<<<<<<< HEAD
 
 
 	}
@@ -168,9 +185,60 @@ public class StoreControl : MonoBehaviour
 									Instantiate (sniper_turret, transform.position, transform.rotation);
 									Coins = (Coins - 100);
 									sniper_toggle = false;
+=======
+			if (round_accessor.current_enemy_amount > 0) {
+				StoreOpen = false;
+			}
+			
+			if (round_accessor.current_enemy_amount == 0) {
+				StoreOpen = true;
+			}
+		
+			if (illum_toggle == true && StoreOpen == true && Coins >= 100) {
+				if (Input.GetMouseButton (0)) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
+						Instantiate (illum_turret, transform.position, transform.rotation);
+						Coins = (Coins - 100);
+						illum_toggle = false;
 					}
 				}
 			}
+			if (green_toggle == true && StoreOpen == true && Coins >= 100) {
+				if (Input.GetMouseButton (0)) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+						Instantiate (green_tur, transform.position, transform.rotation);
+						Coins = (Coins - 100);
+						green_toggle = false;
+					}
 				}
+			}
+			if (Flame_toggle == true && StoreOpen == true && Coins >= 100) {
+				if (Input.GetMouseButton (0)) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+						Instantiate (flame_tur, transform.position, transform.rotation);
+						Coins = (Coins - 100);
+						Flame_toggle = false;
+>>>>>>> Perry
+					}
+				}
+			}
+			if (Bomber_toggle == true && StoreOpen == true && Coins >= 100) {
+				if (Input.GetMouseButton (0)) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+						Instantiate (Bomber, transform.position, transform.rotation);
+						Coins = (Coins - 100);
+						Bomber_toggle = false;
+					}
+				}
+<<<<<<< HEAD
+=======
+			}
+
+
+
+		}
+			
+
+>>>>>>> Perry
 }
 }

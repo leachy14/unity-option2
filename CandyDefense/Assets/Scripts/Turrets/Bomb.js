@@ -42,10 +42,15 @@ function FindClosestEnemy () {
 				closest = go; 
 				distance = curDistance; 
 			}
+<<<<<<< HEAD
 			if (distance < 1 && closest.transform.position.x >= -2.388) {
 			transform.LookAt(Bomb.gameObject.FindGameObjectWithTag("Enemy").transform.position, Vector3.forward);
 			if (Time.time > nextFire) {
 			nextFire = (Time.time + fireRate);
+=======
+			if (distance < 0.2 && closest.transform.position.x >= -2.388) {
+			transform.LookAt(closest.transform.position, Vector3.forward);
+>>>>>>> Perry
 			Explode();
 			
 			}
@@ -55,7 +60,18 @@ function FindClosestEnemy () {
 
 function Explode () {
 
+<<<<<<< HEAD
 GetComponent.<Animation>().Play("Countdown", PlayMode.StopAll);
 	
+=======
+
+		
+		anim.SetBool ("explode", true);
+		Physics2D.IgnoreLayerCollision(10,13, false);
+		Physics2D.IgnoreLayerCollision(13,11, false);
+		transform.localScale += Vector3(1,1,0);
+		Destroy(gameObject, 0.17);
+		
+>>>>>>> Perry
 
 }

@@ -29,7 +29,6 @@ public class Enemy_Coll : MonoBehaviour
 				} else if (this.gameObject.name == "Dino_enemy(Clone)") {
 					StoreControl.Coins += 10;
 				}
-			Debug.Log ("Got coins?");
 			Destroy(gameObject);
 
 		}
