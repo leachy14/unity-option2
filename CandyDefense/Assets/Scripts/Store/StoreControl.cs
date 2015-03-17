@@ -23,6 +23,7 @@ public class StoreControl : MonoBehaviour
 	public Texture green_turret;
 	public Texture flamethrower;
 	public Texture sniper;
+	public Texture Bomber_text;
 
 	//Toggles
 	public bool illum_toggle = false;
@@ -30,7 +31,7 @@ public class StoreControl : MonoBehaviour
 	public bool green_toggle = false;
 	public bool Flame_toggle = false;
 	public bool Bomber_toggle = false;
-
+	public bool sniper_toggle = false;
 
 	//Positions
 	public int Storeposition;
@@ -44,6 +45,7 @@ public class StoreControl : MonoBehaviour
 	public GameObject green_tur;
 	public GameObject flame_tur;
 	public GameObject sniper_turret;
+	public GameObject Bomber;
 
 	//Path Collider
 	public GameObject path_collide;
@@ -51,13 +53,7 @@ public class StoreControl : MonoBehaviour
 	//Access other scripts
 	public GameObject round_level;
 	public LevelControl round_accessor;
-
-
-
-	//Toggles
-		private bool green_toggle = false;
-		private bool flame_toggle = false;
-		private bool sniper_toggle = false;
+	
 
 	//Ui Stuff New UI
 	private GameObject Health_Slider;
@@ -111,21 +107,21 @@ public class StoreControl : MonoBehaviour
 						if (GUI.Button (new Rect (0, 0, 64, 64), illuminaty_turret)) {
 								illum_toggle = true;
 								green_toggle = false;
-								flame_toggle = false;
+								Flame_toggle = false;
 						}
 						if (GUI.Button (new Rect (70, 0, 65, 65), green_turret)) {
 								green_toggle = true;
 								illum_toggle = false;
-								flame_toggle = false;
+								Flame_toggle = false;
 						}
 						if (GUI.Button (new Rect (0, 70, 65, 65), flamethrower)) {
-								flame_toggle = true;
+								Flame_toggle = true;
 								illum_toggle = false;
 								green_toggle = false;
 						}
 						
 						if (GUI.Button (new Rect (70, 70, 65, 65), sniper)) {
-								flame_toggle = false;
+								Flame_toggle = false;
 								illum_toggle = false;
 								green_toggle = false;
 								sniper_toggle = true;
@@ -167,12 +163,12 @@ public class StoreControl : MonoBehaviour
 										}
 								}
 						}
-						if (flame_toggle == true && Coins >= 100) {
+						if (Flame_toggle == true && Coins >= 100) {
 								if (Input.GetMouseButton (0)) {
 										if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
 												Instantiate (flame_tur, transform.position, transform.rotation);
 												Coins = (Coins - 100);
-												flame_toggle = false;
+												Flame_toggle = false;
 										}
 								}
 						}
@@ -237,4 +233,7 @@ public class StoreControl : MonoBehaviour
 
 
 }
+}
+} 
+	}
 }
