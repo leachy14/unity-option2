@@ -29,7 +29,7 @@ public class LevelControl : MonoBehaviour
 	public int currentEnemies;  //amount of enemies currently on the map
 	public int pauseX;
 	public int pauseY;
-	public int lives;
+	
 
 	public int current_enemy_amount;
 		
@@ -38,6 +38,8 @@ public class LevelControl : MonoBehaviour
 	//floats
 	public float hSliderValue = 5.0F;
 	public float startTimer;    //countdown until timer ends	
+	public float SpawnRate;
+		public float lives;
 	
 	//Access other scripts
 		public GameObject store_accessor;
@@ -57,15 +59,16 @@ public class LevelControl : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		wave = 3;
-		maxEnemies = 4;
+		wave = 0;
+		maxEnemies = 1;
 		roundIsOver = true;
 		startTimer = 2;
 		current_enemy_amount = 0;
 		Tutorial = 1;
-		lives = 3;
+		lives = 20;
 		store_accessor = GameObject.Find ("Store");
 		storecontrol = store_accessor.GetComponent <StoreControl> ();
+		SpawnRate = 1F;
 	}
 	
 	// Update is called once per frame
@@ -103,18 +106,15 @@ public class LevelControl : MonoBehaviour
 										pause = false;
 								}
 
-								//pauseY = (Screen.height - 300);
-								//pauseX Perry, what does this do?
-
 								pauseY = (Screen.height / 2 - 100);
 								pauseX = (Screen.width / 2 - 200);
 
 						
-					if (lives == 0) 
+					if (lives <= 0) 
 			{
 				StoreControl.Coins = 100;
 				storecontrol.StoreOpen = true;
-				lives = 3;
+				lives = 20f;
 				for (int i = 0; i < enemies.Length; i++)
 				{
 					Destroy (enemies[i]);
@@ -129,11 +129,12 @@ public class LevelControl : MonoBehaviour
 	void NextWave ()   //resets the spawn timer, adds 1 to the wave #, and then spawns based on wave
 	{
 		currentEnemies = 0;
-		startTimer = 2;
+		startTimer = 1;
 		SetWave (wave + 1);
 		maxEnemies ++;
 		roundIsOver = false;
 		StartCoroutine (Spawn (0, maxEnemies));
+		SpawnRate = SpawnRate + -0.01F;
 	}
 	
 	void SetWave (int waveToSet) //sets the wave number
@@ -146,11 +147,11 @@ public class LevelControl : MonoBehaviour
 		for (int i = 0; i <= amount; i++) {
 			if (currentEnemies < maxEnemies) {
 				Instantiate (Raptor, transform.position, transform.rotation);
-				yield return new WaitForSeconds (1);
+				yield return new WaitForSeconds (SpawnRate);
 				currentEnemies ++;
 				if (wave >= 4) {
 					Instantiate (SanicRaptor, transform.position, transform.rotation);
-					yield return new WaitForSeconds (1);
+					yield return new WaitForSeconds (SpawnRate);
 					currentEnemies ++;
 				}
 			}

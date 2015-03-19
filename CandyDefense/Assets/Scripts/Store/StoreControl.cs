@@ -31,6 +31,7 @@ public class StoreControl : MonoBehaviour
 	public bool green_toggle = false;
 	public bool Flame_toggle = false;
 	public bool Bomber_toggle = false;
+	public bool Sniper_toggle = false;
 
 
 	//Positions
@@ -45,6 +46,8 @@ public class StoreControl : MonoBehaviour
 	public GameObject green_tur;
 	public GameObject flame_tur;
 	public GameObject Bomber;
+	public GameObject Sniper_tur;
+
 
 	//Path Collider
 	public GameObject path_collide;
@@ -135,6 +138,15 @@ public class StoreControl : MonoBehaviour
 						Instantiate (Bomber, transform.position, transform.rotation);
 						Coins = (Coins - 100);
 						Bomber_toggle = false;
+					}
+				}
+			}
+			if (Sniper_toggle == true && StoreOpen == true && Coins >= 100) {
+				if (Input.GetMouseButton (0)) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
+						Instantiate (Sniper_tur, transform.position, transform.rotation);
+						Coins = (Coins - 100);
+						Sniper_toggle = false;
 					}
 				}
 			}

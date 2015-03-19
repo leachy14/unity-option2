@@ -17,6 +17,7 @@ public class Dino_walk : MonoBehaviour {
 
 	public GameObject other_dino;
 
+		public int healthdo;
 	// Use this for initialization
 	void Start () 
 	{
@@ -29,7 +30,7 @@ public class Dino_walk : MonoBehaviour {
 			} else if (this.gameObject.name == "Dino_enemy(Clone)") {
 				Speed = 2;
 			}
-
+			healthdo = 0;
 	}
 	
 	// Update is called once per frame
@@ -68,8 +69,8 @@ public class Dino_walk : MonoBehaviour {
 			else
 			{
 				// Inform level script that a unit has reached the last waypoint
-					levelcontrol.lives--;
-					Destroy(gameObject);
+					//InvokeRepeating ("TakeHealth", 1, 1);
+					StartCoroutine (TakeHealth(healthdo));
 				
 				return;
 			}
@@ -81,7 +82,13 @@ public class Dino_walk : MonoBehaviour {
 		}
 
 	}
-
+	IEnumerator TakeHealth (int Hi) {
+			for (int i = 0; i < 50; i++) {
+				levelcontrol.lives = (levelcontrol.lives + -0.002f);
+				yield return new WaitForSeconds(0.0001f);
+			}
+			Destroy(gameObject);
+		}
 
 }	
 }

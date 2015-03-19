@@ -33,8 +33,11 @@ function FixedUpdate () {
 
 function HandleShotMovement () {
 
-
+if(this.gameObject.name == "Sniper_Shot_entity(Clone)"){
+	GetComponent.<Rigidbody2D>().velocity = transform.up * -6;
+} else {
 	GetComponent.<Rigidbody2D>().velocity = transform.up * -2;
+}
 
 if (transform.position.x < -3.5) {
 	Destroy(gameObject);

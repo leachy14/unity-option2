@@ -21,13 +21,16 @@ public class BuyTurrets : MonoBehaviour
 	
 		}
 	public void Buy_Sniper () {
-		//Store_bool.SniperToggle = true;
+		Store_bool.Sniper_toggle = true;
 	}
 	public void Buy_Flame () {
 		Store_bool.Flame_toggle = true;
 	}
 	public void Buy_Bomber () {
 		Store_bool.Bomber_toggle = true;
+	}
+	public void Buy_Normal () {
+		Store_bool.green_toggle = true;
 	}
 }
 
