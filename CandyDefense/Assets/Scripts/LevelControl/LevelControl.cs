@@ -70,12 +70,13 @@ public class LevelControl : MonoBehaviour
 		store_accessor = GameObject.Find ("Store");
 		storecontrol = store_accessor.GetComponent <StoreControl> ();
 		SpawnRate = 1F;
+		//currentEnemies = 1;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-						if (startTimer > 0 && currentEnemies == maxEnemies) {          //if we're either counting down or still waiting
+						if (startTimer > 0 /*&& currentEnemies == maxEnemies*/) {          //if we're either counting down or still waiting
 								roundIsOver = true; 		//round is still in over state
 
 						} else {                         //otherwise
