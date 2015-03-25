@@ -32,7 +32,7 @@ public class StoreControl : MonoBehaviour
 	public bool Flame_toggle = false;
 	public bool Bomber_toggle = false;
 	public bool Sniper_toggle = false;
-
+	public bool Ice_toggle = false;
 
 	//Positions
 	public int Storeposition;
@@ -47,6 +47,7 @@ public class StoreControl : MonoBehaviour
 	public GameObject flame_tur;
 	public GameObject Bomber;
 	public GameObject Sniper_tur;
+	public GameObject Ice_tur;
 
 
 	//Path Collider
@@ -123,30 +124,39 @@ public class StoreControl : MonoBehaviour
 					}
 				}
 			}
-			if (Flame_toggle == true && StoreOpen == true && Coins >= 100) {
+			if (Flame_toggle == true && StoreOpen == true && Coins >= 1000) {
 				if (Input.GetMouseButton (0)) {
 					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
 						Instantiate (flame_tur, transform.position, transform.rotation);
-						Coins = (Coins - 100);
+						Coins = (Coins - 1000);
 						Flame_toggle = false;
 					}
 				}
 			}
-			if (Bomber_toggle == true && StoreOpen == true && Coins >= 100) {
+			if (Bomber_toggle == true && StoreOpen == true && Coins >= 1500) {
 				if (Input.GetMouseButton (0)) {
 					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
 						Instantiate (Bomber, transform.position, transform.rotation);
-						Coins = (Coins - 100);
+						Coins = (Coins - 1500);
 						Bomber_toggle = false;
 					}
 				}
 			}
-			if (Sniper_toggle == true && StoreOpen == true && Coins >= 100) {
+			if (Sniper_toggle == true && StoreOpen == true && Coins >= 2250) {
 				if (Input.GetMouseButton (0)) {
 					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
 						Instantiate (Sniper_tur, transform.position, transform.rotation);
-						Coins = (Coins - 100);
+						Coins = (Coins - 2250);
 						Sniper_toggle = false;
+					}
+				}
+			}
+			if (Ice_toggle == true && StoreOpen == true && Coins >= 1500) {
+				if (Input.GetMouseButton (0)) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
+						Instantiate (Ice_tur, transform.position, transform.rotation);
+						Coins = (Coins - 1500);
+						Ice_toggle = false;
 					}
 				}
 			}

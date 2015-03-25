@@ -32,5 +32,8 @@ public class BuyTurrets : MonoBehaviour
 	public void Buy_Normal () {
 		Store_bool.green_toggle = true;
 	}
+	public void Buy_Ice () {
+		Store_bool.Ice_toggle = true;
+	}
 }
 

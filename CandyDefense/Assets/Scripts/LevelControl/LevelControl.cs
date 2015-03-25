@@ -17,6 +17,7 @@ public class LevelControl : MonoBehaviour
 	public GameObject[] spawnPoints; //array of spawnpoints
 	public GameObject Raptor;	
 	public GameObject SanicRaptor;
+	public GameObject DinoFuck;
 	
 	//Bools	
 	public bool roundIsOver;    //are we inbetween rounds?
@@ -39,7 +40,7 @@ public class LevelControl : MonoBehaviour
 	public float hSliderValue = 5.0F;
 	public float startTimer;    //countdown until timer ends	
 	public float SpawnRate;
-		public float lives;
+	public float lives;
 	
 	//Access other scripts
 		public GameObject store_accessor;
@@ -69,12 +70,13 @@ public class LevelControl : MonoBehaviour
 		store_accessor = GameObject.Find ("Store");
 		storecontrol = store_accessor.GetComponent <StoreControl> ();
 		SpawnRate = 1F;
+		//currentEnemies = 1;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-						if (startTimer > 0) {          //if we're either counting down or still waiting
+						if (startTimer > 0 /*&& currentEnemies == maxEnemies*/) {          //if we're either counting down or still waiting
 								roundIsOver = true; 		//round is still in over state
 
 						} else {                         //otherwise
@@ -151,9 +153,14 @@ public class LevelControl : MonoBehaviour
 				currentEnemies ++;
 				if (wave >= 4) {
 					Instantiate (SanicRaptor, transform.position, transform.rotation);
-					yield return new WaitForSeconds (SpawnRate);
+					yield return new WaitForSeconds (SpawnRate / 2);
 					currentEnemies ++;
 				}
+				if(wave >= 7) {
+						Instantiate (DinoFuck, transform.position, transform.rotation);
+						yield return new WaitForSeconds (SpawnRate / 2);
+						currentEnemies ++;
+					}
 			}
 		}
 	}
