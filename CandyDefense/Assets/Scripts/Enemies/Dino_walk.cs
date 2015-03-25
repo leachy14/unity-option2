@@ -16,7 +16,8 @@ public class Dino_walk : MonoBehaviour {
 	public LevelControl levelcontrol;
 
 	public GameObject other_dino;
-
+	public GameObject HealthBar;
+	
 		public int healthdo;
 	// Use this for initialization
 	void Start () 
