@@ -88,7 +88,9 @@ public class Dino_walk : MonoBehaviour {
 				levelcontrol.lives = (levelcontrol.lives + -0.002f);
 				yield return new WaitForSeconds(0.0001f);
 			}
+			Destroy(GameObject.Find ("Enemy_slider"));
 			Destroy(gameObject);
+
 		}
 
 }	

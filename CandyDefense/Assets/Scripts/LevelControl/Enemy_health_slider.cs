@@ -5,15 +5,23 @@ public class Enemy_health_slider : MonoBehaviour {
 
 
 	public Camera main;
+	public Transform Enemy_for_this;
+	public Vector3 vec;
 	// Use this for initialization
 	void Start () {
-	
+		//Enemy_for_this = GameObject.Find ("Dino_enemy(Clone)");
+		Debug.Log(transform.localToWorldMatrix);
+		Enemy_for_this = transform.Find ("/Dino_enemy(Clone)");
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		Vector3 vec = main.ScreenToWorldPoint(GameObject.Find("Dino_enemy(Clone)").transform.position);
-		transform.position = vec;
-		transform.localPosition = new Vector2 (0, -0.1f);
-	}
-}
+		Enemy_for_this = transform.Find ("/Dino_enemy(Clone)");
+		vec = Enemy_for_this.InverseTransformVector(transform.position);
+		transform.localPosition = vec;
+
+
+		}
+
+	}	
+
