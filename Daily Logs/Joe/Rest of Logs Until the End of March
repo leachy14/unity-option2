@@ -1,0 +1,51 @@
+February 9: Snowday
+
+February 10: Created a health system for the player to eventually lose the game.
+
+February 12: Fixed some bugs with the dino movements and store; everything is moving at a nice pace. 
+
+February 13: Compiled all the branches into one new version and fixed the errors between them. Newest stable version is updated.
+
+February 17: Started working on health bars for the enemies.
+
+February 19: Continued to work on health bars for the enemies with an entirely new approach.
+
+February 20: Health bars still aren’t working. All the branches were pulled and compiled into the latest version of the game.
+
+February 23: Looked up videos and code on how to get health bars to work.
+
+February 25: Started looking at the API for GUITexture to see if that could help with the health bar issue.
+
+February 26: Having difficulty with getting this type of GUI object to spawn in the correct spot.
+
+February 27: A GUI box finally appeared in the screen after looking at many examples of how to do it. Trying to work on the issue with it not following its specific dinosaur.
+
+March 2: Had a problem with Unity on my computer. Spent the whole time trying to find and solve the culprit.
+
+March 4: Thought we had a meeting today and didn’t bring my laptop. Brainstormed on health bar problem.
+
+March 5: Snow Day
+
+March 6: Downloaded Unity 5, which took the whole period to complete
+
+March 9: Found a new UI component that can help me make a health bar for the enemies
+
+March 11: Watched James as he started modeling in Blender to try to understand the key bindings
+
+March 12: Having problems with merging Kevin’s branch with the master, will have to try tomorrow
+
+March 13: Worked on merging Kevin’s branch with the master. Need to work on Perry’s
+
+March 17: I merged Perry’s branch to the master, but had problems while doing so. I’ll need to fix those at home tonight
+
+March 18: Branch still not fixed. I started to get a feel for Blender and its user interface.
+
+March 19: Did a little modeling in Blender today; there are so many key bindings to use in order for the program to work; thankfully James was there to help me through it.
+
+March 23: Fixed the problems with GitHub’s merging conflicts. The master branch is now up to date with the most current updates.
+
+March 24: Created the health bar prefab to be instantiated every time a dinosaur is added to the screen. Currently not showing up on the game screen, but they are being created.
+
+March 25: Figured out how to get the health bars to show up every time one is created. Still not moving with the dinosaurs.
+
+March 27: More of a chill day, worked on trying to get health bars to follow enemies.
