@@ -17,8 +17,8 @@ public class Enemy_health_slider : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Enemy_for_this = transform.Find ("/Dino_enemy(Clone)");
-		vec = Enemy_for_this.InverseTransformVector(transform.position);
-		transform.localPosition = vec;
+		vec = Enemy_for_this.TransformVector(transform.position);
+		transform.position = vec * 100.2f;
 
 
 		}
