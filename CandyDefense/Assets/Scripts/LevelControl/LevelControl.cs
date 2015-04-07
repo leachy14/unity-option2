@@ -18,6 +18,7 @@ public class LevelControl : MonoBehaviour
 	public GameObject Raptor;	
 	public GameObject SanicRaptor;
 	public GameObject DinoFuck;
+	public GameObject Bar;
 	
 	//Bools	
 	public bool roundIsOver;    //are we inbetween rounds?
@@ -149,15 +150,18 @@ public class LevelControl : MonoBehaviour
 		for (int i = 0; i <= amount; i++) {
 			if (currentEnemies < maxEnemies) {
 				Instantiate (Raptor, transform.position, transform.rotation);
+				Instantiate (Bar, transform.position, transform.rotation);
 				yield return new WaitForSeconds (SpawnRate);
 				currentEnemies ++;
 				if (wave >= 4) {
 					Instantiate (SanicRaptor, transform.position, transform.rotation);
+					Instantiate (Bar, transform.position, transform.rotation);
 					yield return new WaitForSeconds (SpawnRate / 2);
 					currentEnemies ++;
 				}
 				if(wave >= 7) {
 						Instantiate (DinoFuck, transform.position, transform.rotation);
+						Instantiate (Bar, transform.position, transform.rotation);
 						yield return new WaitForSeconds (SpawnRate / 2);
 						currentEnemies ++;
 					}

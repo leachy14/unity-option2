@@ -89,6 +89,7 @@ public class Dino_walk : MonoBehaviour {
 				yield return new WaitForSeconds(0.0001f);
 			}
 			Destroy(GameObject.Find ("Enemy_slider"));
+			Destroy(GameObject.Find ("Enemy_health_slider(Clone)"));
 			Destroy(gameObject);
 
 		}
