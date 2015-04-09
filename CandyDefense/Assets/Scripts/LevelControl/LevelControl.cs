@@ -150,20 +150,20 @@ public class LevelControl : MonoBehaviour
 		for (int i = 0; i <= amount; i++) {
 			if (currentEnemies < maxEnemies) {
 				Instantiate (Raptor, transform.position, transform.rotation);
-				yield return new WaitForSeconds(0.01f);
+				yield return new WaitForSeconds(0.05f);
 				Instantiate (Bar, transform.position, transform.rotation);
 				yield return new WaitForSeconds (SpawnRate);
 				currentEnemies ++;
 				if (wave >= 4) {
 					Instantiate (SanicRaptor, transform.position, transform.rotation);
-					yield return new WaitForSeconds(0.01f);
+					yield return new WaitForSeconds(0.05f);
 					Instantiate (Bar, transform.position, transform.rotation);
 					yield return new WaitForSeconds (SpawnRate / 2);
 					currentEnemies ++;
 				}
 				if(wave >= 7) {
 						Instantiate (DinoFuck, transform.position, transform.rotation);
-						yield return new WaitForSeconds(0.01f);
+						yield return new WaitForSeconds(0.05f);
 						Instantiate (Bar, transform.position, transform.rotation);
 						yield return new WaitForSeconds (SpawnRate / 2);
 						currentEnemies ++;
