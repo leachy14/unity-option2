@@ -18,6 +18,7 @@ public class LevelControl : MonoBehaviour
 	public GameObject Raptor;	
 	public GameObject SanicRaptor;
 	public GameObject DinoFuck;
+	public GameObject Bar;
 	
 	//Bools	
 	public bool roundIsOver;    //are we inbetween rounds?
@@ -52,7 +53,7 @@ public class LevelControl : MonoBehaviour
 			startTimer -= 1;
 		}
 		if (startTimer == 0) {
-
+				NextWave (); 
 			CancelInvoke ();
 				}
 	}
@@ -70,18 +71,18 @@ public class LevelControl : MonoBehaviour
 		store_accessor = GameObject.Find ("Store");
 		storecontrol = store_accessor.GetComponent <StoreControl> ();
 		SpawnRate = 1F;
-		//currentEnemies = 1;
+		currentEnemies = 1;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-						if (startTimer > 0 /*&& currentEnemies == maxEnemies*/) {          //if we're either counting down or still waiting
+						if (startTimer > 0 && currentEnemies == maxEnemies) {          //if we're either counting down or still waiting
 								roundIsOver = true; 		//round is still in over state
 
 						} else {                         //otherwise
 								//the round is over and we need to
-								NextWave ();  			   //start the next wave
+								 			   //start the next wave
 								roundIsOver = false;
 						}
 	
@@ -149,15 +150,21 @@ public class LevelControl : MonoBehaviour
 		for (int i = 0; i <= amount; i++) {
 			if (currentEnemies < maxEnemies) {
 				Instantiate (Raptor, transform.position, transform.rotation);
+				yield return new WaitForSeconds(0.05f);
+				Instantiate (Bar, transform.position, transform.rotation);
 				yield return new WaitForSeconds (SpawnRate);
 				currentEnemies ++;
 				if (wave >= 4) {
 					Instantiate (SanicRaptor, transform.position, transform.rotation);
+					yield return new WaitForSeconds(0.05f);
+					Instantiate (Bar, transform.position, transform.rotation);
 					yield return new WaitForSeconds (SpawnRate / 2);
 					currentEnemies ++;
 				}
 				if(wave >= 7) {
 						Instantiate (DinoFuck, transform.position, transform.rotation);
+						yield return new WaitForSeconds(0.05f);
+						Instantiate (Bar, transform.position, transform.rotation);
 						yield return new WaitForSeconds (SpawnRate / 2);
 						currentEnemies ++;
 					}

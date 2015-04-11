@@ -1,13 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelControl/LevelControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelControl/Enemy_health_slider.cs">
     <Files>
-      <File FileName="Assets/Scripts/Turrets/sniper.js" Line="54" Column="38" />
-      <File FileName="Assets/Scripts/Store/StoreControl.cs" Line="147" Column="30" />
-      <File FileName="Assets/Scripts/Store/BuyTurrets.cs" Line="33" Column="34" />
-      <File FileName="Assets/Scripts/Turrets/projectile.js" Line="8" Column="20" />
-      <File FileName="Assets/Scripts/LevelControl/LevelControl.cs" Line="158" Column="4" />
-      <File FileName="Assets/Scripts/Enemies/Dino_walk.cs" Line="33" Column="16" />
+      <File FileName="Assets/Scripts/LevelControl/Enemy_health_slider.cs" Line="25" Column="5" />
+      <File FileName="Assets/Scripts/Enemies/Enemy_Coll.cs" Line="29" Column="1" />
+      <File FileName="Assets/Scripts/LevelControl/Health.cs" Line="13" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
