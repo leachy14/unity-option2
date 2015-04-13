@@ -5,11 +5,10 @@ public class StartScreen : MonoBehaviour {
 
 
 	//Textures
-	public Texture StartGame;
+
 
 	//Button pos
-	public int StartButX;
-	public int StartButY;
+	public int HealthDo;
 
 	// Use this for initialization
 	void Start () {
@@ -19,15 +18,14 @@ public class StartScreen : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 	
-		StartButX = (Screen.width / 2 - 100);
-		StartButY = (Screen.height / 2 + 100);
 
 	}
-	void OnGUI() {
-		if (GUI.Button(new Rect(StartButX, StartButY, 200, 50), "Start Game(This is a placeholder)")) {
-			Application.LoadLevel("Forest");
 
-		}
+	public void StartGame() {
+		StartCoroutine (LoadGame(HealthDo));
 	}
-
+	IEnumerator LoadGame (int hi) {
+		yield return new WaitForSeconds(0.25f);
+		Application.LoadLevel("Forest");
+	}
 }

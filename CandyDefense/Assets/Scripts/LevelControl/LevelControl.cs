@@ -97,7 +97,7 @@ public class LevelControl : MonoBehaviour
 						}     
 						enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 						round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
-						RoundHeight = (Screen.height - 75);
+						RoundHeight = (Screen.height - (Screen.height - 75));
 
 
 						
@@ -172,7 +172,7 @@ public class LevelControl : MonoBehaviour
 		}
 	}
 	void OnGUI () {
-		if(GUI.Button(new Rect(10, 30, 100, 50), startbutton)) {
+		if(GUI.Button(new Rect(10, RoundHeight, 100, 50), startbutton)) {
 			if(roundIsOver){
 				if (startTimer > 0) {                        // but only if its not 0
 					InvokeRepeating ("CountDown", 1, 1);
@@ -187,15 +187,7 @@ public class LevelControl : MonoBehaviour
 			}
 			GUI.EndGroup();
 		}
-		if (Tutorial == 1) {
-				GUI.BeginGroup(new Rect(pauseX, pauseY, 800, 600));
-				GUI.Box(new Rect(0, 0, 600, 400), "Instructions");
-				GUI.Label(new Rect(20, 20, 400, 300), "Click on the right edge of the screen to open the store.");
-				if(GUI.Button(new Rect(200, 200, 100, 50), "Next")) {
-					Tutorial++;
-				}
-				GUI.EndGroup();
-			}
+	
 	}
 }
 }
