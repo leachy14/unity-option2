@@ -10,7 +10,7 @@ public class StoreControl : MonoBehaviour
 	
 
 	
-	public static int Coins = 100;
+	public static int Coins = 600;
 	
 	public string Money;
 	public string Lives;
@@ -115,20 +115,20 @@ public class StoreControl : MonoBehaviour
 					}
 				}
 			}
-			if (green_toggle == true && StoreOpen == true && Coins >= 100) {
+			if (green_toggle == true && StoreOpen == true && Coins >= 250) {
 				if (Input.GetMouseButton (0)) {
 					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
 						Instantiate (green_tur, transform.position, transform.rotation);
-						Coins = (Coins - 100);
+						Coins = (Coins - 250);
 						green_toggle = false;
 					}
 				}
 			}
-			if (Flame_toggle == true && StoreOpen == true && Coins >= 1000) {
+			if (Flame_toggle == true && StoreOpen == true && Coins >= 1500) {
 				if (Input.GetMouseButton (0)) {
 					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
 						Instantiate (flame_tur, transform.position, transform.rotation);
-						Coins = (Coins - 1000);
+						Coins = (Coins - 1500);
 						Flame_toggle = false;
 					}
 				}
@@ -142,11 +142,11 @@ public class StoreControl : MonoBehaviour
 					}
 				}
 			}
-			if (Sniper_toggle == true && StoreOpen == true && Coins >= 2250) {
+			if (Sniper_toggle == true && StoreOpen == true && Coins >= 600) {
 				if (Input.GetMouseButton (0)) {
 					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
 						Instantiate (Sniper_tur, transform.position, transform.rotation);
-						Coins = (Coins - 2250);
+						Coins = (Coins - 600);
 						Sniper_toggle = false;
 					}
 				}
