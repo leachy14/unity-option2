@@ -27,6 +27,9 @@ function Start () {
 	if (this.gameObject.name == "FlameThrower(Clone)") {
 	fireRate = 0.1;
 	}
+	if (this.gameObject.name == "Ice_turret(Clone)") {
+	fireRate = 0.1;
+	}
 }
 
 function Update () {
@@ -68,10 +71,13 @@ function FindClosestEnemy (){
 
 function Shoot () {
 
-	if(this.gameObject.name != "FlameThrower(Clone)"){
-		Instantiate(shotnormal, transform.position, transform.rotation);
-	}
+	//if(this.gameObject.name != "FlameThrower(Clone)"){
+	//	Instantiate(shotnormal, transform.position, transform.rotation);
+	//}
 	if(this.gameObject.name == "FlameThrower(Clone)"){
+		Instantiate(shotFlame, transform.position, transform.rotation);
+	}
+		if(this.gameObject.name == "Ice_turret(Clone)"){
 		Instantiate(shotFlame, transform.position, transform.rotation);
 	}
 }

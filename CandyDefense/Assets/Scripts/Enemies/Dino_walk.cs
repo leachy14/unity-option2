@@ -30,6 +30,8 @@ public class Dino_walk : MonoBehaviour {
 				Speed = 4;	
 			} else if (this.gameObject.name == "Dino_enemy(Clone)") {
 				Speed = 2;
+			} else if (this.gameObject.name == "Salid_snake(Clone)") {
+				Speed = 1;
 			}
 			healthdo = 0;
 	}

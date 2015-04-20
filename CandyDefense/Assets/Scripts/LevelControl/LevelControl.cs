@@ -77,7 +77,7 @@ public class LevelControl : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-						if (startTimer > 0 && currentEnemies == maxEnemies) {          //if we're either counting down or still waiting
+			if (startTimer > 0 && currentEnemies == maxEnemies && enemies.Length == 0) {          //if we're either counting down or still waiting
 								roundIsOver = true; 		//round is still in over state
 
 						} else {                         //otherwise
@@ -93,12 +93,12 @@ public class LevelControl : MonoBehaviour
 										}    
 								}
 
-								current_enemy_amount = enemies.Length;
+								//current_enemy_amount = enemies.Length;
 						}     
 						enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 						round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
 						RoundHeight = (Screen.height - (Screen.height - 75));
-
+			current_enemy_amount = enemies.Length;
 
 						
 
@@ -131,8 +131,9 @@ public class LevelControl : MonoBehaviour
 				}
 	void NextWave ()   //resets the spawn timer, adds 1 to the wave #, and then spawns based on wave
 	{
-		currentEnemies = 0;
+		
 		startTimer = 1;
+		currentEnemies = 0;
 		SetWave (wave + 1);
 		maxEnemies ++;
 		roundIsOver = false;
@@ -154,14 +155,14 @@ public class LevelControl : MonoBehaviour
 				Instantiate (Bar, transform.position, transform.rotation);
 				yield return new WaitForSeconds (SpawnRate);
 				currentEnemies ++;
-				if (wave >= 4) {
+					if (wave >= 4 && currentEnemies < maxEnemies) {
 					Instantiate (SanicRaptor, transform.position, transform.rotation);
 					yield return new WaitForSeconds(0.05f);
 					Instantiate (Bar, transform.position, transform.rotation);
 					yield return new WaitForSeconds (SpawnRate / 2);
 					currentEnemies ++;
 				}
-				if(wave >= 7) {
+					if(wave >= 7 && currentEnemies < maxEnemies) {
 						Instantiate (DinoFuck, transform.position, transform.rotation);
 						yield return new WaitForSeconds(0.05f);
 						Instantiate (Bar, transform.position, transform.rotation);
@@ -172,7 +173,7 @@ public class LevelControl : MonoBehaviour
 		}
 	}
 	void OnGUI () {
-		if(GUI.Button(new Rect(10, RoundHeight, 100, 50), startbutton)) {
+		if(GUI.Button(new Rect(10, 50, 100, 50), startbutton)) {
 			if(roundIsOver){
 				if (startTimer > 0) {                        // but only if its not 0
 					InvokeRepeating ("CountDown", 1, 1);

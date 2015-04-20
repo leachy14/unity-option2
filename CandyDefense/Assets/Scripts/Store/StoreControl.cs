@@ -10,7 +10,7 @@ public class StoreControl : MonoBehaviour
 	
 
 	
-	public static int Coins = 600;
+	public static int Coins = 1500;
 	
 	public string Money;
 	public string Lives;
@@ -108,7 +108,7 @@ public class StoreControl : MonoBehaviour
 		
 			if (illum_toggle == true && StoreOpen == true && Coins >= 100) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {	
 						Instantiate (illum_turret, transform.position, transform.rotation);
 						Coins = (Coins - 100);
 						illum_toggle = false;
@@ -117,7 +117,7 @@ public class StoreControl : MonoBehaviour
 			}
 			if (green_toggle == true && StoreOpen == true && Coins >= 250) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {
 						Instantiate (green_tur, transform.position, transform.rotation);
 						Coins = (Coins - 250);
 						green_toggle = false;
@@ -126,7 +126,7 @@ public class StoreControl : MonoBehaviour
 			}
 			if (Flame_toggle == true && StoreOpen == true && Coins >= 1500) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {
 						Instantiate (flame_tur, transform.position, transform.rotation);
 						Coins = (Coins - 1500);
 						Flame_toggle = false;
@@ -135,7 +135,7 @@ public class StoreControl : MonoBehaviour
 			}
 			if (Bomber_toggle == true && StoreOpen == true && Coins >= 1500) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {
 						Instantiate (Bomber, transform.position, transform.rotation);
 						Coins = (Coins - 1500);
 						Bomber_toggle = false;
@@ -144,7 +144,7 @@ public class StoreControl : MonoBehaviour
 			}
 			if (Sniper_toggle == true && StoreOpen == true && Coins >= 600) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {	
 						Instantiate (Sniper_tur, transform.position, transform.rotation);
 						Coins = (Coins - 600);
 						Sniper_toggle = false;
@@ -153,7 +153,7 @@ public class StoreControl : MonoBehaviour
 			}
 			if (Ice_toggle == true && StoreOpen == true && Coins >= 1500) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {	
 						Instantiate (Ice_tur, transform.position, transform.rotation);
 						Coins = (Coins - 1500);
 						Ice_toggle = false;
