@@ -14,9 +14,7 @@ function Start () {
 		if(this.gameObject.name == "shotFlame(Clone)") {
 			Destroy(gameObject, 0.3);
 		}
-		if(this.gameObject.name == "") {
-		
-		}
+
 }
 
 
