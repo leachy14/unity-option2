@@ -11,6 +11,8 @@ var shotFlame : GameObject;
 
 var distance : float;
 var fireRate : int;
+var iceRate : int;
+private var nextIce = 0.0;
 private var nextFire = 0.0;
 
 
@@ -28,7 +30,8 @@ function Start () {
 	fireRate = 0.1;
 	}
 	if (this.gameObject.name == "Ice_turret(Clone)") {
-	fireRate = 0.1;
+	fireRate = 2;
+	iceRate = 0.2;
 	}
 }
 
@@ -76,8 +79,16 @@ function Shoot () {
 	//}
 	if(this.gameObject.name == "FlameThrower(Clone)"){
 		Instantiate(shotFlame, transform.position, transform.rotation);
-	}
-		if(this.gameObject.name == "Ice_turret(Clone)"){
-		Instantiate(shotFlame, transform.position, transform.rotation);
+	}else if(this.gameObject.name == "Ice_turret(Clone)"){
+	
+			for (var i = 0; i < 10; i++) {
+			//if (Time.time > nextIce) {
+			//nextIce = (Time.time + iceRate);
+			Instantiate(shotFlame, transform.position, transform.rotation);
+			//}
+			}
+			
+	} else {
+	Instantiate(shotnormal, transform.position, transform.rotation);
 	}
 }

@@ -173,13 +173,13 @@ public class LevelControl : MonoBehaviour
 		}
 	}
 	void OnGUI () {
-		if(GUI.Button(new Rect(10, 50, 100, 50), startbutton)) {
+		/*if(GUI.Button(new Rect(10, 50, 100, 50), startbutton)) {
 			if(roundIsOver){
 				if (startTimer > 0) {                        // but only if its not 0
 					InvokeRepeating ("CountDown", 1, 1);
 				}
 			}
-		}
+		}*/
 		if(pause == true) {
 			GUI.BeginGroup(new Rect(pauseX, pauseY, 800, 600));
 			GUI.Box(new Rect(0, 0, 400, 200), "This is a title");
@@ -190,5 +190,10 @@ public class LevelControl : MonoBehaviour
 		}
 	
 	}
+	public void StartRound () {
+			if (roundIsOver == true) {
+				NextWave();
+			}
+		}
 }
 }
