@@ -10,7 +10,7 @@ public class Dino_walk : MonoBehaviour {
 	
 	public float movementSpeed = 3f;
 	public int wave_number;
-	public static float Speed;
+	public float Speed;
 
 	public GameObject level_accessor;
 	public LevelControl levelcontrol;
@@ -44,6 +44,9 @@ public class Dino_walk : MonoBehaviour {
 				Physics2D.IgnoreCollision(other_dino.collider2D, collider2D);
 			}*/
 			Physics2D.IgnoreLayerCollision(10,11, true);
+			Physics2D.IgnoreLayerCollision(10,10, true);
+			Physics2D.IgnoreLayerCollision(11,11, true);
+
 	}
 	
 	// Fixed update

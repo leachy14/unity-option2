@@ -51,7 +51,7 @@ public class Enemy_Coll : MonoBehaviour
 			}
 			if(coll.gameObject.tag == "Ice") {
 				Destroy(coll.gameObject);
-				hlth -= 1;
+				//hlth -= 1;
 			//	Dino_walk.Speed = Dino_walk.Speed / 1.5f;
 			}
 		}

@@ -42,6 +42,9 @@ public class LevelControl : MonoBehaviour
 	public float startTimer;    //countdown until timer ends	
 	public float SpawnRate;
 	public float lives;
+
+	//double
+	public double MaxEnemyDouble;
 	
 	//Access other scripts
 		public GameObject store_accessor;
@@ -135,10 +138,23 @@ public class LevelControl : MonoBehaviour
 		startTimer = 1;
 		currentEnemies = 0;
 		SetWave (wave + 1);
-		maxEnemies ++;
+		if(wave <= 3) {
+				maxEnemies ++;
+		} else if (wave >= 4 && wave <= 24) {
+		 //MaxEnemyDouble = maxEnemies * 1.25;
+
+
+			}else if (wave >= 25 && wave <= 50){
+
+		maxEnemies = maxEnemies * 1;
+			} else {
+				maxEnemies = 1000;
+			}
 		roundIsOver = false;
 		StartCoroutine (Spawn (0, maxEnemies));
-		SpawnRate = SpawnRate + -0.01F;
+			if (SpawnRate > 0.6f) {
+		SpawnRate = SpawnRate + -0.05F;
+			}	
 	}
 	
 	void SetWave (int waveToSet) //sets the wave number
