@@ -33,6 +33,7 @@ public class StoreControl : MonoBehaviour
 	public bool Bomber_toggle = false;
 	public bool Sniper_toggle = false;
 	public bool Ice_toggle = false;
+	public bool GameSpeed = false;
 
 	//Positions
 	public int Storeposition;
@@ -79,7 +80,7 @@ public class StoreControl : MonoBehaviour
 	void Update ()
 	{
 		Vector3 vec = main.ScreenToWorldPoint(Input.mousePosition);
-		//transform.position.z = 0;
+		
 		transform.position = vec;
 		
 		Money =	"<color=#ff0000ff><size=30>Coins: " + Coins + "</size></color>";
