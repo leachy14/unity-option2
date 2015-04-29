@@ -17,8 +17,10 @@ public class Enemy_Coll : MonoBehaviour
 	
 	if (this.gameObject.name == "Sanic_Raptor(Clone)") {
 						hlth = 2;
-				} else {
+				} else if(this.gameObject.name == "Dino_enemy(Clone)") {
 				hlth = 1;
+			}else {
+				hlth = 3;
 			}
 	}
 	
@@ -28,11 +30,11 @@ public class Enemy_Coll : MonoBehaviour
 
 	if (hlth < 1) 
 		{
-			StoreControl.Coins += 10;
+				StoreControl.Coins = StoreControl.Coins + 10;
 			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
-				StoreControl.Coins += 40;
+					StoreControl.Coins = StoreControl.Coins + 40;
 				} else if (this.gameObject.name == "Dino_enemy(Clone)") {
-					StoreControl.Coins += 10;
+					StoreControl.Coins = StoreControl.Coins + 10;
 				}
 			Destroy(gameObject);
 

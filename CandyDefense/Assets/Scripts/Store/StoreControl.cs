@@ -12,17 +12,10 @@ public class StoreControl : MonoBehaviour
 	
 	public static int Coins = 1500;
 	
-	public string Money;
-	public string Lives;
+
 	public Camera main;
 	
 	
-	//Textures
-	public Texture illuminaty_turret;
-	public Texture startbutton;
-	public Texture green_turret;
-	public Texture flamethrower;
-	public Texture Bomber_text;
 
 
 	//Toggles
@@ -63,7 +56,7 @@ public class StoreControl : MonoBehaviour
 	
 
 	//Positions
-		public Vector2 scrollPosition = Vector2.zero;
+	public Vector2 scrollPosition = Vector2.zero;
 
 
 	// Use this for initialization
@@ -83,9 +76,7 @@ public class StoreControl : MonoBehaviour
 		
 		transform.position = vec;
 		
-		Money =	"<color=#ff0000ff><size=30>Coins: " + Coins + "</size></color>";
-		Lives = "<color=#ff0000ff><size=30>Lives left: " + round_accessor.lives + "</size></color>";
-
+		
 			if (StoreOpen == true) {
 				Storeposition = (Screen.width - 180);
 				StoreOpenButtonPos = (Screen.width - 200);

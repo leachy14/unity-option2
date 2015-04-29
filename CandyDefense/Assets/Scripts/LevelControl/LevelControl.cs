@@ -12,7 +12,8 @@ namespace Level
 				public string round;
 	
 				//Textures
-				public Texture startbutton;
+
+
 	
 				//Game Objects	
 				public GameObject[] enemies;     //array of enemies
@@ -43,7 +44,7 @@ namespace Level
 				public float SpawnRate;
 				public float lives;
 
-	
+		public Image speedon;
 	
 	
 				//Access other scripts
