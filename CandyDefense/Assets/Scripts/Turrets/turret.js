@@ -40,8 +40,12 @@ function Update () {
 	FindClosestEnemy();
 	transform.rotation.x = 0;
 	transform.rotation.y = 0;
-
-
+Physics2D.IgnoreLayerCollision(10,13, true);
+Physics2D.IgnoreLayerCollision(13,11, true);
+Physics2D.IgnoreLayerCollision(13,13, true);
+Physics2D.IgnoreLayerCollision(13,14, true);
+Physics2D.IgnoreLayerCollision(11,14, true);
+Physics2D.IgnoreLayerCollision(10,14, true);
 }
 
 function FindClosestEnemy (){

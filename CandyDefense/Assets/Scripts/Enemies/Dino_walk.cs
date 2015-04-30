@@ -10,7 +10,7 @@ public class Dino_walk : MonoBehaviour {
 	
 	public float movementSpeed = 3f;
 	public int wave_number;
-	public float Speed;
+	public static float Speed;
 
 	public GameObject level_accessor;
 	public LevelControl levelcontrol;

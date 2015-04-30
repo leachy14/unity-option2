@@ -34,7 +34,7 @@ public class Enemy_health_slider : MonoBehaviour {
 		transform.localScale = new Vector3(1f,1f,1f);
 
 		EnemyBar.value = Mathf.MoveTowards (EnemyBar.value, round_accessor.hlth, 1f);
-		if (round_accessor.hlth < 1) 
+		if (round_accessor.hlth <= 0) 
 		{
 			Destroy(gameObject);
 		}

@@ -11,6 +11,7 @@ TagManager:
   - Bomb
   - Bar
   - Ice
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -26,7 +27,7 @@ TagManager:
   - sanic
   - Flame
   - Bomb
-  - 
+  - DinoKeep
   - 
   - 
   - 

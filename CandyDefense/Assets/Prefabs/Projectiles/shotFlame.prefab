@@ -15,7 +15,7 @@ GameObject:
   - 95: {fileID: 9507450}
   m_Layer: 12
   m_Name: shotFlame
-  m_TagString: Projectile
+  m_TagString: Fire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

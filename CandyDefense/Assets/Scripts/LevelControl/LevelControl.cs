@@ -18,11 +18,13 @@ namespace Level
 				//Game Objects	
 				public GameObject[] enemies;     //array of enemies
 				public GameObject[] spawnPoints; //array of spawnpoints
+				public GameObject[] Turrets;
 				public GameObject Raptor;
 				public GameObject SanicRaptor;
 				public GameObject DinoFuck;
 				public GameObject Bar;
 				public Toggle SpeedTog;
+				public GameObject Pause;
 	
 				//Bools	
 				public bool roundIsOver;    //are we inbetween rounds?
@@ -43,8 +45,7 @@ namespace Level
 				public float startTimer;    //countdown until timer ends	
 				public float SpawnRate;
 				public float lives;
-
-		public Image speedon;
+				public Image speedon;
 	
 	
 				//Access other scripts
@@ -99,19 +100,38 @@ namespace Level
 
 								//current_enemy_amount = enemies.Length;
 						}     
-						enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+						
 						round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
 						RoundHeight = (Screen.height - (Screen.height - 75));
 						current_enemy_amount = enemies.Length;
-
+						
 						
 
 						if (Input.GetKeyDown ("escape") && pause == false) {
-
 								pause = true;
+								Instantiate (Pause, transform.position, transform.rotation);
+								foreach (GameObject objs in Turrets) {
+										objs.SetActive (false);
+								}
+								foreach (GameObject Enem in enemies) {
+										Enem.SetActive (false);
+								}
 						} else if (Input.GetKeyDown ("escape") && pause == true) {
 								pause = false;
+								foreach (GameObject objs in Turrets) {
+										objs.SetActive (true);
+								}
+								foreach (GameObject Enem in enemies) {
+										Enem.SetActive (true);
+								}
+								GameObject PauseScreen = GameObject.Find("Pause Screen(Clone)");
+								Destroy(PauseScreen);
 						}
+						if (pause == false){
+						enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+				Turrets = GameObject.FindGameObjectsWithTag ("Turret");
+						}
+				
 
 						pauseY = (Screen.height / 2 - 100);
 						pauseX = (Screen.width / 2 - 200);
@@ -170,31 +190,33 @@ namespace Level
 				IEnumerator Spawn (int arrayIndex, int amount)  //spawns in specific spawnPoint
 				{ //call with StartCoroutine (Spawn (enemy array index, number to spawn, spawnpoint array index));
 						for (int i = 0; i <= amount; i++) {
-								if (currentEnemies < maxEnemies) {
-										Instantiate (Raptor, transform.position, transform.rotation);
-										yield return new WaitForSeconds (0.05f);
-										Instantiate (Bar, transform.position, transform.rotation);
-										yield return new WaitForSeconds (SpawnRate);
-										currentEnemies ++;
-										if (wave >= 4 && currentEnemies < maxEnemies) {
-												Instantiate (SanicRaptor, transform.position, transform.rotation);
+								if (pause == false) {
+										if (currentEnemies < maxEnemies) {
+												Instantiate (Raptor, transform.position, transform.rotation);
 												yield return new WaitForSeconds (0.05f);
 												Instantiate (Bar, transform.position, transform.rotation);
-												yield return new WaitForSeconds (SpawnRate / 2);
+												yield return new WaitForSeconds (SpawnRate);
 												currentEnemies ++;
-										}
-										if (wave >= 7 && currentEnemies < maxEnemies) {
-												Instantiate (DinoFuck, transform.position, transform.rotation);
-												yield return new WaitForSeconds (0.05f);
-												Instantiate (Bar, transform.position, transform.rotation);
-												yield return new WaitForSeconds (SpawnRate / 2);
-												currentEnemies ++;
+												if (wave >= 4 && currentEnemies < maxEnemies) {
+														Instantiate (SanicRaptor, transform.position, transform.rotation);
+														yield return new WaitForSeconds (0.05f);
+														Instantiate (Bar, transform.position, transform.rotation);
+														yield return new WaitForSeconds (SpawnRate / 2);
+														currentEnemies ++;
+												}
+												if (wave >= 7 && currentEnemies < maxEnemies) {
+														Instantiate (DinoFuck, transform.position, transform.rotation);
+														yield return new WaitForSeconds (0.05f);
+														Instantiate (Bar, transform.position, transform.rotation);
+														yield return new WaitForSeconds (SpawnRate / 2);
+														currentEnemies ++;
+												}
 										}
 								}
 						}
 				}
 
-				void OnGUI ()
+				/*void OnGUI ()
 				{
 
 						if (pause == true) {
@@ -206,7 +228,7 @@ namespace Level
 								GUI.EndGroup ();
 						}
 	
-				}
+				}*/
 
 				public void StartRound ()
 				{
