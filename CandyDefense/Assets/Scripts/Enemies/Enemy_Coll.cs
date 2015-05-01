@@ -8,19 +8,26 @@ namespace Enemy {
 public class Enemy_Coll : MonoBehaviour
 {
 		public float hlth;
-	
-
+		public GameObject thisEnemy;
+		public Dino_walk Speedgetter;
+		public bool Froze = false;
+		private double nextFire = 0.0;
+		public double Unfreeze = 3;
+		public int SanicSp = 4;
+		public int RaptorSp = 2;
+		public int SalidSp = 1;
 	// Use this for initialization
 	void Start ()
 	{
 
-	
+			thisEnemy = this.gameObject;
+			Speedgetter = thisEnemy.GetComponent<Dino_walk> ();;
 	if (this.gameObject.name == "Sanic_Raptor(Clone)") {
 						hlth = 2f;
 				} else if(this.gameObject.name == "Dino_enemy(Clone)") {
 				hlth = 1f;
 			}else {
-				hlth = 3f;
+				hlth = 6f;
 			}
 	}
 	
@@ -35,12 +42,28 @@ public class Enemy_Coll : MonoBehaviour
 					StoreControl.Coins = StoreControl.Coins + 40;
 				} else if (this.gameObject.name == "Dino_enemy(Clone)") {
 					StoreControl.Coins = StoreControl.Coins + 10;
+				} else if (this.gameObject.name == "Salid_snake(Clone)") {
+					StoreControl.Coins = StoreControl.Coins + 60;
 				}
 			Destroy(gameObject);
 
 		}
+			if (Froze == true){
+
+				if (Time.time >  nextFire) {
+					Froze = false;
+				}
+			} else if (Froze == false) {
+				if (this.gameObject.name == "Sanic_Raptor(Clone)") {
+					Speedgetter.Speed = SanicSp;
+				} else if (this.gameObject.name == "Salid_snake(Clone)") {
+					Speedgetter.Speed = SalidSp;
+				} else if (this.gameObject.name == "Dino_enemy(Clone)") {
+					Speedgetter.Speed = RaptorSp;
+				}
+			}
 	}
-	void OnCollisionEnter2D(Collision2D coll) 
+		void OnTriggerEnter2D(Collider2D coll) 
 	{
 		if (coll.gameObject.tag == "Projectile")
 		{
@@ -54,7 +77,11 @@ public class Enemy_Coll : MonoBehaviour
 			if(coll.gameObject.tag == "Ice") {
 				Destroy(coll.gameObject);
 				//hlth -= 1;
-				Dino_walk.Speed = Dino_walk.Speed / 1.5f;
+				if (Froze == false){
+					Speedgetter.Speed = Speedgetter.Speed / 1.5f;
+					Froze = true;
+					nextFire = (Time.time + Unfreeze);
+				}
 			}
 		if(coll.gameObject.tag == "Fire") {
 				hlth -= 0.20f;

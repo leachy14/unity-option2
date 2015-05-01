@@ -30,7 +30,7 @@ function Start () {
 	fireRate = 0.1;
 	}
 	if (this.gameObject.name == "Ice_turret(Clone)") {
-	fireRate = 2;
+	fireRate = 4;
 	iceRate = 0.2;
 	}
 }
@@ -85,7 +85,7 @@ function Shoot () {
 		Instantiate(shotFlame, transform.position, transform.rotation);
 	}else if(this.gameObject.name == "Ice_turret(Clone)"){
 	
-			for (var i = 0; i < 10; i++) {
+			for (var i = 0; i < 3; i++) {
 			//if (Time.time > nextIce) {
 			//nextIce = (Time.time + iceRate);
 			Instantiate(shotFlame, transform.position, transform.rotation);

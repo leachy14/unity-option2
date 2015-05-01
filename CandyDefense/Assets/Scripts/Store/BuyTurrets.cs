@@ -30,7 +30,7 @@ public class BuyTurrets : MonoBehaviour
 		Store_bool.Bomber_toggle = false;
 		Store_bool.Flame_toggle = false;
 		Store_bool.Ice_toggle = false;
-		Price.text = ("$600");
+		Price.text = ("$500");
 		NameTur.text = ("Sniper");
 	}
 	public void Buy_Flame () {
@@ -40,7 +40,7 @@ public class BuyTurrets : MonoBehaviour
 		Store_bool.Sniper_toggle = false;
 		Store_bool.Ice_toggle = false;
 		Price.text = ("$1500");
-		NameTur.text = ("$Flame Thrower");
+		NameTur.text = ("Flame Thrower");
 	}
 	public void Buy_Bomber () {
 		Store_bool.Bomber_toggle = true;
@@ -48,7 +48,7 @@ public class BuyTurrets : MonoBehaviour
 		Store_bool.Sniper_toggle = false;
 		Store_bool.Flame_toggle = false;
 		Store_bool.Ice_toggle = false;
-		Price.text = ("$1500");
+		Price.text = ("$1250");
 		NameTur.text = ("Bomber");
 	}
 	public void Buy_Normal () {
@@ -66,7 +66,7 @@ public class BuyTurrets : MonoBehaviour
 		Store_bool.Bomber_toggle = false;
 		Store_bool.Flame_toggle = false;
 		Store_bool.Sniper_toggle = false;
-		Price.text = ("$1500");
+		Price.text = ("$1000");
 		NameTur.text = ("Ice Turret");
 	}
 }

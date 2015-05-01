@@ -10,7 +10,7 @@ public class StoreControl : MonoBehaviour
 	
 
 	
-	public static int Coins = 1500;
+	public static int Coins = 500;
 	
 
 	public Camera main;
@@ -125,29 +125,29 @@ public class StoreControl : MonoBehaviour
 					}
 				}
 			}
-			if (Bomber_toggle == true && StoreOpen == true && Coins >= 1500) {
+			if (Bomber_toggle == true && StoreOpen == true && Coins >= 1250) {
 				if (Input.GetMouseButton (0)) {
 					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {
 						Instantiate (Bomber, transform.position, transform.rotation);
-						Coins = (Coins - 1500);
+						Coins = (Coins - 1250);
 						Bomber_toggle = false;
 					}
 				}
 			}
-			if (Sniper_toggle == true && StoreOpen == true && Coins >= 600) {
+			if (Sniper_toggle == true && StoreOpen == true && Coins >= 500) {
 				if (Input.GetMouseButton (0)) {
 					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {	
 						Instantiate (Sniper_tur, transform.position, transform.rotation);
-						Coins = (Coins - 600);
+						Coins = (Coins - 500);
 						Sniper_toggle = false;
 					}
 				}
 			}
-			if (Ice_toggle == true && StoreOpen == true && Coins >= 1500) {
+			if (Ice_toggle == true && StoreOpen == true && Coins >= 1000) {
 				if (Input.GetMouseButton (0)) {
 					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {	
 						Instantiate (Ice_tur, transform.position, transform.rotation);
-						Coins = (Coins - 1500);
+						Coins = (Coins - 1000);
 						Ice_toggle = false;
 					}
 				}

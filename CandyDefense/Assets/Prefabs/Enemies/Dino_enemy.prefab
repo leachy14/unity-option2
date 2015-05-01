@@ -56,7 +56,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
@@ -109,6 +109,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hlth: 1
+  thisEnemy: {fileID: 0}
+  Speedgetter: {fileID: 0}
+  Froze: 0
+  Unfreeze: 3
+  SanicSp: 4
+  RaptorSp: 2
+  SalidSp: 1
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

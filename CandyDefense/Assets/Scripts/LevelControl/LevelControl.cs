@@ -163,6 +163,7 @@ namespace Level
 						startTimer = 1;
 						currentEnemies = 0;
 						SetWave (wave + 1);
+				
 						if (wave <= 3) {
 								maxEnemies ++;
 						} else if (wave >= 4 && wave <= 24) {
@@ -212,6 +213,9 @@ namespace Level
 														currentEnemies ++;
 												}
 										}
+					if (currentEnemies == maxEnemies && enemies.Length == 0) {
+						roundEnd();
+					}
 								}
 						}
 				}
@@ -235,6 +239,11 @@ namespace Level
 						if (roundIsOver == true) {
 								NextWave ();
 						}
+				}
+
+				void roundEnd(){
+					
+			StoreControl.Coins = StoreControl.Coins + 100;
 				}
 		}
 }
