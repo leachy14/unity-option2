@@ -84,7 +84,7 @@ public class Enemy_Coll : MonoBehaviour
 				}
 			}
 		if(coll.gameObject.tag == "Fire") {
-				hlth -= 0.20f;
+				hlth -= 0.10f;
 			}
 		}
 	

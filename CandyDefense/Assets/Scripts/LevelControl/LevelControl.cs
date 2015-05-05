@@ -108,8 +108,9 @@ namespace Level
 						
 
 						if (Input.GetKeyDown ("escape") && pause == false) {
-								pause = true;
-								Instantiate (Pause, transform.position, transform.rotation);
+							
+				Instantiate (Pause, transform.position, transform.rotation);	
+				pause = true;
 								foreach (GameObject objs in Turrets) {
 										objs.SetActive (false);
 								}
@@ -129,9 +130,8 @@ namespace Level
 						}
 						if (pause == false){
 						enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-				Turrets = GameObject.FindGameObjectsWithTag ("Turret");
+						Turrets = GameObject.FindGameObjectsWithTag ("Turret");
 						}
-				
 
 						pauseY = (Screen.height / 2 - 100);
 						pauseX = (Screen.width / 2 - 200);
@@ -245,5 +245,16 @@ namespace Level
 					
 			StoreControl.Coins = StoreControl.Coins + 100;
 				}
+		public void PauseOn () {
+			pause = true;
+			Instantiate (Pause, transform.position, transform.rotation);
+			foreach (GameObject objs in Turrets) {
+				objs.SetActive (false);
+			}
+			foreach (GameObject Enem in enemies) {
+				Enem.SetActive (false);
+			}
+		}
+
 		}
 }

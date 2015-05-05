@@ -10,7 +10,7 @@ public class StoreControl : MonoBehaviour
 	
 
 	
-	public static int Coins = 500;
+	public static int Coins = 5000;
 	
 
 	public Camera main;

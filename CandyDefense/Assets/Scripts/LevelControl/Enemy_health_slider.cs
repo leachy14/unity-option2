@@ -19,12 +19,16 @@ public class Enemy_health_slider : MonoBehaviour {
 	void Start () {
 
 		Dinos = GameObject.FindGameObjectsWithTag("Enemy");
-		transform.SetParent(GameObject.Find("Canvas").transform, false);
 		Enemy_for_this = Dinos[Dinos.Length - 1].transform;
+		vec = Enemy_for_this.InverseTransformDirection(Enemy_for_this.position.x,Enemy_for_this.position.y + -.25f, -6 );
+		transform.position = vec;
+
 		round_accessor = Enemy_for_this.GetComponent<Enemy_Coll> ();
 		//Bars = FindObjectsOfType(typeof (Slider));
 		EnemyBar = FindObjectOfType(typeof (Slider)) as Slider;
 		EnemyBar.maxValue = round_accessor.hlth;
+	
+		transform.SetParent(GameObject.Find("Canvas").transform, false);
 	}
 	
 	// Update is called once per frame
