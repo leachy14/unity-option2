@@ -4,10 +4,11 @@
     <Files>
       <File FileName="Assets/Scripts/Enemies/Enemy_Coll.cs" Line="87" Column="16" />
       <File FileName="Assets/Scripts/Store/StoreControl.cs" Line="51" Column="1" />
-      <File FileName="Assets/Scripts/LevelControl/PauseScreen.cs" Line="26" Column="17" />
+      <File FileName="Assets/Scripts/LevelControl/PauseScreen.cs" Line="37" Column="41" />
       <File FileName="Assets/Scripts/Enemies/Dino_walk.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Store/BuyTurrets.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/LevelControl/LevelControl.cs" Line="21" Column="12" />
+      <File FileName="Assets/Scripts/LevelControl/Enemy_health_slider.cs" Line="26" Column="46" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

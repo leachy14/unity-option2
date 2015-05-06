@@ -10,7 +10,7 @@ public class StoreControl : MonoBehaviour
 	
 
 	
-	public static int Coins = 5000;
+	public int Coins;
 	
 
 	public Camera main;
@@ -66,7 +66,7 @@ public class StoreControl : MonoBehaviour
 
 			round_level = GameObject.Find ("spawner");
 			round_accessor = round_level.GetComponent<LevelControl> ();
-		
+			Coins = 5000;
 	}
 	
 	// Update is called once per frame

@@ -10,21 +10,27 @@ public class Enemy_Coll : MonoBehaviour
 		public float hlth;
 		public GameObject thisEnemy;
 		public Dino_walk Speedgetter;
+		public GameObject store_accessor;
+		public StoreControl storecontrol;
 		public bool Froze = false;
 		private double nextFire = 0.0;
 		public double Unfreeze = 3;
 		public int SanicSp = 4;
 		public int RaptorSp = 2;
 		public int SalidSp = 1;
+
+
 	// Use this for initialization
 	void Start ()
 	{
 
 			thisEnemy = this.gameObject;
-			Speedgetter = thisEnemy.GetComponent<Dino_walk> ();;
-	if (this.gameObject.name == "Sanic_Raptor(Clone)") {
+			Speedgetter = thisEnemy.GetComponent<Dino_walk> ();
+			store_accessor = GameObject.Find ("Store");
+			storecontrol = store_accessor.GetComponent <StoreControl> ();
+			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
 						hlth = 2f;
-				} else if(this.gameObject.name == "Dino_enemy(Clone)") {
+				} else if (this.gameObject.name == "Dino_enemy(Clone)") {
 				hlth = 1f;
 			}else {
 				hlth = 6f;
@@ -37,13 +43,13 @@ public class Enemy_Coll : MonoBehaviour
 
 	if (hlth <= 0) 
 		{
-				StoreControl.Coins = StoreControl.Coins + 10;
+				storecontrol.Coins = storecontrol.Coins + 10;
 			if (this.gameObject.name == "Sanic_Raptor(Clone)") {
-					StoreControl.Coins = StoreControl.Coins + 40;
+					storecontrol.Coins = storecontrol.Coins + 40;
 				} else if (this.gameObject.name == "Dino_enemy(Clone)") {
-					StoreControl.Coins = StoreControl.Coins + 10;
+					storecontrol.Coins = storecontrol.Coins + 10;
 				} else if (this.gameObject.name == "Salid_snake(Clone)") {
-					StoreControl.Coins = StoreControl.Coins + 60;
+					storecontrol.Coins = storecontrol.Coins + 60;
 				}
 			Destroy(gameObject);
 
@@ -84,7 +90,9 @@ public class Enemy_Coll : MonoBehaviour
 				}
 			}
 		if(coll.gameObject.tag == "Fire") {
+				Destroy(coll.gameObject);
 				hlth -= 0.10f;
+
 			}
 		}
 	

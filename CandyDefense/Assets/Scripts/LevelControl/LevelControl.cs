@@ -19,6 +19,11 @@ namespace Level
 				public GameObject[] enemies;     //array of enemies
 				public GameObject[] spawnPoints; //array of spawnpoints
 				public GameObject[] Turrets;
+				public GameObject[] Bars;
+				public GameObject[] Projectiles;
+				public GameObject[] FireShots;
+				public GameObject[] Bombs;
+				public GameObject[] Ices;
 				public GameObject Raptor;
 				public GameObject SanicRaptor;
 				public GameObject DinoFuck;
@@ -109,13 +114,28 @@ namespace Level
 
 						if (Input.GetKeyDown ("escape") && pause == false) {
 							
-				Instantiate (Pause, transform.position, transform.rotation);	
-				pause = true;
+								Instantiate (Pause, transform.position, transform.rotation);	
+								pause = true;
 								foreach (GameObject objs in Turrets) {
 										objs.SetActive (false);
 								}
 								foreach (GameObject Enem in enemies) {
 										Enem.SetActive (false);
+								}
+								foreach (GameObject bArs in Bars) {
+										bArs.SetActive (false);
+								}
+								foreach (GameObject bOmb in Bombs) {
+										bOmb.SetActive (false);
+								}
+								foreach (GameObject ProJ in Projectiles) {
+										ProJ.SetActive (false);
+								}
+								foreach (GameObject fIre in FireShots) {
+										fIre.SetActive (false);
+								}
+								foreach (GameObject iCes in Ices) {
+										iCes.SetActive (false);
 								}
 						} else if (Input.GetKeyDown ("escape") && pause == true) {
 								pause = false;
@@ -125,12 +145,32 @@ namespace Level
 								foreach (GameObject Enem in enemies) {
 										Enem.SetActive (true);
 								}
-								GameObject PauseScreen = GameObject.Find("Pause Screen(Clone)");
-								Destroy(PauseScreen);
+								foreach (GameObject bArs in Bars) {
+										bArs.SetActive (true);
+								}
+								foreach (GameObject bOmb in Bombs) {
+										bOmb.SetActive (true);
+								}
+								foreach (GameObject ProJ in Projectiles) {
+										ProJ.SetActive (true);
+								}
+								foreach (GameObject fIre in FireShots) {
+										fIre.SetActive (true);
+								}
+								foreach (GameObject iCes in Ices) {
+										iCes.SetActive (true);
+								}
+								GameObject PauseScreen = GameObject.Find ("Pause Screen(Clone)");
+								Destroy (PauseScreen);
 						}
-						if (pause == false){
-						enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-						Turrets = GameObject.FindGameObjectsWithTag ("Turret");
+						if (pause == false) {
+								enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+								Turrets = GameObject.FindGameObjectsWithTag ("Turret");
+								Bars = GameObject.FindGameObjectsWithTag ("Bar");
+								FireShots = GameObject.FindGameObjectsWithTag ("Fire");
+								Projectiles = GameObject.FindGameObjectsWithTag ("Projectile");
+								Ices = GameObject.FindGameObjectsWithTag ("Ice");
+								Bombs = GameObject.FindGameObjectsWithTag ("Bomb");
 						}
 
 						pauseY = (Screen.height / 2 - 100);
@@ -138,17 +178,7 @@ namespace Level
 
 						
 						if (lives <= 0) {
-								StoreControl.Coins = 100;
-								storecontrol.StoreOpen = true;
-								lives = 20f;
-								for (int i = 0; i < enemies.Length; i++) {
-										Destroy (enemies [i]);
-								}
-								GameObject[] turret_objects = GameObject.FindGameObjectsWithTag ("Turret");
-								foreach (GameObject objs in turret_objects)
-										Destroy (objs);
-								wave = 1;
-								maxEnemies = 4;
+								Application.LoadLevel ("Forest");
 						}
 						if (SpeedTog.isOn == true) {
 								Time.timeScale = 2f;
@@ -213,9 +243,9 @@ namespace Level
 														currentEnemies ++;
 												}
 										}
-					if (currentEnemies == maxEnemies && enemies.Length == 0) {
-						roundEnd();
-					}
+										if (currentEnemies == maxEnemies && enemies.Length == 0) {
+												roundEnd ();
+										}
 								}
 						}
 				}
@@ -241,20 +271,38 @@ namespace Level
 						}
 				}
 
-				void roundEnd(){
+				void roundEnd ()
+				{
 					
-			StoreControl.Coins = StoreControl.Coins + 100;
+						storecontrol.Coins = storecontrol.Coins + 100;
 				}
-		public void PauseOn () {
-			pause = true;
-			Instantiate (Pause, transform.position, transform.rotation);
-			foreach (GameObject objs in Turrets) {
-				objs.SetActive (false);
-			}
-			foreach (GameObject Enem in enemies) {
-				Enem.SetActive (false);
-			}
-		}
+
+				public void PauseOn ()
+				{
+						Instantiate (Pause, transform.position, transform.rotation);
+						pause = true;
+						foreach (GameObject objs in Turrets) {
+								objs.SetActive (false);
+						}
+						foreach (GameObject Enem in enemies) {
+								Enem.SetActive (false);
+						}
+						foreach (GameObject bArs in Bars) {
+								bArs.SetActive (false);
+						}
+						foreach (GameObject bOmb in Bombs) {
+								bOmb.SetActive (false);
+						}
+						foreach (GameObject ProJ in Projectiles) {
+								ProJ.SetActive (false);
+						}
+						foreach (GameObject fIre in FireShots) {
+								fIre.SetActive (false);
+						}
+						foreach (GameObject iCes in Ices) {
+								iCes.SetActive (false);
+						}
+				}
 
 		}
 }

@@ -28,14 +28,15 @@ public class Enemy_health_slider : MonoBehaviour {
 		EnemyBar = FindObjectOfType(typeof (Slider)) as Slider;
 		EnemyBar.maxValue = round_accessor.hlth;
 	
-		transform.SetParent(GameObject.Find("Canvas").transform, false);
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		transform.localScale = new Vector3(1f,1f,1f);
 		vec = Enemy_for_this.InverseTransformDirection(Enemy_for_this.position.x,Enemy_for_this.position.y + -.25f, -6 );
 		transform.position = vec;
-		transform.localScale = new Vector3(1f,1f,1f);
 
 		EnemyBar.value = Mathf.MoveTowards (EnemyBar.value, round_accessor.hlth, 1f);
 		if (round_accessor.hlth <= 0) 
@@ -43,6 +44,12 @@ public class Enemy_health_slider : MonoBehaviour {
 			Destroy(gameObject);
 		}
 		}
+	void LateUpdate () {
+		vec = Enemy_for_this.InverseTransformDirection(Enemy_for_this.position.x,Enemy_for_this.position.y + -.25f, -6 );
+		transform.position = vec;
+		transform.SetParent(GameObject.Find("Canvas").transform, false);
+		transform.localScale = new Vector3(1f,1f,1f);
+	}
 
 	}	
 

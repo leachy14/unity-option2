@@ -797,6 +797,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   round_level: {fileID: 0}
   round_accessor: {fileID: 0}
+  store_accessor: {fileID: 0}
+  storecontrol: {fileID: 0}
 --- !u!1 &904436028
 GameObject:
   m_ObjectHideFlags: 0
@@ -840,6 +842,11 @@ MonoBehaviour:
   enemies: []
   spawnPoints: []
   Turrets: []
+  Bars: []
+  Projectiles: []
+  FireShots: []
+  Bombs: []
+  Ices: []
   Raptor: {fileID: 100000, guid: 7fccee57eb0ff144095916ad46d5d1c7, type: 2}
   SanicRaptor: {fileID: 100000, guid: 3e7835a1bd63bec4c90332edc22656e4, type: 2}
   DinoFuck: {fileID: 100000, guid: 7e75f23555d74402f9fe3d71ea7e3644, type: 2}
@@ -1400,6 +1407,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad84f9979e02140cfbd67ea5ee25e887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Coins: 0
   main: {fileID: 126665868}
   illum_toggle: 0
   StoreOpen: 0
@@ -2130,9 +2138,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '500
-
-'
+  m_Text: 
 --- !u!222 &1755114135
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2169,6 +2175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   round_level: {fileID: 0}
   round_accessor: {fileID: 0}
+  store_accessor: {fileID: 0}
+  storecontrol: {fileID: 0}
 --- !u!1 &1806771783
 GameObject:
   m_ObjectHideFlags: 0

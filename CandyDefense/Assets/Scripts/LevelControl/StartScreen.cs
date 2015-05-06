@@ -28,4 +28,7 @@ public class StartScreen : MonoBehaviour {
 		yield return new WaitForSeconds(0.25f);
 		Application.LoadLevel("Forest");
 	}
+	public void ExitGame() {
+		Application.Quit();
+	}
 }

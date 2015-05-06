@@ -30,6 +30,21 @@ public class PauseScreen : MonoBehaviour {
 		foreach (GameObject Enem in round_accessor.enemies) {
 			Enem.SetActive (true);
 		}
+		foreach (GameObject bArs in round_accessor.Bars) {
+			bArs.SetActive (true);
+		}
+		foreach (GameObject bOmb in round_accessor.Bombs) {
+			bOmb.SetActive (true);
+		}
+		foreach (GameObject ProJ in round_accessor.Projectiles) {
+			ProJ.SetActive (true);
+		}
+		foreach (GameObject fIre in round_accessor.FireShots) {
+			fIre.SetActive (true);
+		}
+		foreach (GameObject iCes in round_accessor.Ices) {
+			iCes.SetActive (true);
+		}
 		GameObject PauseScreen = GameObject.Find("Pause Screen(Clone)");
 		Destroy(PauseScreen);
 	}
