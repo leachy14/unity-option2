@@ -19,11 +19,14 @@ public class Dino_walk : MonoBehaviour {
 	public GameObject other_dino;
 	public GameObject HealthBar;
 	
-		public int healthdo;
+	public int healthdo;
+	
 	// Use this for initialization
 	void Start () 
 	{
-		_waypoints = GameObject.Find("Waypoints").transform;
+
+
+		
 		level_accessor = GameObject.Find("spawner");
 		levelcontrol = level_accessor.GetComponent<LevelControl> ();
 		//wave_number = levelcontrol.wave;
@@ -35,6 +38,8 @@ public class Dino_walk : MonoBehaviour {
 				Speed = 1;
 			}
 			healthdo = 0;
+
+			_waypoints = GameObject.Find("Waypoints").transform;
 	}
 	
 	// Update is called once per frame
@@ -94,7 +99,6 @@ public class Dino_walk : MonoBehaviour {
 			Destroy(GameObject.Find ("Enemy_slider"));
 			Destroy(GameObject.Find ("Enemy_health_slider(Clone)"));
 			Destroy(gameObject);
-
 		}
 
 }	

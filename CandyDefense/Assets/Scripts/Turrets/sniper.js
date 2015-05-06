@@ -13,6 +13,8 @@ var distance : float;
 var fireRate : int;
 private var nextFire = 0.0;
 
+var laser2 : AudioClip;
+
 
 function Start () {
 	
@@ -69,5 +71,6 @@ function Shoot () {
 
 	
 		Instantiate(shotnormal, transform.position, transform.rotation);
+		GetComponent.<AudioSource>().PlayOneShot(laser2);
 
 }

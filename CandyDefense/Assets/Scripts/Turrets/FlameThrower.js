@@ -14,11 +14,18 @@ var fireRate : int;
 private var nextFire = 0.0;
 
 
+var coolDown : float;		//new
+var timestamp: float;		//new
+var flame : AudioClip;			//new
+
+
 function Start () {
 
 	FindClosestEnemy();
 	transform.position.z = 0;
 	fireRate = 0.1;
+	coolDown += 1.0;
+
 }
 
 function Update () {
@@ -67,5 +74,11 @@ function Shoot () {
 
 
 		Instantiate(shotFlame, transform.position, transform.rotation);
+		
+		if(Time.time > timestamp){			//new timer for sound
+
+				GetComponent.<AudioSource>().PlayOneShot(flame);				//new Add Audio Source Componets
+				timestamp = Time.time + coolDown;
+		}
 	
 }

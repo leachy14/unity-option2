@@ -15,6 +15,9 @@ var iceRate : int;
 private var nextIce = 0.0;
 private var nextFire = 0.0;
 
+var laser : AudioClip;			//new
+var ice : AudioClip;
+//GetComponent.<AudioSource>().PlayOneShot(laser);				//new Add Audio Source Componets uncheck play on awake too
 
 function Start () {
 
@@ -33,6 +36,8 @@ function Start () {
 	fireRate = 4;
 	iceRate = 0.2;
 	}
+	
+	//laser = GetComponent.<AudioClip>();
 }
 
 function Update () {
@@ -71,6 +76,8 @@ function FindClosestEnemy (){
 			nextFire = (Time.time + fireRate);
 			Shoot();
 			
+			
+			
 			}
 		} 	
 	}// && this.gameObject.name != "Flame thrower(Clone)"
@@ -83,6 +90,7 @@ function Shoot () {
 	//}
 	if(this.gameObject.name == "FlameThrower(Clone)"){
 		Instantiate(shotFlame, transform.position, transform.rotation);
+		
 	}else if(this.gameObject.name == "Ice_turret(Clone)"){
 	
 			for (var i = 0; i < 3; i++) {
@@ -90,9 +98,13 @@ function Shoot () {
 			//nextIce = (Time.time + iceRate);
 			Instantiate(shotFlame, transform.position, transform.rotation);
 			//}
+			GetComponent.<AudioSource>().PlayOneShot(ice);
 			}
 			
 	} else {
 	Instantiate(shotnormal, transform.position, transform.rotation);
+	GetComponent.<AudioSource>().PlayOneShot(laser);				//new Add Audio Source Componets
 	}
+	
+	
 }

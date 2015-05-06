@@ -111,6 +111,8 @@ MonoBehaviour:
   hlth: 1
   thisEnemy: {fileID: 0}
   Speedgetter: {fileID: 0}
+  store_accessor: {fileID: 0}
+  storecontrol: {fileID: 0}
   Froze: 0
   Unfreeze: 3
   SanicSp: 4
