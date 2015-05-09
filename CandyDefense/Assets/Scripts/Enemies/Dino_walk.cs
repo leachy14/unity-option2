@@ -10,19 +10,23 @@ public class Dino_walk : MonoBehaviour {
 	
 	public float movementSpeed = 3f;
 	public int wave_number;
-	public int Speed;
+	public float Speed;
 
+	
 	public GameObject level_accessor;
 	public LevelControl levelcontrol;
 
 	public GameObject other_dino;
 	public GameObject HealthBar;
 	
-		public int healthdo;
+	public int healthdo;
+	
 	// Use this for initialization
 	void Start () 
 	{
-		_waypoints = GameObject.Find("Waypoints").transform;
+
+
+		
 		level_accessor = GameObject.Find("spawner");
 		levelcontrol = level_accessor.GetComponent<LevelControl> ();
 		//wave_number = levelcontrol.wave;
@@ -30,18 +34,22 @@ public class Dino_walk : MonoBehaviour {
 				Speed = 4;	
 			} else if (this.gameObject.name == "Dino_enemy(Clone)") {
 				Speed = 2;
+			} else if (this.gameObject.name == "Salid_snake(Clone)") {
+				Speed = 1;
 			}
 			healthdo = 0;
+
+			_waypoints = GameObject.Find("Waypoints").transform;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-			/*if (this.gameObject.name == "Sanic_Raptor(Clone)") {
-				Speed = 4;	
-				Physics2D.IgnoreCollision(other_dino.collider2D, collider2D);
-			}*/
+
 			Physics2D.IgnoreLayerCollision(10,11, true);
+			Physics2D.IgnoreLayerCollision(10,10, true);
+			Physics2D.IgnoreLayerCollision(11,11, true);
+
 	}
 	
 	// Fixed update
@@ -87,11 +95,10 @@ public class Dino_walk : MonoBehaviour {
 			for (int i = 0; i < 50; i++) {
 				levelcontrol.lives = (levelcontrol.lives + -0.002f);
 				yield return new WaitForSeconds(0.0001f);
-			}
+			}	
 			Destroy(GameObject.Find ("Enemy_slider"));
 			Destroy(GameObject.Find ("Enemy_health_slider(Clone)"));
 			Destroy(gameObject);
-
 		}
 
 }	

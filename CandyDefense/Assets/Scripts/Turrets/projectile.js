@@ -14,6 +14,7 @@ function Start () {
 		if(this.gameObject.name == "shotFlame(Clone)") {
 			Destroy(gameObject, 0.3);
 		}
+
 }
 
 
@@ -34,9 +35,11 @@ function FixedUpdate () {
 function HandleShotMovement () {
 
 if(this.gameObject.name == "Sniper_Shot_entity(Clone)"){
-	GetComponent.<Rigidbody2D>().velocity = transform.up * -6;
+	GetComponent.<Rigidbody2D>().velocity = transform.up * -10;
+} else if (this.gameObject.name == "shotFlame(Clone)"){
+	GetComponent.<Rigidbody2D>().velocity = transform.up * -3;
 } else {
-	GetComponent.<Rigidbody2D>().velocity = transform.up * -2;
+	GetComponent.<Rigidbody2D>().velocity = transform.up * -6;
 }
 
 if (transform.position.x < -3.5) {

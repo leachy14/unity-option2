@@ -13,6 +13,9 @@ var fireRate : int;
 private var nextFire = 0.0;
 
 
+var bomb : AudioClip;
+
+
 function Start () {
 
 	FindClosestEnemy();
@@ -60,4 +63,5 @@ function FindClosestEnemy (){
 function Shoot () {
 
 	Instantiate(Bomb, transform.position, transform.rotation);
+	GetComponent.<AudioSource>().PlayOneShot(bomb);
 }

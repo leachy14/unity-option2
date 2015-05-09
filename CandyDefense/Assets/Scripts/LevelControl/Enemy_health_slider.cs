@@ -19,26 +19,37 @@ public class Enemy_health_slider : MonoBehaviour {
 	void Start () {
 
 		Dinos = GameObject.FindGameObjectsWithTag("Enemy");
-		transform.SetParent(GameObject.Find("Canvas").transform, false);
 		Enemy_for_this = Dinos[Dinos.Length - 1].transform;
+		vec = Enemy_for_this.InverseTransformDirection(Enemy_for_this.position.x,Enemy_for_this.position.y + -.25f, -6 );
+		transform.position = vec;
+
 		round_accessor = Enemy_for_this.GetComponent<Enemy_Coll> ();
 		//Bars = FindObjectsOfType(typeof (Slider));
 		EnemyBar = FindObjectOfType(typeof (Slider)) as Slider;
 		EnemyBar.maxValue = round_accessor.hlth;
+	
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+		transform.localScale = new Vector3(1f,1f,1f);
 		vec = Enemy_for_this.InverseTransformDirection(Enemy_for_this.position.x,Enemy_for_this.position.y + -.25f, -6 );
 		transform.position = vec;
-		transform.localScale = new Vector3(1f,1f,1f);
 
 		EnemyBar.value = Mathf.MoveTowards (EnemyBar.value, round_accessor.hlth, 1f);
-		if (round_accessor.hlth < 1) 
+		if (round_accessor.hlth <= 0) 
 		{
 			Destroy(gameObject);
 		}
 		}
+	void LateUpdate () {
+		vec = Enemy_for_this.InverseTransformDirection(Enemy_for_this.position.x,Enemy_for_this.position.y + -.25f, -6 );
+		transform.position = vec;
+		transform.SetParent(GameObject.Find("Canvas").transform, false);
+		transform.localScale = new Vector3(1f,1f,1f);
+	}
 
 	}	
 

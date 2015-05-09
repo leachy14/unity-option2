@@ -1,10 +1,10 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelControl/Enemy_health_slider.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelControl/StartScreen.cs">
     <Files>
-      <File FileName="Assets/Scripts/LevelControl/Enemy_health_slider.cs" Line="25" Column="5" />
-      <File FileName="Assets/Scripts/Enemies/Enemy_Coll.cs" Line="29" Column="1" />
-      <File FileName="Assets/Scripts/LevelControl/Health.cs" Line="13" Column="1" />
+      <File FileName="Assets/Scripts/LevelControl/LoadingScreen.cs" Line="33" Column="36" />
+      <File FileName="Assets/Scripts/LevelControl/UpdateLabels.cs" Line="12" Column="35" />
+      <File FileName="Assets/Scripts/LevelControl/StartScreen.cs" Line="29" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

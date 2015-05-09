@@ -13,6 +13,8 @@ var distance : float;
 var fireRate : int;
 private var nextFire = 0.0;
 
+var laser2 : AudioClip;
+
 
 function Start () {
 	
@@ -25,7 +27,12 @@ function Update () {
 	FindClosestEnemy();
 	transform.rotation.x = 0;
 	transform.rotation.y = 0;
-
+Physics2D.IgnoreLayerCollision(10,13, true);
+Physics2D.IgnoreLayerCollision(13,11, true);
+Physics2D.IgnoreLayerCollision(13,13, true);
+Physics2D.IgnoreLayerCollision(13,14, true);
+Physics2D.IgnoreLayerCollision(11,14, true);
+Physics2D.IgnoreLayerCollision(10,14, true);
 
 }
 
@@ -64,5 +71,6 @@ function Shoot () {
 
 	
 		Instantiate(shotnormal, transform.position, transform.rotation);
+		GetComponent.<AudioSource>().PlayOneShot(laser2);
 
 }

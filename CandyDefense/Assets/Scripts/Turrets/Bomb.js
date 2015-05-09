@@ -19,7 +19,7 @@ function Start () {
 transform.Translate(0, 0, 0.2);
 iscounting = 0;
 anim = GetComponent("Animator");
-GetComponent.<Rigidbody2D>().velocity = transform.up * 0.1;
+//GetComponent.<Rigidbody2D>().velocity = transform.up * 0.1;
 FindClosestEnemy();	
 fireRate = 2;
 explodeRate = 3;
@@ -91,7 +91,7 @@ function Explode () {
 		anim.SetBool ("explode", true);
 		Physics2D.IgnoreLayerCollision(10,13, false);
 		Physics2D.IgnoreLayerCollision(13,11, false);
-		transform.localScale += Vector3(1,1,0);
+		transform.localScale += Vector3(0.5f,0.5f,0);
 		Destroy(gameObject, 0.17);
 		
 

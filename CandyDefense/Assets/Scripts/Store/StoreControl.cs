@@ -10,19 +10,12 @@ public class StoreControl : MonoBehaviour
 	
 
 	
-	public static int Coins = 100;
+	public int Coins;
 	
-	public string Money;
-	public string Lives;
+
 	public Camera main;
 	
 	
-	//Textures
-	public Texture illuminaty_turret;
-	public Texture startbutton;
-	public Texture green_turret;
-	public Texture flamethrower;
-	public Texture Bomber_text;
 
 
 	//Toggles
@@ -33,6 +26,7 @@ public class StoreControl : MonoBehaviour
 	public bool Bomber_toggle = false;
 	public bool Sniper_toggle = false;
 	public bool Ice_toggle = false;
+	public bool GameSpeed = false;
 
 	//Positions
 	public int Storeposition;
@@ -62,7 +56,7 @@ public class StoreControl : MonoBehaviour
 	
 
 	//Positions
-		public Vector2 scrollPosition = Vector2.zero;
+	public Vector2 scrollPosition = Vector2.zero;
 
 
 	// Use this for initialization
@@ -72,19 +66,17 @@ public class StoreControl : MonoBehaviour
 
 			round_level = GameObject.Find ("spawner");
 			round_accessor = round_level.GetComponent<LevelControl> ();
-		
+			Coins = 5000;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
 		Vector3 vec = main.ScreenToWorldPoint(Input.mousePosition);
-		//transform.position.z = 0;
+		
 		transform.position = vec;
 		
-		Money =	"<color=#ff0000ff><size=30>Coins: " + Coins + "</size></color>";
-		Lives = "<color=#ff0000ff><size=30>Lives left: " + round_accessor.lives + "</size></color>";
-
+		
 			if (StoreOpen == true) {
 				Storeposition = (Screen.width - 180);
 				StoreOpenButtonPos = (Screen.width - 200);
@@ -108,54 +100,54 @@ public class StoreControl : MonoBehaviour
 		
 			if (illum_toggle == true && StoreOpen == true && Coins >= 100) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {	
 						Instantiate (illum_turret, transform.position, transform.rotation);
 						Coins = (Coins - 100);
 						illum_toggle = false;
 					}
 				}
 			}
-			if (green_toggle == true && StoreOpen == true && Coins >= 100) {
+			if (green_toggle == true && StoreOpen == true && Coins >= 250) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {
 						Instantiate (green_tur, transform.position, transform.rotation);
-						Coins = (Coins - 100);
+						Coins = (Coins - 250);
 						green_toggle = false;
 					}
 				}
 			}
-			if (Flame_toggle == true && StoreOpen == true && Coins >= 1000) {
+			if (Flame_toggle == true && StoreOpen == true && Coins >= 1500) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {
 						Instantiate (flame_tur, transform.position, transform.rotation);
-						Coins = (Coins - 1000);
+						Coins = (Coins - 1500);
 						Flame_toggle = false;
 					}
 				}
 			}
-			if (Bomber_toggle == true && StoreOpen == true && Coins >= 1500) {
+			if (Bomber_toggle == true && StoreOpen == true && Coins >= 1250) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {
 						Instantiate (Bomber, transform.position, transform.rotation);
-						Coins = (Coins - 1500);
+						Coins = (Coins - 1250);
 						Bomber_toggle = false;
 					}
 				}
 			}
-			if (Sniper_toggle == true && StoreOpen == true && Coins >= 2250) {
+			if (Sniper_toggle == true && StoreOpen == true && Coins >= 500) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {	
 						Instantiate (Sniper_tur, transform.position, transform.rotation);
-						Coins = (Coins - 2250);
+						Coins = (Coins - 500);
 						Sniper_toggle = false;
 					}
 				}
 			}
-			if (Ice_toggle == true && StoreOpen == true && Coins >= 1500) {
+			if (Ice_toggle == true && StoreOpen == true && Coins >= 1000) {
 				if (Input.GetMouseButton (0)) {
-					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false) {	
+					if (path_collide.GetComponent<Collider2D>().OverlapPoint (transform.position) == false && transform.position.y > -1) {	
 						Instantiate (Ice_tur, transform.position, transform.rotation);
-						Coins = (Coins - 1500);
+						Coins = (Coins - 1000);
 						Ice_toggle = false;
 					}
 				}

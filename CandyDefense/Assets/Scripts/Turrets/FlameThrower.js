@@ -14,11 +14,18 @@ var fireRate : int;
 private var nextFire = 0.0;
 
 
+var coolDown : float;		//new
+var timestamp: float;		//new
+var flame : AudioClip;			//new
+
+
 function Start () {
 
 	FindClosestEnemy();
 	transform.position.z = 0;
 	fireRate = 0.1;
+	coolDown += 1.0;
+
 }
 
 function Update () {
@@ -26,7 +33,12 @@ function Update () {
 	FindClosestEnemy();
 	transform.rotation.x = 0;
 	transform.rotation.y = 0;
-
+Physics2D.IgnoreLayerCollision(10,13, true);
+Physics2D.IgnoreLayerCollision(13,11, true);
+Physics2D.IgnoreLayerCollision(13,13, true);
+Physics2D.IgnoreLayerCollision(13,14, true);
+Physics2D.IgnoreLayerCollision(11,14, true);
+Physics2D.IgnoreLayerCollision(10,14, true);
 
 }
 
@@ -62,5 +74,11 @@ function Shoot () {
 
 
 		Instantiate(shotFlame, transform.position, transform.rotation);
+		
+		if(Time.time > timestamp){			//new timer for sound
+
+				GetComponent.<AudioSource>().PlayOneShot(flame);				//new Add Audio Source Componets
+				timestamp = Time.time + coolDown;
+		}
 	
 }
