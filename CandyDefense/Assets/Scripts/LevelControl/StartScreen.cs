@@ -26,7 +26,7 @@ public class StartScreen : MonoBehaviour {
 	}
 	IEnumerator LoadGame (int hi) {
 		yield return new WaitForSeconds(0.25f);
-		Application.LoadLevel("LoadingScreen");
+		Application.LoadLevel("Forest");
 	}
 	public void ExitGame() {
 		Application.Quit();

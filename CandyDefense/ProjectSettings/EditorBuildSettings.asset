@@ -11,5 +11,3 @@ EditorBuildSettings:
     path: Assets/Levels/Start Screen.unity
   - enabled: 1
     path: Assets/Levels/Forest.unity
-  - enabled: 1
-    path: Assets/Levels/LoadingScreen.unity
