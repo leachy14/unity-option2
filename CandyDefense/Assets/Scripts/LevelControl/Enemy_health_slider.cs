@@ -18,6 +18,7 @@ public class Enemy_health_slider : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+		transform.Translate(1000, 0, 0);
 		Dinos = GameObject.FindGameObjectsWithTag("Enemy");
 		Enemy_for_this = Dinos[Dinos.Length - 1].transform;
 		vec = Enemy_for_this.InverseTransformDirection(Enemy_for_this.position.x,Enemy_for_this.position.y + -.25f, -6 );
@@ -47,7 +48,7 @@ public class Enemy_health_slider : MonoBehaviour {
 	void LateUpdate () {
 		vec = Enemy_for_this.InverseTransformDirection(Enemy_for_this.position.x,Enemy_for_this.position.y + -.25f, -6 );
 		transform.position = vec;
-		transform.SetParent(GameObject.Find("Canvas").transform, false);
+		transform.SetParent(GameObject.Find("Canvas").transform, true);
 		transform.localScale = new Vector3(1f,1f,1f);
 	}
 

@@ -34,6 +34,7 @@ namespace Level
 				//Bools	
 				public bool roundIsOver;    //are we inbetween rounds?
 				public bool pause = false;
+				public bool Called = true;
 
 				//integers
 				public int wave;            //the wave we're on
@@ -88,6 +89,9 @@ namespace Level
 				void Update ()
 				{
 						if (startTimer > 0 && currentEnemies == maxEnemies && enemies.Length == 0) {          //if we're either counting down or still waiting
+								if (Called == false) {
+										roundEnd ();
+								}				
 								roundIsOver = true; 		//round is still in over state
 
 						} else {                         //otherwise
@@ -243,11 +247,10 @@ namespace Level
 														currentEnemies ++;
 												}
 										}
-										if (currentEnemies == maxEnemies && enemies.Length == 0) {
-												roundEnd ();
-										}
+
 								}
 						}
+						Called = false;
 				}
 
 				/*void OnGUI ()
@@ -273,8 +276,8 @@ namespace Level
 
 				void roundEnd ()
 				{
-					
 						storecontrol.Coins = storecontrol.Coins + 100;
+						Called = true;
 				}
 
 				public void PauseOn ()
