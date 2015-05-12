@@ -12,6 +12,8 @@ TagManager:
   - Bar
   - Ice
   - Fire
+  - Thrower
+  - Bomber
   layers:
   - Default
   - TransparentFX

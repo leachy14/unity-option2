@@ -14,7 +14,7 @@ GameObject:
   - 82: {fileID: 8212632}
   m_Layer: 8
   m_Name: FlameThrower
-  m_TagString: Turret
+  m_TagString: Thrower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

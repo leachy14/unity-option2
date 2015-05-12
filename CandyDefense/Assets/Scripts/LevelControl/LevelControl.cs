@@ -11,10 +11,6 @@ namespace Level
 				//Strings
 				public string round;
 	
-				//Textures
-
-
-	
 				//Game Objects	
 				public GameObject[] enemies;     //array of enemies
 				public GameObject[] spawnPoints; //array of spawnpoints
@@ -23,13 +19,18 @@ namespace Level
 				public GameObject[] Projectiles;
 				public GameObject[] FireShots;
 				public GameObject[] Bombs;
+				public GameObject[] Bomber;
+				public GameObject[] FlameThrowers;
 				public GameObject[] Ices;
+				public GameObject[] Snipers;
+				public GameObject[] FreezeRay;
 				public GameObject Raptor;
 				public GameObject SanicRaptor;
 				public GameObject DinoFuck;
 				public GameObject Bar;
 				public Toggle SpeedTog;
 				public GameObject Pause;
+				public GameObject flame_tur;
 	
 				//Bools	
 				public bool roundIsOver;    //are we inbetween rounds?
@@ -45,6 +46,8 @@ namespace Level
 				public int pauseY;
 				public int current_enemy_amount;
 				public int Tutorial;
+				public int num;
+				public int NumFlameSP = 1;
 
 				//floats
 				public float hSliderValue = 5.0F;
@@ -72,17 +75,23 @@ namespace Level
 				// Use this for initialization
 				void Start ()
 				{
+						num = 1;
 						wave = 0;
 						maxEnemies = 1;
 						roundIsOver = true;
 						startTimer = 2;
 						current_enemy_amount = 0;
 						Tutorial = 1;
-						lives = 20;
+						lives = PlayerPrefs.GetFloat ("Health");
 						store_accessor = GameObject.Find ("Store");
 						storecontrol = store_accessor.GetComponent <StoreControl> ();
 						SpawnRate = 1F;
 						currentEnemies = 1;
+						for (NumFlameSP = 1; NumFlameSP <= PlayerPrefs.GetInt("NumFlame"); NumFlameSP++ ) {
+						Instantiate (flame_tur, transform.position, transform.rotation);
+						PlayerPrefs.SetInt("NumFlameSpawn", NumFlameSP);
+						}
+						PlayerPrefs.SetInt("NumFlame", 0);
 				}
 	
 				// Update is called once per frame
@@ -170,6 +179,8 @@ namespace Level
 						if (pause == false) {
 								enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 								Turrets = GameObject.FindGameObjectsWithTag ("Turret");
+				//Bomber = GameObject.FindGameObjectsWithTag("Bomber");
+				FlameThrowers = GameObject.FindGameObjectsWithTag("Thrower");
 								Bars = GameObject.FindGameObjectsWithTag ("Bar");
 								FireShots = GameObject.FindGameObjectsWithTag ("Fire");
 								Projectiles = GameObject.FindGameObjectsWithTag ("Projectile");
@@ -182,6 +193,11 @@ namespace Level
 
 						
 						if (lives <= 0) {
+								PlayerPrefs.SetInt ("Money", 500);
+								PlayerPrefs.SetFloat ("Health", 20);
+								PlayerPrefs.SetInt ("Round", 0);
+								PlayerPrefs.SetInt("NumFlame", 0);
+
 								Application.LoadLevel ("Forest");
 						}
 						if (SpeedTog.isOn == true) {
@@ -278,6 +294,16 @@ namespace Level
 				{
 						storecontrol.Coins = storecontrol.Coins + 100;
 						Called = true;
+						PlayerPrefs.SetInt("NumFlame", FlameThrowers.Length);
+						PlayerPrefs.SetInt ("Money", storecontrol.Coins);
+						PlayerPrefs.SetInt ("Round", wave);
+						PlayerPrefs.SetFloat ("Health", lives);
+						foreach (GameObject ThRoW in FlameThrowers) {
+						PlayerPrefs.SetFloat("FlameX" + num.ToString(), ThRoW.transform.position.x);
+						PlayerPrefs.SetFloat("FlameY" + num.ToString(), ThRoW.transform.position.y);
+						num++;
+			}
+						PlayerPrefs.Save ();
 				}
 
 				public void PauseOn ()

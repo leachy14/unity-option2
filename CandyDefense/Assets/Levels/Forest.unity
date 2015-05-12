@@ -846,15 +846,21 @@ MonoBehaviour:
   Projectiles: []
   FireShots: []
   Bombs: []
+  Bomber: []
+  FlameThrowers: []
   Ices: []
+  Snipers: []
+  FreezeRay: []
   Raptor: {fileID: 100000, guid: 7fccee57eb0ff144095916ad46d5d1c7, type: 2}
   SanicRaptor: {fileID: 100000, guid: 3e7835a1bd63bec4c90332edc22656e4, type: 2}
   DinoFuck: {fileID: 100000, guid: 7e75f23555d74402f9fe3d71ea7e3644, type: 2}
   Bar: {fileID: 174418, guid: b914b521e4537f84e83e739241c0b484, type: 2}
   SpeedTog: {fileID: 1103983768}
   Pause: {fileID: 113268, guid: 117a5370eb68c45b3a1c84944592ced7, type: 2}
+  flame_tur: {fileID: 100000, guid: b461debd18dfd44be9c78718dfb082ae, type: 2}
   roundIsOver: 0
   pause: 0
+  Called: 1
   wave: 0
   RoundHeight: 0
   maxEnemies: 0
@@ -863,6 +869,8 @@ MonoBehaviour:
   pauseY: 0
   current_enemy_amount: 0
   Tutorial: 0
+  num: 0
+  NumFlameSP: 1
   hSliderValue: 5
   startTimer: 0
   SpawnRate: 0

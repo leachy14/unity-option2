@@ -23,6 +23,10 @@ function Start () {
 
 	FindClosestEnemy();
 	transform.position.z = 0;
+	if (PlayerPrefs.GetInt("NumFlame") != 0){
+	transform.position.x = PlayerPrefs.GetFloat("FlameX" + PlayerPrefs.GetInt("NumFlameSpawn"));
+	transform.position.y = PlayerPrefs.GetFloat("FlameY" + PlayerPrefs.GetInt("NumFlameSpawn"));
+	}
 	fireRate = 0.1;
 	coolDown += 1.0;
 

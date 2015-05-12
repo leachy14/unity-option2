@@ -66,7 +66,7 @@ public class StoreControl : MonoBehaviour
 
 			round_level = GameObject.Find ("spawner");
 			round_accessor = round_level.GetComponent<LevelControl> ();
-			Coins = 5000;
+			Coins = PlayerPrefs.GetInt("Money");
 	}
 	
 	// Update is called once per frame
