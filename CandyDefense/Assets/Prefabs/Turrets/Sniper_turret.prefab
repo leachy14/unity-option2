@@ -13,7 +13,7 @@ GameObject:
   - 82: {fileID: 8231386}
   m_Layer: 8
   m_Name: Sniper_turret
-  m_TagString: Turret
+  m_TagString: Sniper
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

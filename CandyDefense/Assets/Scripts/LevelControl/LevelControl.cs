@@ -84,8 +84,8 @@ namespace Level
 				void Start ()
 				{
 						num = 1;
-						wave = 0;
-						maxEnemies = 1;
+						wave = PlayerPrefs.GetInt ("Round");
+						maxEnemies = PlayerPrefs.GetInt ("MaxEnemies");
 						roundIsOver = true;
 						startTimer = 2;
 						current_enemy_amount = 0;
@@ -94,7 +94,7 @@ namespace Level
 						store_accessor = GameObject.Find ("Store");
 						storecontrol = store_accessor.GetComponent <StoreControl> ();
 						SpawnRate = 1F;
-						currentEnemies = 1;
+						currentEnemies = PlayerPrefs.GetInt ("currentEnemies");
 						for (NumFlameSP = 1; NumFlameSP <= PlayerPrefs.GetInt("NumFlame"); NumFlameSP++) {
 								FlamePos.x = PlayerPrefs.GetFloat ("FlameX" + NumFlameSP.ToString ());
 								FlamePos.y = PlayerPrefs.GetFloat ("FlameY" + NumFlameSP.ToString ());
@@ -220,7 +220,8 @@ namespace Level
 								PlayerPrefs.SetFloat ("Health", 20);
 								PlayerPrefs.SetInt ("Round", 0);
 								PlayerPrefs.SetInt ("NumFlame", 0);
-
+								PlayerPrefs.SetInt ("MaxEnemies", 1);
+								PlayerPrefs.SetInt ("currentEnemies", 1);
 								Application.LoadLevel ("Forest");
 						}
 						if (SpeedTog.isOn == true) {
@@ -324,7 +325,9 @@ namespace Level
 						PlayerPrefs.SetInt ("NumBomber", Bomber.Length);
 						PlayerPrefs.SetInt ("Money", storecontrol.Coins);
 						PlayerPrefs.SetInt ("Round", wave);
+						PlayerPrefs.SetInt ("MaxEnemies", maxEnemies);
 						PlayerPrefs.SetFloat ("Health", lives);
+						PlayerPrefs.SetInt ("currentEnemies", currentEnemies);
 						foreach (GameObject ThRoW in FlameThrowers) {
 								PlayerPrefs.SetFloat ("FlameX" + num.ToString (), ThRoW.transform.position.x);
 								PlayerPrefs.SetFloat ("FlameY" + num.ToString (), ThRoW.transform.position.y);

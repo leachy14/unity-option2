@@ -14,6 +14,8 @@ TagManager:
   - Fire
   - Thrower
   - Bomber
+  - Freeze
+  - Sniper
   layers:
   - Default
   - TransparentFX

@@ -31,4 +31,13 @@ public class StartScreen : MonoBehaviour {
 	public void ExitGame() {
 		Application.Quit();
 	}
+	public void NewGame() {
+		PlayerPrefs.DeleteAll();
+		PlayerPrefs.SetInt ("Money", 5000);
+		PlayerPrefs.SetFloat ("Health", 20);
+		PlayerPrefs.SetInt ("Round", 0);
+		PlayerPrefs.SetInt ("MaxEnemies", 1);
+		PlayerPrefs.SetInt ("currentEnemies", 1);
+		StartCoroutine (LoadGame(HealthDo));
+	}
 }

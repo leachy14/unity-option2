@@ -13,7 +13,7 @@ GameObject:
   - 82: {fileID: 8299038}
   m_Layer: 8
   m_Name: Ice_turret
-  m_TagString: Turret
+  m_TagString: Freeze
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
