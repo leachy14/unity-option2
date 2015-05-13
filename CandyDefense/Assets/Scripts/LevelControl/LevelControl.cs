@@ -60,7 +60,15 @@ namespace Level
 				//Access other scripts
 				public GameObject store_accessor;
 				public StoreControl storecontrol;
-	
+
+				
+				//Turret Positions
+				public Vector3 FlamePos;
+				public Vector3 SnipersPos;
+				public Vector3 TurretPos;
+				public Vector3 IcePos;
+				public Vector3 BomberPos;
+
 				public void CountDown ()  //countsdown  1 every 1 second
 				{
 						if (startTimer != 0) {
@@ -87,11 +95,13 @@ namespace Level
 						storecontrol = store_accessor.GetComponent <StoreControl> ();
 						SpawnRate = 1F;
 						currentEnemies = 1;
-						for (NumFlameSP = 1; NumFlameSP <= PlayerPrefs.GetInt("NumFlame"); NumFlameSP++ ) {
-						Instantiate (flame_tur, transform.position, transform.rotation);
-						PlayerPrefs.SetInt("NumFlameSpawn", NumFlameSP);
+						for (NumFlameSP = 1; NumFlameSP <= PlayerPrefs.GetInt("NumFlame"); NumFlameSP++) {
+								FlamePos.x = PlayerPrefs.GetFloat ("FlameX" + NumFlameSP.ToString ());
+								FlamePos.y = PlayerPrefs.GetFloat ("FlameY" + NumFlameSP.ToString ());
+								Instantiate (flame_tur, FlamePos, transform.rotation);
+								PlayerPrefs.SetInt ("NumFlameSpawn", NumFlameSP);
 						}
-						PlayerPrefs.SetInt("NumFlame", 0);
+						//PlayerPrefs.SetInt ("NumFlame", 0);
 				}
 	
 				// Update is called once per frame
@@ -141,10 +151,16 @@ namespace Level
 								foreach (GameObject bOmb in Bombs) {
 										bOmb.SetActive (false);
 								}
+								foreach (GameObject bOmb in Bomber) {
+										bOmb.SetActive (false);
+								}
 								foreach (GameObject ProJ in Projectiles) {
 										ProJ.SetActive (false);
 								}
 								foreach (GameObject fIre in FireShots) {
+										fIre.SetActive (false);
+								}
+								foreach (GameObject fIre in FlameThrowers) {
 										fIre.SetActive (false);
 								}
 								foreach (GameObject iCes in Ices) {
@@ -164,10 +180,16 @@ namespace Level
 								foreach (GameObject bOmb in Bombs) {
 										bOmb.SetActive (true);
 								}
+								foreach (GameObject bOmb in Bomber) {
+										bOmb.SetActive (true);
+								}
 								foreach (GameObject ProJ in Projectiles) {
 										ProJ.SetActive (true);
 								}
 								foreach (GameObject fIre in FireShots) {
+										fIre.SetActive (true);
+								}
+								foreach (GameObject fIre in FlameThrowers) {
 										fIre.SetActive (true);
 								}
 								foreach (GameObject iCes in Ices) {
@@ -179,12 +201,13 @@ namespace Level
 						if (pause == false) {
 								enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 								Turrets = GameObject.FindGameObjectsWithTag ("Turret");
-				//Bomber = GameObject.FindGameObjectsWithTag("Bomber");
-				FlameThrowers = GameObject.FindGameObjectsWithTag("Thrower");
+								Bomber = GameObject.FindGameObjectsWithTag ("Bomber");
+								FlameThrowers = GameObject.FindGameObjectsWithTag ("Thrower");
 								Bars = GameObject.FindGameObjectsWithTag ("Bar");
 								FireShots = GameObject.FindGameObjectsWithTag ("Fire");
 								Projectiles = GameObject.FindGameObjectsWithTag ("Projectile");
 								Ices = GameObject.FindGameObjectsWithTag ("Ice");
+								FreezeRay = GameObject.FindGameObjectsWithTag ("Freeze");
 								Bombs = GameObject.FindGameObjectsWithTag ("Bomb");
 						}
 
@@ -196,7 +219,7 @@ namespace Level
 								PlayerPrefs.SetInt ("Money", 500);
 								PlayerPrefs.SetFloat ("Health", 20);
 								PlayerPrefs.SetInt ("Round", 0);
-								PlayerPrefs.SetInt("NumFlame", 0);
+								PlayerPrefs.SetInt ("NumFlame", 0);
 
 								Application.LoadLevel ("Forest");
 						}
@@ -294,15 +317,19 @@ namespace Level
 				{
 						storecontrol.Coins = storecontrol.Coins + 100;
 						Called = true;
-						PlayerPrefs.SetInt("NumFlame", FlameThrowers.Length);
+						num = 1;
+						PlayerPrefs.SetInt ("NumFlame", FlameThrowers.Length);
+						PlayerPrefs.SetInt ("NumSnipe", Snipers.Length);
+						PlayerPrefs.SetInt ("NumIce", Ices.Length);
+						PlayerPrefs.SetInt ("NumBomber", Bomber.Length);
 						PlayerPrefs.SetInt ("Money", storecontrol.Coins);
 						PlayerPrefs.SetInt ("Round", wave);
 						PlayerPrefs.SetFloat ("Health", lives);
 						foreach (GameObject ThRoW in FlameThrowers) {
-						PlayerPrefs.SetFloat("FlameX" + num.ToString(), ThRoW.transform.position.x);
-						PlayerPrefs.SetFloat("FlameY" + num.ToString(), ThRoW.transform.position.y);
-						num++;
-			}
+								PlayerPrefs.SetFloat ("FlameX" + num.ToString (), ThRoW.transform.position.x);
+								PlayerPrefs.SetFloat ("FlameY" + num.ToString (), ThRoW.transform.position.y);
+								num++;
+						}
 						PlayerPrefs.Save ();
 				}
 
