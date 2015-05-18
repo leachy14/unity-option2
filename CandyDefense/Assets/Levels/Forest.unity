@@ -886,6 +886,9 @@ MonoBehaviour:
   SpeedTog: {fileID: 1103983768}
   Pause: {fileID: 113268, guid: 117a5370eb68c45b3a1c84944592ced7, type: 2}
   flame_tur: {fileID: 100000, guid: b461debd18dfd44be9c78718dfb082ae, type: 2}
+  Green: {fileID: 100000, guid: 7e494b0fc4e464a4fb16811471644145, type: 2}
+  IcesP: {fileID: 100000, guid: bcd4e26025a604f9091b0de1e981df8c, type: 2}
+  Bombers: {fileID: 0}
   roundIsOver: 0
   pause: 0
   Called: 1
@@ -899,6 +902,10 @@ MonoBehaviour:
   Tutorial: 0
   num: 0
   NumFlameSP: 1
+  NumGreenSP: 1
+  NumSniperSP: 1
+  NumIceSP: 1
+  NumBombSP: 1
   hSliderValue: 5
   startTimer: 0
   SpawnRate: 0

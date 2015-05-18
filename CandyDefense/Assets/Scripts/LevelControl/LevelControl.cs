@@ -31,6 +31,9 @@ namespace Level
 				public Toggle SpeedTog;
 				public GameObject Pause;
 				public GameObject flame_tur;
+				public GameObject Green;
+				public GameObject IcesP;
+				public GameObject Bombers;
 	
 				//Bools	
 				public bool roundIsOver;    //are we inbetween rounds?
@@ -48,6 +51,10 @@ namespace Level
 				public int Tutorial;
 				public int num;
 				public int NumFlameSP = 1;
+				public int NumGreenSP = 1;
+				public int NumSniperSP = 1;
+				public int NumIceSP = 1;
+				public int NumBombSP = 1;
 
 				//floats
 				public float hSliderValue = 5.0F;
@@ -100,6 +107,18 @@ namespace Level
 								FlamePos.y = PlayerPrefs.GetFloat ("FlameY" + NumFlameSP.ToString ());
 								Instantiate (flame_tur, FlamePos, transform.rotation);
 								PlayerPrefs.SetInt ("NumFlameSpawn", NumFlameSP);
+						}
+						for (NumGreenSP = 1; NumGreenSP <= PlayerPrefs.GetInt("NumGreen"); NumGreenSP++) {
+								TurretPos.x = PlayerPrefs.GetFloat ("GreenX" + NumGreenSP.ToString ());
+								TurretPos.y = PlayerPrefs.GetFloat ("GreenY" + NumGreenSP.ToString ());
+								Instantiate (Green, TurretPos, transform.rotation);
+								PlayerPrefs.SetInt ("NumGreenSpawn", NumGreenSP);
+						}
+						for (NumIceSP = 1; NumIceSP <= PlayerPrefs.GetInt("NumIce"); NumIceSP++) {
+								TurretPos.x = PlayerPrefs.GetFloat ("IceX" + NumIceSP.ToString ());
+								TurretPos.y = PlayerPrefs.GetFloat ("IceY" + NumIceSP.ToString ());
+								Instantiate (IcesP, TurretPos, transform.rotation);
+								PlayerPrefs.SetInt ("NumIceSpawn", NumIceSP);
 						}
 						//PlayerPrefs.SetInt ("NumFlame", 0);
 				}
@@ -321,7 +340,7 @@ namespace Level
 						num = 1;
 						PlayerPrefs.SetInt ("NumFlame", FlameThrowers.Length);
 						PlayerPrefs.SetInt ("NumSnipe", Snipers.Length);
-						PlayerPrefs.SetInt ("NumIce", Ices.Length);
+						PlayerPrefs.SetInt ("NumIce", FreezeRay.Length);
 						PlayerPrefs.SetInt ("NumBomber", Bomber.Length);
 						PlayerPrefs.SetInt ("Money", storecontrol.Coins);
 						PlayerPrefs.SetInt ("Round", wave);
@@ -331,6 +350,25 @@ namespace Level
 						foreach (GameObject ThRoW in FlameThrowers) {
 								PlayerPrefs.SetFloat ("FlameX" + num.ToString (), ThRoW.transform.position.x);
 								PlayerPrefs.SetFloat ("FlameY" + num.ToString (), ThRoW.transform.position.y);
+								num++;
+						}
+
+						num = 1;
+						foreach (GameObject objs in Turrets) {
+								PlayerPrefs.SetFloat ("GreenX" + num.ToString (), objs.transform.position.x);
+								PlayerPrefs.SetFloat ("GreenY" + num.ToString (), objs.transform.position.y);
+								num++;
+						}
+						num = 1;
+						foreach (GameObject objs in FreezeRay) {
+								PlayerPrefs.SetFloat ("IceX" + num.ToString (), objs.transform.position.x);
+								PlayerPrefs.SetFloat ("IceY" + num.ToString (), objs.transform.position.y);
+								num++;
+						}				
+						num = 1;
+						foreach (GameObject objs in Bomber) {
+								PlayerPrefs.SetFloat ("BombX" + num.ToString (), objs.transform.position.x);
+								PlayerPrefs.SetFloat ("BombY" + num.ToString (), objs.transform.position.y);
 								num++;
 						}
 						PlayerPrefs.Save ();
