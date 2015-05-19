@@ -888,7 +888,8 @@ MonoBehaviour:
   flame_tur: {fileID: 100000, guid: b461debd18dfd44be9c78718dfb082ae, type: 2}
   Green: {fileID: 100000, guid: 7e494b0fc4e464a4fb16811471644145, type: 2}
   IcesP: {fileID: 100000, guid: bcd4e26025a604f9091b0de1e981df8c, type: 2}
-  Bombers: {fileID: 0}
+  Bombers: {fileID: 100000, guid: dd4719c5f8e144eeca25e0fe74c57ca5, type: 2}
+  Sniper: {fileID: 100000, guid: 7176b888213144f6fa6345f3fdab4fd7, type: 2}
   roundIsOver: 0
   pause: 0
   Called: 1

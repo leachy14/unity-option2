@@ -34,6 +34,7 @@ namespace Level
 				public GameObject Green;
 				public GameObject IcesP;
 				public GameObject Bombers;
+				public GameObject Sniper;
 	
 				//Bools	
 				public bool roundIsOver;    //are we inbetween rounds?
@@ -119,6 +120,18 @@ namespace Level
 								TurretPos.y = PlayerPrefs.GetFloat ("IceY" + NumIceSP.ToString ());
 								Instantiate (IcesP, TurretPos, transform.rotation);
 								PlayerPrefs.SetInt ("NumIceSpawn", NumIceSP);
+						}
+						for (NumBombSP = 1; NumBombSP <= PlayerPrefs.GetInt("NumBomber"); NumBombSP++) {
+								TurretPos.x = PlayerPrefs.GetFloat ("BombX" + NumBombSP.ToString ());
+								TurretPos.y = PlayerPrefs.GetFloat ("BombY" + NumBombSP.ToString ());
+								Instantiate (Bombers, TurretPos, transform.rotation);
+								PlayerPrefs.SetInt ("NumBombSpawn", NumBombSP);
+						}
+						for (NumSniperSP = 1; NumSniperSP <= PlayerPrefs.GetInt("NumSnipe"); NumSniperSP++) {
+								TurretPos.x = PlayerPrefs.GetFloat ("SniperX" + NumSniperSP.ToString ());
+								TurretPos.y = PlayerPrefs.GetFloat ("SniperY" + NumSniperSP.ToString ());
+								Instantiate (Sniper, TurretPos, transform.rotation);
+								PlayerPrefs.SetInt ("NumSniperSpawn", NumSniperSP);
 						}
 						//PlayerPrefs.SetInt ("NumFlame", 0);
 				}
@@ -228,6 +241,7 @@ namespace Level
 								Ices = GameObject.FindGameObjectsWithTag ("Ice");
 								FreezeRay = GameObject.FindGameObjectsWithTag ("Freeze");
 								Bombs = GameObject.FindGameObjectsWithTag ("Bomb");
+								Snipers = GameObject.FindGameObjectsWithTag ("Sniper");
 						}
 
 						pauseY = (Screen.height / 2 - 100);
@@ -342,6 +356,7 @@ namespace Level
 						PlayerPrefs.SetInt ("NumSnipe", Snipers.Length);
 						PlayerPrefs.SetInt ("NumIce", FreezeRay.Length);
 						PlayerPrefs.SetInt ("NumBomber", Bomber.Length);
+						PlayerPrefs.SetInt ("NumGreen", Turrets.Length);
 						PlayerPrefs.SetInt ("Money", storecontrol.Coins);
 						PlayerPrefs.SetInt ("Round", wave);
 						PlayerPrefs.SetInt ("MaxEnemies", maxEnemies);
@@ -369,6 +384,12 @@ namespace Level
 						foreach (GameObject objs in Bomber) {
 								PlayerPrefs.SetFloat ("BombX" + num.ToString (), objs.transform.position.x);
 								PlayerPrefs.SetFloat ("BombY" + num.ToString (), objs.transform.position.y);
+								num++;
+						}
+						num = 1;
+						foreach (GameObject objs in Snipers) {
+								PlayerPrefs.SetFloat ("SniperX" + num.ToString (), objs.transform.position.x);
+								PlayerPrefs.SetFloat ("SniperY" + num.ToString (), objs.transform.position.y);
 								num++;
 						}
 						PlayerPrefs.Save ();

@@ -33,7 +33,7 @@ public class StartScreen : MonoBehaviour {
 	}
 	public void NewGame() {
 		PlayerPrefs.DeleteAll();
-		PlayerPrefs.SetInt ("Money", 5000);
+		PlayerPrefs.SetInt ("Money", 300);
 		PlayerPrefs.SetFloat ("Health", 20);
 		PlayerPrefs.SetInt ("Round", 0);
 		PlayerPrefs.SetInt ("MaxEnemies", 1);
