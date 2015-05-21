@@ -51,10 +51,7 @@ function Update () {
 		  
 		 var stateInfo : AnimatorStateInfo = anim.GetCurrentAnimatorStateInfo(0);
 		
-		 
-	 
-
-		
+		 	
 
 
 }

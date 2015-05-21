@@ -62,8 +62,7 @@ namespace Level
 				public float startTimer;    //countdown until timer ends	
 				public float SpawnRate;
 				public float lives;
-				public Image speedon;
-	
+				
 	
 				//Access other scripts
 				public GameObject store_accessor;
@@ -161,14 +160,11 @@ namespace Level
 								//current_enemy_amount = enemies.Length;
 						}     
 						
-						round = "<color=#ff0000ff><size=30>Round: " + wave + "</size></color>";
-						RoundHeight = (Screen.height - (Screen.height - 75));
 						current_enemy_amount = enemies.Length;
 						
 						
 
-						if (Input.GetKeyDown ("escape") && pause == false) {
-							
+						if (Input.GetKeyDown ("escape") && pause == false) {							
 								Instantiate (Pause, transform.position, transform.rotation);	
 								pause = true;
 								foreach (GameObject objs in Turrets) {
@@ -249,7 +245,8 @@ namespace Level
 
 						
 						if (lives <= 0) {
-								PlayerPrefs.SetInt ("Money", 500);
+								PlayerPrefs.DeleteAll();
+								PlayerPrefs.SetInt ("Money", 300);
 								PlayerPrefs.SetFloat ("Health", 20);
 								PlayerPrefs.SetInt ("Round", 0);
 								PlayerPrefs.SetInt ("NumFlame", 0);
@@ -326,19 +323,7 @@ namespace Level
 						Called = false;
 				}
 
-				/*void OnGUI ()
-				{
 
-						if (pause == true) {
-								GUI.BeginGroup (new Rect (pauseX, pauseY, 800, 600));
-								GUI.Box (new Rect (0, 0, 400, 200), "This is a title");
-								if (GUI.Button (new Rect (10, 50, 100, 50), "Quit Game")) {
-										Application.Quit ();
-								}
-								GUI.EndGroup ();
-						}
-	
-				}*/
 
 				public void StartRound ()
 				{

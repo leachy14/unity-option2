@@ -9,9 +9,6 @@ public class PauseScreen : MonoBehaviour {
 	void Start () {
 
 
-//			enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-//			Turrets = GameObject.FindGameObjectsWithTag ("Turret");
-
 		transform.SetParent(GameObject.Find("Canvas").transform, false);
 		round_level = GameObject.Find ("spawner");
 		round_accessor = round_level.GetComponent<LevelControl> ();

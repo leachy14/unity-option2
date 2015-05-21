@@ -80,24 +80,22 @@ function FindClosestEnemy (){
 			
 			}
 		} 	
-	}// && this.gameObject.name != "Flame thrower(Clone)"
+	}
 }
 
 function Shoot () {
 
-	//if(this.gameObject.name != "FlameThrower(Clone)"){
-	//	Instantiate(shotnormal, transform.position, transform.rotation);
-	//}
+	
 	if(this.gameObject.name == "FlameThrower(Clone)"){
 		Instantiate(shotFlame, transform.position, transform.rotation);
 		
 	}else if(this.gameObject.name == "Ice_turret(Clone)"){
 	
 			for (var i = 0; i < 3; i++) {
-			//if (Time.time > nextIce) {
-			//nextIce = (Time.time + iceRate);
+			
+			
 			Instantiate(shotFlame, transform.position, transform.rotation);
-			//}
+			
 			GetComponent.<AudioSource>().PlayOneShot(ice);
 			}
 			

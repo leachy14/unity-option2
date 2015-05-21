@@ -911,7 +911,6 @@ MonoBehaviour:
   startTimer: 0
   SpawnRate: 0
   lives: 0
-  speedon: {fileID: 0}
   store_accessor: {fileID: 0}
   storecontrol: {fileID: 0}
   FlamePos: {x: 0, y: 0, z: 0}
@@ -1467,11 +1466,6 @@ MonoBehaviour:
   Sniper_toggle: 0
   Ice_toggle: 0
   GameSpeed: 0
-  Storeposition: 0
-  MoneyHeight: 0
-  StoreOpenButtonPos: 0
-  StorePlaneH: 0
-  test: 0
   illum_turret: {fileID: 100000, guid: 87978f61b81b5410a80c357e9b14a06d, type: 2}
   green_tur: {fileID: 100000, guid: 7e494b0fc4e464a4fb16811471644145, type: 2}
   flame_tur: {fileID: 100000, guid: b461debd18dfd44be9c78718dfb082ae, type: 2}
@@ -1481,7 +1475,6 @@ MonoBehaviour:
   path_collide: {fileID: 1537667611}
   round_level: {fileID: 0}
   round_accessor: {fileID: 0}
-  scrollPosition: {x: 0, y: 0}
 --- !u!4 &1326259432
 Transform:
   m_ObjectHideFlags: 0

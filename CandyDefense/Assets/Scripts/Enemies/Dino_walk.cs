@@ -78,7 +78,7 @@ public class Dino_walk : MonoBehaviour {
 			else
 			{
 				// Inform level script that a unit has reached the last waypoint
-					//InvokeRepeating ("TakeHealth", 1, 1);
+
 					StartCoroutine (TakeHealth(healthdo));
 				
 				return;
