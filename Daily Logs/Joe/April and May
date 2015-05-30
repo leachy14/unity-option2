@@ -1,0 +1,57 @@
+April 6: Absent
+
+April 7: Health bars spawn but only move with the first dinosaur
+
+April 8: Worked on some bugs with the health bars. Health bar now moves with the proper dinosaur.
+
+April 9: Health bars now show enemy health remaining. Also, it destroys when the dinosaur is destroyed.
+
+April 10: Start menu initialized. Game is primarily done.
+
+April 13: Compiled the game for use with Android. 
+
+April 14-April 16: Class didn’t meet
+
+April 17: Absent (Villanova visit)
+
+April 20: Putting some finishing touches on the game.
+
+April 21: Fixing more bugs that we see along the way.
+
+April 23: More bug fixes.
+
+April 24: Fixed one major problem with the turrets spawning where they please.
+
+April 27: Bug fixes
+
+April 29: More bug fixes
+
+April 30: Wasn’t in class due to AP Chem review session during this period
+
+May 1: Wasn’t in class due to AP Chem review session during this period
+
+May 5: Wasn’t in class most of the time due to AP Calc test running long
+
+May 6: Moved miscellaneous files from Kevin’s branch to Perry’s to be implemented
+
+May 7: Pulled files from Perry’s branch to the master...also an update with the loading screen
+
+May 11: Missed most of the period due to AP Physics tests
+
+May 12: No class due to AP French exam
+
+May 13: Finishing up some things and cleaning up some files
+
+May 15: Finishing up bug fixes
+
+May 18: One or two more final fixes...
+
+May 19: The game is finished! Compiled for Android
+
+May 21: Uploaded Android app to the Play Store
+
+May 22: Absent
+
+May 27: Absent
+
+May 28: Compiled for PC; installer created
